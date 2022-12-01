@@ -1,0 +1,76 @@
+{
+    "os": "Linux-5.15.0-53-generic-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2022-12-01T17:34:18.568026",
+    "startedAt": "2022-12-01T17:34:12.551877",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "random_forest-jvsc-5b646819-477e-41df-9023-13bdd569ec37467b0ced-1d55-499e-a550-de1640bf0c13.ipynb",
+    "root": "/home/till/projects/uni/data science/museum_item_classification",
+    "git": {
+        "remote": "git@github.com:TillWenke/museum_item_classification.git",
+        "commit": "d2c3035a5f4fd9e4ce027492fd06e761deee679c"
+    },
+    "email": "till.wenke@gmx.net",
+    "host": "till",
+    "username": "till",
+    "executable": "/bin/python3",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1911.70775,
+        "min": 400.0,
+        "max": 4700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1700.0,
+            "min": 400.0,
+            "max": 4700.0
+        },
+        {
+            "current": 2418.155,
+            "min": 400.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1610.78,
+            "min": 400.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1700.0,
+            "min": 400.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1700.0,
+            "min": 400.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1700.0,
+            "min": 400.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1470.57,
+            "min": 400.0,
+            "max": 4700.0
+        },
+        {
+            "current": 2409.197,
+            "min": 400.0,
+            "max": 4700.0
+        }
+    ],
+    "disk": {
+        "total": 937.3305015563965,
+        "used": 384.45297622680664
+    },
+    "memory": {
+        "total": 15.35672378540039
+    }
+}
