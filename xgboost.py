@@ -42,12 +42,57 @@ labels = data.type
 label_encoder = LabelEncoder()
 label_encoder = label_encoder.fit(labels)
 labels = label_encoder.transform(labels)
-X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.0001, random_state=0)
-bst = XGBClassifier(random_state=0)
-# fit model
-bst.fit(X_train, y_train)
-# make predictions
-preds = bst.predict(X_test)
-val_acc = accuracy_score(y_test, preds)
-val_acc
-bst.save_model('models/xgboost_full.json')
+X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.3, random_state=0)
+
+# Define sweep config
+sweep_configuration = {
+    'method': 'random',
+    'name': 'sweep',
+    'metric': {'goal': 'maximize', 'name': 'val_acc'},
+    'parameters': 
+    {
+        'child': {'values': [1, 2, 5, 10, 100]},
+        'depth': {'values': [3, 6, 10, 50, 100]},
+     }
+}
+
+# Initialize sweep by passing in config. (Optional) Provide a name of the project.
+sweep_id = wandb.sweep(sweep=sweep_configuration, project='xgboost')
+
+def main():
+    run = wandb.init(project="xgboost")
+
+    # note that we define values from `wandb.config` instead 
+    # of defining hard values 
+    est = wandb.config.est
+    depth = wandb.config.depth
+    child = wandb.config.child
+
+    # -------------------------- usual training code starts here  -------------------------------------
+
+    bst = XGBClassifier(n_estimtorators=1000, max_depth=depth, min_child_weight=child, random_state=0)
+    # fit model
+    bst.fit(X_train, y_train)
+    # make predictions
+    preds = bst.predict(X_test)
+    val_acc = accuracy_score(y_test, preds)
+    
+    y_pred = bst.predict(X_train)
+    train_acc = accuracy_score(y_train, y_pred)
+
+    print(train_acc, val_acc)
+
+    # -------------------------- ends here  -------------------------------------
+    
+
+    wandb.log({
+      'train_acc': train_acc,
+      'val_acc': val_acc,
+    })
+
+# Start sweep job.
+wandb.agent(sweep_id, function=main, count=4)
+
+
+
+#bst.save_model('models/xgboost_full.json')
