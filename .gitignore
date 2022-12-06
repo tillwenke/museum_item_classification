@@ -6,3 +6,4 @@
 **/train_curie.csv
 **/test_curie.csv
 models/*
+wandb/*

@@ -27,7 +27,7 @@ train_prep = pd.read_csv('data/train_prepared.csv', index_col='id', dtype={'type
 
 
 # xg boost
-import xgboost
+from xgboost import XGBClassifier
 # utilities
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
@@ -62,13 +62,12 @@ def main():
 
     # note that we define values from `wandb.config` instead 
     # of defining hard values 
-    est = wandb.config.est
     depth = wandb.config.depth
     child = wandb.config.child
 
     # -------------------------- usual training code starts here  -------------------------------------
 
-    bst = xgboost.XGBClassifier(n_estimtorators=1000, max_depth=depth, min_child_weight=child, random_state=0)
+    bst = XGBClassifier(n_estimators=1000, max_depth=depth, min_child_weight=child, random_state=0)
     # fit model
     bst.fit(X_train, y_train)
     # make predictions
