@@ -34,7 +34,7 @@ id,type
 3195467,telegramm
 3308155,raamat
 2779567,foto
-4113070,käsikiri
+4113070,kiri
 2332996,arheoloogiline leid
 465368,fotonegatiiv
 2386712,kava
@@ -80,7 +80,7 @@ id,type
 1413205,foto
 3043033,plakat
 2568619,foto
-3039663,käsikiri
+3039663,kiri
 3575809,kavand/joonis/eskiis
 2062333,foto
 2767917,fotonegatiiv
@@ -128,7 +128,7 @@ id,type
 2731108,foto
 2495153,foto
 2034282,foto
-4087575,käsikiri
+4087575,väiketrükis
 3494611,kavand/joonis/eskiis
 4116389,plakat
 3901940,plakat
@@ -141,7 +141,7 @@ id,type
 2352467,medal
 3371765,foto
 2035322,foto
-3872408,noodid
+3872408,raamat
 2400715,raamat
 3512146,kavand/joonis/eskiis
 2743078,fotonegatiiv
@@ -157,7 +157,7 @@ id,type
 2366406,fotonegatiiv
 4262131,fotonegatiiv
 4307896,dokument
-3612305,kiri
+3612305,kava
 2765161,fotonegatiiv
 2960578,plakat
 2046682,foto
@@ -201,7 +201,7 @@ id,type
 3927178,plakat
 3682466,käsikiri
 2469406,kava
-3113946,dokument
+3113946,kiri
 3926496,raamat
 2927520,pitser/templijäljend
 2333542,arheoloogiline leid
@@ -212,7 +212,7 @@ id,type
 2074786,fotonegatiiv
 2805200,fotonegatiiv
 3449393,foto
-3326557,kutse
+3326557,kiri
 4078055,plakat
 4233347,foto
 2788789,fotonegatiiv
@@ -250,10 +250,10 @@ id,type
 3524354,kiri
 2694164,foto
 2317956,arheoloogiline leid
-3804744,kava
-3239635,käsikiri
+3804744,kiri
+3239635,kiri
 204772,kavand/joonis/eskiis
-1290281,lint/pael
+1290281,kleit
 4045718,dokument
 3865109,foto
 3585710,digitaalne kujutis
@@ -273,7 +273,7 @@ id,type
 3930775,kiri
 3269278,foto
 4312707,plakat
-2090718,"käsikiri, laul/ vokaalmuusika"
+2090718,käsikiri
 2785813,kava
 1865895,noodid
 3459645,plakat
@@ -296,8 +296,8 @@ id,type
 2040368,foto
 1711273,diapositiiv
 3924279,plakat
-3625216,foto
-2559251,dokument
+3625216,ajaleht
+2559251,kiri
 3143037,pitser/templijäljend
 2053270,foto
 2409132,raamat
@@ -305,7 +305,7 @@ id,type
 2405304,fotonegatiiv
 3769891,foto
 1362362,fotonegatiiv
-2979178,ajaleht
+2979178,dokument
 2774456,plakat
 4277905,plakat
 3390306,kavand/joonis/eskiis
@@ -377,7 +377,7 @@ id,type
 3603237,kavand/joonis/eskiis
 3244694,kava
 3359760,"käsikiri, noodid"
-1538898,foto
+1538898,digitaalne kujutis
 3084695,foto
 3422318,foto
 3985036,raamat
@@ -389,7 +389,7 @@ id,type
 4266102,plakat
 232298,käsikiri
 2073839,fotonegatiiv
-4139956,kiri
+4139956,kava
 2991030,foto
 3910227,kiri
 3845034,foto
@@ -411,8 +411,8 @@ id,type
 1827270,dokument
 2326753,arheoloogiline leid
 3197286,digitaalne kujutis
-1859918,dokument
-3398860,noodid
+1859918,kava
+3398860,kiri
 2311467,foto
 3667437,digitaalne kujutis
 3934502,plakat
@@ -420,7 +420,7 @@ id,type
 2323319,arheoloogiline leid
 2040408,foto
 1858157,kava
-2698336,kava
+2698336,foto
 2794049,fotonegatiiv
 2072787,fotonegatiiv
 3716803,foto
@@ -435,7 +435,7 @@ id,type
 4030240,digitaalne kujutis
 2076697,fotonegatiiv
 2829704,kava
-3403155,kava
+3403155,käsikiri
 3329586,fotonegatiiv
 2712765,raamat
 2040778,foto
@@ -444,11 +444,11 @@ id,type
 2807187,fotonegatiiv
 3402261,foto
 2025438,kava
-4134504,raamat
+4134504,noodid
 4169813,raamat
 2652132,münt
 3679576,kiri
-2620568,ajaleht
+2620568,dokument
 2031057,noodid
 3652090,kiri
 2039684,foto
@@ -501,7 +501,7 @@ id,type
 3850649,kiri
 1807219,diapositiiv
 1916424,foto
-3631228,kiri
+3631228,dokument
 3372084,foto
 2040709,foto
 3653816,kiri
@@ -552,7 +552,7 @@ id,type
 395040,foto
 3769657,raamat
 3215429,käsikiri
-3430963,kiri
+3430963,kava
 4278048,dokument
 2464379,foto
 2688377,foto
@@ -573,7 +573,7 @@ id,type
 3562540,kavand/joonis/eskiis
 2846421,raamat
 2791449,fotonegatiiv
-3636109,kava
+3636109,kiri
 3866188,foto
 3252727,foto
 3999817,foto
@@ -620,7 +620,7 @@ id,type
 3682943,fotonegatiiv
 2357699,pitser/templijäljend
 2298772,foto
-2183229,raamat
+2183229,käsikiri
 2015117,kava
 2323975,arheoloogiline leid
 2743433,fotonegatiiv
@@ -648,7 +648,7 @@ id,type
 2975037,foto
 2326361,arheoloogiline leid
 4115776,plakat
-3010843,foto
+3010843,ajaleht
 3452463,kiri
 3659541,kavand/joonis/eskiis
 3168811,kava
@@ -668,7 +668,7 @@ id,type
 2474323,fotonegatiiv
 2319137,arheoloogiline leid
 3447154,kavand/joonis/eskiis
-3057982,väiketrükis
+3057982,raamat
 3239394,paber
 2036055,foto
 2071749,foto
@@ -688,21 +688,21 @@ id,type
 3949129,raamat
 3672781,kava
 3574553,graafika
-3936038,noodid
+3936038,dokument
 396568,ajakiri
 3762811,dokument
 2333481,arheoloogiline leid
 2825867,fotonegatiiv
 3934180,plakat
 3263603,foto
-3537575,kutse
+3537575,dokument
 4122339,foto
 2803026,fotonegatiiv
-232773,kiri
+232773,käsikiri
 3190677,käsikiri
 2701942,foto
 2815326,fotonegatiiv
-3431458,kiri
+3431458,postkaart
 2907761,telegramm
 215844,plakat
 3270242,raamat
@@ -721,10 +721,10 @@ id,type
 2782711,pitser/templijäljend
 2704159,fotonegatiiv
 2707938,fotonegatiiv
-3114297,käsikiri
+3114297,raamat
 2729728,foto
 2409057,raamat
-3139794,ajaleht
+3139794,dokument
 2052936,foto
 3576332,kavand/joonis/eskiis
 3370047,digitaalne kujutis
@@ -738,7 +738,7 @@ id,type
 4083943,käsikiri
 2325343,arheoloogiline leid
 3003367,kott
-3850093,kiri
+3850093,dokument
 4092018,käsikiri
 3997749,väiketrükis
 3575150,kavand/joonis/eskiis
@@ -749,7 +749,7 @@ id,type
 2037193,foto
 3582400,kavand/joonis/eskiis
 3240040,kava
-3747673,graafika
+3747673,joonistus
 3701139,kiri
 3933514,raamat
 3341765,paber
@@ -795,7 +795,7 @@ id,type
 4078881,kava
 2804498,fotonegatiiv
 3148540,käsikiri
-3061364,paber
+3061364,kiri
 4084735,plakat
 3264971,kava
 2323819,arheoloogiline leid
@@ -809,7 +809,7 @@ id,type
 4028921,digitaalne kujutis
 3877650,kava
 2038242,album
-3263660,joonistus
+3263660,graafika
 2843736,foto
 3069241,kiri
 2347130,foto
@@ -830,7 +830,7 @@ id,type
 2664124,raamat
 3299598,raamat
 3822699,foto
-4291332,aukiri/auaadress
+4291332,dokument
 1975270,kiri
 2317895,arheoloogiline leid
 2793043,fotonegatiiv
@@ -843,7 +843,7 @@ id,type
 2729733,foto
 3663995,kavand/joonis/eskiis
 236932,graafika
-2048433,foto
+2048433,"foto, postkaart"
 2762887,fotonegatiiv
 3421264,foto
 1474667,plakat
@@ -860,7 +860,7 @@ id,type
 2927486,dokument
 4100148,foto
 3359568,"käsikiri, noodid"
-3829993,postkaart
+3829993,kiri
 2776633,fotonegatiiv
 2804561,fotonegatiiv
 4283615,plakat
@@ -885,9 +885,9 @@ id,type
 3581774,kavand/joonis/eskiis
 3413980,graafika
 2804335,fotonegatiiv
-4080683,kiri
+4080683,aukiri/auaadress
 2765358,fotonegatiiv
-3626185,foto
+3626185,ajaleht
 2325940,arheoloogiline leid
 3537011,kavand/joonis/eskiis
 4050109,ajakiri
@@ -895,7 +895,7 @@ id,type
 3813178,graafika
 236361,graafika
 3373325,kava
-3539636,käsikiri
+3539636,kava
 3682101,käsikiri
 3269240,dokument
 2727875,foto
@@ -928,8 +928,8 @@ id,type
 2067887,foto
 2725814,foto
 3625337,postkaart
-3099443,postkaart
-3963633,kiri
+3099443,kiri
+3963633,telegramm
 1335882,pitser/templijäljend
 4294483,fotonegatiiv
 2309950,kava
@@ -963,7 +963,7 @@ id,type
 2510345,münt
 1683510,foto
 3433532,foto
-3691550,kavand/joonis/eskiis
+3691550,kava
 212526,muusikainstrument
 3268470,dokument
 2079178,fotonegatiiv
@@ -998,7 +998,7 @@ id,type
 3394216,foto
 3060208,karikatuur
 1617287,noodid
-225004,silt/märk
+225004,nukk
 2136750,kava
 2061144,foto
 1861054,diapositiiv
@@ -1024,7 +1024,7 @@ id,type
 4015045,aukiri/auaadress
 3319272,kavand/joonis/eskiis
 3647481,kavand/joonis/eskiis
-4032058,foto
+4032058,kiri
 3281017,dokument
 2330522,arheoloogiline leid
 2336722,arheoloogiline leid
@@ -1085,7 +1085,7 @@ id,type
 2523824,münt
 2336765,arheoloogiline leid
 3943943,kava
-1402336,"käsikiri, laul/ vokaalmuusika"
+1402336,"käsikiri, muusikateos"
 3930686,aukiri/auaadress
 200909,"käsikiri, laul/ vokaalmuusika"
 2691520,"foto, postkaart"
@@ -1130,7 +1130,7 @@ id,type
 2240021,foto
 2056910,foto
 2554104,muusikainstrument
-3432370,kiri
+3432370,dokument
 2073951,fotonegatiiv
 3096804,foto
 2724893,foto
@@ -1142,7 +1142,7 @@ id,type
 2351767,medal
 2142269,foto
 2285547,kava
-3486582,pakend
+3486582,silt/märk
 2266960,foto
 2789599,fotonegatiiv
 3254186,foto
@@ -1166,7 +1166,7 @@ id,type
 3632436,fotonegatiiv
 2789110,fotonegatiiv
 3142939,käsikiri
-4032068,foto
+4032068,kiri
 2423138,raamat
 222784,plakat
 3335261,kava
@@ -1201,7 +1201,7 @@ id,type
 2650357,foto
 2047550,foto
 2143473,fotonegatiiv
-3229049,postkaart
+3229049,kiri
 3395860,kava
 1851743,raamat
 2326284,arheoloogiline leid
@@ -1222,7 +1222,7 @@ id,type
 2039417,foto
 3821937,graafika
 203016,"käsikiri, laul/ vokaalmuusika"
-4103812,dokument
+4103812,kiri
 3208071,kiri
 2043895,foto
 3915361,foto
@@ -1239,7 +1239,7 @@ id,type
 2740342,foto
 2794646,fotonegatiiv
 2771549,fotonegatiiv
-3752264,kiri
+3752264,dokument
 2757896,plakat
 4261082,fotonegatiiv
 2799060,fotonegatiiv
@@ -1251,7 +1251,7 @@ id,type
 2788690,fotonegatiiv
 3387867,foto
 3224783,ajaleht
-4280676,kiri
+4280676,dokument
 2658422,fotonegatiiv
 3489575,digitaalne kujutis
 4299033,fotonegatiiv
@@ -1275,7 +1275,7 @@ id,type
 2015095,foto
 2076797,fotonegatiiv
 3832597,fotonegatiiv
-3866294,dokument
+3866294,foto
 1461029,kava
 2902620,kava
 4030530,digitaalne kujutis
@@ -1303,7 +1303,7 @@ id,type
 3630320,kiri
 3667766,kava
 3693523,fotonegatiiv
-3081215,kiri
+3081215,kava
 3635071,kava
 3388166,foto
 2689184,foto
@@ -1348,18 +1348,18 @@ id,type
 3489724,digitaalne kujutis
 1822786,dokument
 2064534,foto
-3630591,kiri
+3630591,ajaleht
 3197085,digitaalne kujutis
 1428576,noodid
 2036013,foto
 2323688,arheoloogiline leid
-3534992,ajaleht
+3534992,dokument
 2103528,kiri
 2057489,foto
-3155255,laegas/karp
+3155255,nõu/anum
 3584089,fotomaterjal
 3341976,kavand/joonis/eskiis
-197774,"käsikiri, laul/ vokaalmuusika"
+197774,"käsikiri, muusikateos"
 2792466,fotonegatiiv
 2404927,foto
 3627399,kiri
@@ -1373,7 +1373,7 @@ id,type
 2336319,arheoloogiline leid
 3387396,foto
 2814860,fotonegatiiv
-3260565,kleit
+3260565,lint/pael
 2721041,foto
 2331113,arheoloogiline leid
 1975704,fotonegatiiv
@@ -1386,8 +1386,8 @@ id,type
 2115992,dokument
 2264238,kava
 4098954,plakat
-1802267,noodid
-3097689,kleit
+1802267,raamat
+3097689,pakend
 2316495,arheoloogiline leid
 3990076,käsikiri
 2078664,fotonegatiiv
@@ -1404,7 +1404,7 @@ id,type
 2057829,foto
 3312886,foto
 2075307,fotonegatiiv
-2601116,kiri
+2601116,käsikiri
 3584458,plakat
 2688864,kava
 3651681,arheoloogiline leid
@@ -1429,7 +1429,7 @@ id,type
 3155895,plakat
 2080410,fotonegatiiv
 2315781,arheoloogiline leid
-3766480,raamat
+3766480,dokument
 2491527,foto
 3300551,foto
 2757399,plakat
@@ -1490,19 +1490,19 @@ id,type
 2723372,foto
 2973155,kavand/joonis/eskiis
 3508547,kiri
-3092863,kutse
+3092863,kava
 3666484,foto
 2733483,foto
 2729745,foto
 2407314,fotonegatiiv
-225817,foto
+225817,karikatuur
 2763530,raamat
 3901154,foto
 3634417,graafika
 2831546,fotonegatiiv
 2332908,arheoloogiline leid
 3705098,graafika
-2136172,"käsikiri, laul/ vokaalmuusika"
+2136172,käsikiri
 230507,foto
 2798637,fotonegatiiv
 3050781,raamat
@@ -1514,7 +1514,7 @@ id,type
 4050211,ajakiri
 3121390,kava
 3907564,raamat
-3663721,telegramm
+3663721,kiri
 2053453,foto
 2230433,kava
 2395050,foto
@@ -1550,12 +1550,12 @@ id,type
 2356455,kalender
 2114325,kava
 217466,plakat
-2701272,kava
+2701272,kiri
 2728919,foto
 4078235,plakat
 2767193,fotonegatiiv
 4261134,fotonegatiiv
-2190025,kiri
+2190025,käsikiri
 2732678,foto
 1336602,pitser/templijäljend
 2317192,arheoloogiline leid
@@ -1563,7 +1563,7 @@ id,type
 4205443,plakat
 3760907,graafika
 2098105,foto
-3846869,foto
+3846869,dokument
 3687269,kavand/joonis/eskiis
 2747983,fotonegatiiv
 2564460,dokument
@@ -1600,7 +1600,7 @@ id,type
 2042331,foto
 3798987,foto
 2581582,kiri
-3314066,joonistus
+3314066,kiri
 2149927,kava
 2327162,arheoloogiline leid
 3723495,kavand/joonis/eskiis
@@ -1614,7 +1614,7 @@ id,type
 4104319,foto
 3700820,foto
 2764824,fotonegatiiv
-3931430,kiri
+3931430,aukiri/auaadress
 2912676,kava
 3598569,graafika
 3840682,fotonegatiiv
@@ -1687,14 +1687,14 @@ id,type
 3163660,pitser/templijäljend
 3459542,plakat
 3615612,raamat
-2818515,kava
-2539353,foto
+2818515,postkaart
+2539353,"foto, postkaart"
 2366457,pitser/templijäljend
 3826216,kiri
 3560607,kavand/joonis/eskiis
 3038745,fotonegatiiv
 2653508,fotonegatiiv
-2041598,foto
+2041598,album
 3226369,käsikiri
 1821605,kalender
 2826475,fotonegatiiv
@@ -1718,7 +1718,7 @@ id,type
 3700023,"käsikiri, muusikateos"
 3319352,kavand/joonis/eskiis
 2461476,raamat
-2363812,foto
+2363812,dokument
 2317674,arheoloogiline leid
 3433531,foto
 2770874,fotonegatiiv
@@ -1749,7 +1749,7 @@ id,type
 2120077,kava
 2250243,noodid
 3340338,foto
-2401106,foto
+2401106,kutse
 2509366,foto
 2328047,arheoloogiline leid
 2441022,kaustik/vihik
@@ -1758,7 +1758,7 @@ id,type
 3664342,kavand/joonis/eskiis
 3658926,foto
 3339615,kava
-3941144,kiri
+3941144,dokument
 4063407,käsikiri
 2745237,fotonegatiiv
 2072689,fotonegatiiv
@@ -1853,7 +1853,7 @@ id,type
 2334760,arheoloogiline leid
 3022339,plakat
 3535766,münt
-2617782,kiri
+2617782,foto
 3683446,kavand/joonis/eskiis
 2696984,foto
 2691378,"foto, postkaart"
@@ -1880,9 +1880,9 @@ id,type
 3059747,plakat
 3930631,foto
 2058011,foto
-2216546,kiri
+2216546,käsikiri
 1700453,plakat
-3431615,kiri
+3431615,postkaart
 1550420,pitser/templijäljend
 2455392,foto
 2822732,kava
@@ -1892,7 +1892,7 @@ id,type
 3180922,foto
 3276941,kavand/joonis/eskiis
 2798778,fotonegatiiv
-2281588,käsikiri
+2281588,kiri
 3913048,kava
 3480597,kava
 1861737,noodid
@@ -1908,7 +1908,7 @@ id,type
 3616169,kavand/joonis/eskiis
 2768833,fotonegatiiv
 2316821,arheoloogiline leid
-3116460,kava
+3116460,kiri
 2073433,fotonegatiiv
 2153492,kiri
 2327851,arheoloogiline leid
@@ -1921,7 +1921,7 @@ id,type
 2624038,dokument
 2511395,münt
 3966193,käsikiri
-2604931,kiri
+2604931,käsikiri
 2314763,arheoloogiline leid
 3850882,foto
 2521413,münt
@@ -1939,7 +1939,7 @@ id,type
 3211339,fotonegatiiv
 2335880,arheoloogiline leid
 4116876,foto
-3538026,kutse
+3538026,dokument
 2764937,fotonegatiiv
 3681012,dokument
 2046677,foto
@@ -1959,11 +1959,11 @@ id,type
 2453614,kava
 4118982,käsikiri
 3632303,fotonegatiiv
-3867437,dokument
+3867437,foto
 3259390,kavand/joonis/eskiis
 2315604,arheoloogiline leid
 229112,"käsikiri, laul/ vokaalmuusika"
-2158873,kiri
+2158873,kava
 3549477,foto
 3943080,foto
 233914,raamat
@@ -1990,7 +1990,7 @@ id,type
 3575988,kavand/joonis/eskiis
 2044012,foto
 2072412,foto
-1892906,aukiri/auaadress
+1892906,dokument
 3145842,käsikiri
 2079990,fotonegatiiv
 2732153,foto
@@ -2044,7 +2044,7 @@ id,type
 2788978,fotonegatiiv
 3105201,kava
 3492728,käsikiri
-2045442,postkaart
+2045442,foto
 3855997,kiri
 3487456,kavand/joonis/eskiis
 1863400,diapositiiv
@@ -2056,13 +2056,13 @@ id,type
 3861901,foto
 2011888,foto
 2578465,dokument
-3864987,postkaart
+3864987,foto
 4203606,foto
 3813658,kiri
 3378580,foto
 2732615,foto
 4231521,plakat
-202870,foto
+202870,käsikiri
 3269554,foto
 2447452,foto
 3592862,graafika
@@ -2073,12 +2073,12 @@ id,type
 3435799,foto
 3949742,käsikiri
 2772115,fotonegatiiv
-3850617,kiri
+3850617,postkaart
 2723670,foto
 2329270,arheoloogiline leid
 3927152,plakat
 3603233,kavand/joonis/eskiis
-2031831,dokument
+2031831,tunnistus
 232473,raamat
 3713276,käsikiri
 2811175,fotonegatiiv
@@ -2090,7 +2090,7 @@ id,type
 3825912,dokument
 3678194,kavand/joonis/eskiis
 3085462,foto
-3847931,kiri
+3847931,aukiri/auaadress
 3609727,kavand/joonis/eskiis
 3052065,raamat
 2471046,foto
@@ -2102,8 +2102,8 @@ id,type
 4299157,fotonegatiiv
 2071988,foto
 3342838,kavand/joonis/eskiis
-3604541,fotomaterjal
-4126356,kavand/joonis/eskiis
+3604541,dokument
+4126356,kava
 2034042,foto
 2718220,foto
 2723174,foto
@@ -2123,7 +2123,7 @@ id,type
 3422816,foto
 4280826,kiri
 4029492,"käsikiri, laul/ vokaalmuusika"
-2186552,kiri
+2186552,käsikiri
 3715967,kavand/joonis/eskiis
 3064430,plakat
 4110542,plakat
@@ -2182,7 +2182,7 @@ id,type
 3762862,kiri
 2801726,fotonegatiiv
 2034554,foto
-3552349,dokument
+3552349,kiri
 3535702,foto
 3294606,kiri
 232509,käsikiri
@@ -2215,7 +2215,7 @@ id,type
 3731889,pakend
 4261487,fotonegatiiv
 3203187,kiri
-2351633,münt
+2351633,medal
 3451925,plakat
 4296323,fotonegatiiv
 2338486,plakat
@@ -2254,7 +2254,7 @@ id,type
 2760966,fotonegatiiv
 202913,"käsikiri, laul/ vokaalmuusika"
 1523567,plakat
-398278,kott
+398278,nõu/anum
 3615654,kavand/joonis/eskiis
 2522784,münt
 2746365,fotonegatiiv
@@ -2357,16 +2357,16 @@ id,type
 2150877,kava
 3403315,foto
 2696809,foto
-2182610,noodid
+2182610,raamat
 2473540,raamat
 3275293,kiri
 2350294,kava
 3342674,raamat
 3142716,pitser/templijäljend
 2999293,noodid
-4049180,ajaleht
+4049180,ajakiri
 2126616,ajakiri
-2210502,postkaart
+2210502,fotomaterjal
 3890933,noodid
 3997345,foto
 2345531,foto
@@ -2417,7 +2417,7 @@ id,type
 2780572,fotonegatiiv
 2039503,foto
 3989597,kava
-3901476,kiri
+3901476,dokument
 3152614,pitser/templijäljend
 2296252,kiri
 3060503,kiri
@@ -2433,16 +2433,16 @@ id,type
 4086682,fotonegatiiv
 3308097,dokument
 2573510,nukk
-3867491,kava
+3867491,foto
 2708515,fotonegatiiv
-3850029,postkaart
+3850029,foto
 2324331,arheoloogiline leid
 3686373,foto
 3759607,kava
-2591717,dokument
+2591717,kava
 1679999,plakat
 3358901,foto
-2779165,ajakiri
+2779165,raamat
 3757268,käsikiri
 3628962,fotonegatiiv
 2932907,foto
@@ -2476,7 +2476,7 @@ id,type
 1629342,väiketrükis
 231796,silt/märk
 2512843,münt
-3653564,foto
+3653564,kiri
 4036428,helisalvestis
 2318221,arheoloogiline leid
 2832772,fotonegatiiv
@@ -2504,7 +2504,7 @@ id,type
 4085891,fotonegatiiv
 2723228,foto
 3513502,kavand/joonis/eskiis
-2345857,kutse
+2345857,kiri
 4097694,plakat
 2792674,fotonegatiiv
 3943707,käsikiri
@@ -2514,22 +2514,22 @@ id,type
 3829590,dokument
 3367636,kava
 4121522,"käsikiri, laul/ vokaalmuusika"
-2539635,foto
+2539635,"foto, postkaart"
 3723342,kavand/joonis/eskiis
 2801074,fotonegatiiv
-3109288,väiketrükis
+3109288,noodid
 3342425,kavand/joonis/eskiis
 2510340,münt
 4035668,kava
 2109168,pitser/templijäljend
 2197654,foto
 2072040,foto
-4122392,kava
+4122392,dokument
 4290853,fotonegatiiv
 3540340,kavand/joonis/eskiis
 3538457,foto
 3629388,fotonegatiiv
-4107994,dokument
+4107994,kiri
 2118126,kava
 1333582,pitser/templijäljend
 2802122,fotonegatiiv
@@ -2568,7 +2568,7 @@ id,type
 3417423,foto
 2767632,fotonegatiiv
 2986372,kava
-3274786,telegramm
+3274786,kutse
 2983170,foto
 2803190,fotonegatiiv
 2053522,foto
@@ -2651,7 +2651,7 @@ id,type
 2315016,arheoloogiline leid
 3392653,graafika
 3561145,foto
-3940564,kava
+3940564,dokument
 223270,plakat
 4095205,plakat
 2037199,foto
@@ -2666,7 +2666,7 @@ id,type
 2610957,dokument
 3952055,foto
 3280954,kavand/joonis/eskiis
-4133882,käsikiri
+4133882,"käsikiri, laul/ vokaalmuusika"
 3645596,foto
 2448413,raamat
 2336110,arheoloogiline leid
@@ -2688,7 +2688,7 @@ id,type
 2057377,foto
 1683559,foto
 2118296,noodid
-1841449,väiketrükis
+1841449,noodid
 2057962,foto
 3376198,foto
 2926019,kavand/joonis/eskiis
@@ -2703,7 +2703,7 @@ id,type
 1994637,diapositiiv
 2273238,noodid
 3841426,noodid
-3350475,käsikiri
+3350475,dokument
 3683094,fotonegatiiv
 3223077,käsikiri
 3040188,fotonegatiiv
@@ -2743,7 +2743,7 @@ id,type
 3271401,kavand/joonis/eskiis
 2511666,münt
 1315248,foto
-3796970,dokument
+3796970,kava
 2052795,foto
 2454132,kiri
 2735635,foto
@@ -2752,11 +2752,11 @@ id,type
 4046232,foto
 2053143,foto
 3173236,pitser/templijäljend
-3244102,pakend
+3244102,kott
 4096453,plakat
 3604514,kiri
 3187672,pitser/templijäljend
-2197615,dokument
+2197615,kutse
 2733809,foto
 2057098,foto
 2162835,"käsikiri, laul/ vokaalmuusika"
@@ -2771,7 +2771,7 @@ id,type
 4040060,"käsikiri, laul/ vokaalmuusika"
 3218955,käsikiri
 2718675,foto
-4073063,kutse
+4073063,dokument
 3991331,väiketrükis
 3337988,foto
 2739761,foto
@@ -2813,7 +2813,7 @@ id,type
 3990054,väiketrükis
 3381827,foto
 3510727,kava
-3230694,foto
+3230694,käsikiri
 3940056,dokument
 2746871,fotonegatiiv
 2965565,plakat
@@ -2835,7 +2835,7 @@ id,type
 3046928,kavand/joonis/eskiis
 3324848,plakat
 2801847,fotonegatiiv
-2178670,graafika
+2178670,joonistus
 3708479,foto
 3527677,kavand/joonis/eskiis
 2797363,fotonegatiiv
@@ -2852,7 +2852,7 @@ id,type
 2801068,fotonegatiiv
 2742095,fotonegatiiv
 2072615,fotonegatiiv
-3588004,postkaart
+3588004,telegramm
 2961620,kiri
 3188630,pitser/templijäljend
 3274929,kutse
@@ -2874,7 +2874,7 @@ id,type
 4090763,plakat
 2345396,foto
 3632680,fotonegatiiv
-3908641,kava
+3908641,dokument
 2756087,dokument
 2316461,arheoloogiline leid
 3852630,foto
@@ -2888,7 +2888,7 @@ id,type
 3387977,foto
 2317182,arheoloogiline leid
 2722967,foto
-4000764,ajaleht
+4000764,dokument
 3525285,kavand/joonis/eskiis
 2764599,fotonegatiiv
 2649883,foto
@@ -2911,7 +2911,7 @@ id,type
 2360756,foto
 3265923,plakat
 3632574,fotonegatiiv
-4033251,"käsikiri, laul/ vokaalmuusika"
+4033251,käsikiri
 2317631,arheoloogiline leid
 3371308,foto
 2694349,foto
@@ -2920,16 +2920,16 @@ id,type
 2533081,raamat
 2352758,medal
 3554856,kiri
-3997741,kiri
+3997741,käsikiri
 2161252,kava
 2043881,foto
 232661,käsikiri
 2790283,fotonegatiiv
 1988566,fotonegatiiv
 3539029,kava
-222861,silt/märk
+222861,kleit
 3956280,foto
-3692504,kava
+3692504,album
 2312906,arheoloogiline leid
 3343566,kava
 2402298,foto
@@ -2956,7 +2956,7 @@ id,type
 2330005,arheoloogiline leid
 465251,fotonegatiiv
 4091622,plakat
-3267650,dokument
+3267650,märkmed
 3727300,kavand/joonis/eskiis
 3371962,foto
 1979225,noodid
@@ -2990,7 +2990,7 @@ id,type
 2967536,kava
 3671842,kavand/joonis/eskiis
 2691391,foto
-3279368,kiri
+3279368,postkaart
 2780556,fotonegatiiv
 4083111,kalender
 2036402,foto
@@ -2999,7 +2999,7 @@ id,type
 3508953,kavand/joonis/eskiis
 3141846,kava
 2015118,kava
-2979356,väiketrükis
+2979356,ajakiri
 3134021,fotonegatiiv
 2803160,fotonegatiiv
 3813488,kiri
@@ -3041,7 +3041,7 @@ id,type
 4158713,foto
 1659589,noodid
 2334089,arheoloogiline leid
-3099525,postkaart
+3099525,kiri
 2059188,foto
 3943692,käsikiri
 2780455,foto
@@ -3054,7 +3054,7 @@ id,type
 3039763,foto
 3036637,kiri
 3555038,kava
-2601119,kiri
+2601119,käsikiri
 2044207,foto
 3329781,fotonegatiiv
 2061201,foto
@@ -3064,7 +3064,7 @@ id,type
 2451066,raamat
 2064267,foto
 4112477,helisalvestis
-1545000,kava
+1545000,käsikiri
 3622986,kiri
 4214988,"käsikiri, laul/ vokaalmuusika"
 2520580,foto
@@ -3132,7 +3132,7 @@ id,type
 2052558,foto
 4299341,fotonegatiiv
 3682699,foto
-3341711,"käsikiri, laul/ vokaalmuusika"
+3341711,dokument
 2659668,fotonegatiiv
 3760879,foto
 3480425,kavand/joonis/eskiis
@@ -3152,7 +3152,7 @@ id,type
 4290827,fotonegatiiv
 4315406,dokument
 2522155,münt
-3206662,dokument
+3206662,käsikiri
 3269493,dokument
 3300430,dokument
 3730423,graafika
@@ -3163,7 +3163,7 @@ id,type
 2136416,kava
 2043139,foto
 2718109,foto
-1670912,digitaalne kujutis
+1670912,foto
 4166974,plakat
 2063074,foto
 2711288,foto
@@ -3173,7 +3173,7 @@ id,type
 3625742,fotonegatiiv
 2734740,foto
 2045313,foto
-2920703,foto
+2920703,kiri
 3333254,fotonegatiiv
 2313509,arheoloogiline leid
 2063613,foto
@@ -3196,7 +3196,7 @@ id,type
 3179429,pitser/templijäljend
 2988973,foto
 3916151,raamat
-3116644,dokument
+3116644,käsikiri
 3617937,fotonegatiiv
 2224208,foto
 3678898,foto
@@ -3237,7 +3237,7 @@ id,type
 2564012,graafika
 4234365,foto
 3607183,fotonegatiiv
-1254373,kava
+1254373,dokument
 2293081,väiketrükis
 4076559,foto
 3667534,kavand/joonis/eskiis
@@ -3245,9 +3245,9 @@ id,type
 2068225,foto
 2746699,fotonegatiiv
 3274275,kavand/joonis/eskiis
-4095772,märkmed
+4095772,aukiri/auaadress
 2768551,fotonegatiiv
-3630898,fotomaterjal
+3630898,ajaleht
 3376891,foto
 4096568,plakat
 2818455,ajakiri
@@ -3305,12 +3305,12 @@ id,type
 3583320,fotomaterjal
 2328921,arheoloogiline leid
 2767303,fotonegatiiv
-1851921,kava
+1851921,kiri
 2650374,foto
-2796243,dokument
+2796243,kiri
 2626458,dokument
 2748017,fotonegatiiv
-2300212,käsikiri
+2300212,kiri
 3371842,foto
 2475969,foto
 2779873,fotonegatiiv
@@ -3361,7 +3361,7 @@ id,type
 4284419,plakat
 2313381,arheoloogiline leid
 2563813,foto
-3902316,ajakiri
+3902316,kava
 2405819,fotonegatiiv
 3114394,foto
 2035653,foto
@@ -3444,7 +3444,7 @@ id,type
 3358607,kava
 411043,nõu/anum
 2790482,fotonegatiiv
-2751886,dokument
+2751886,kava
 3773275,dokument
 3620032,fotonegatiiv
 398282,foto
@@ -3473,7 +3473,7 @@ id,type
 3679543,kavand/joonis/eskiis
 3435923,foto
 4221067,plakat
-407993,skulptuur
+407993,ehe
 2838806,foto
 4295914,fotonegatiiv
 3710863,kavand/joonis/eskiis
@@ -3488,7 +3488,7 @@ id,type
 2131981,fotonegatiiv
 3926624,foto
 3692790,foto
-3266589,kiri
+3266589,dokument
 4104025,pakend
 4314909,helisalvestis
 4167700,"käsikiri, laul/ vokaalmuusika"
@@ -3552,7 +3552,7 @@ id,type
 4066122,kava
 2130573,fotonegatiiv
 2739373,foto
-3325517,kiri
+3325517,kutse
 2763191,fotonegatiiv
 2780443,fotonegatiiv
 203965,"käsikiri, laul/ vokaalmuusika"
@@ -3571,7 +3571,7 @@ id,type
 2333850,arheoloogiline leid
 3489813,fotonegatiiv
 2763788,fotonegatiiv
-2539569,foto
+2539569,"foto, postkaart"
 3201084,käsikiri
 2324977,arheoloogiline leid
 1809310,dokument
@@ -3593,8 +3593,8 @@ id,type
 2316436,arheoloogiline leid
 3310936,plakat
 3678638,kavand/joonis/eskiis
-3260177,skulptuur
-3753418,tunnistus
+3260177,maal
+3753418,kiri
 2772692,fotonegatiiv
 2900046,foto
 3663722,kavand/joonis/eskiis
@@ -3603,7 +3603,7 @@ id,type
 2803062,fotonegatiiv
 2730241,foto
 2814919,fotonegatiiv
-3176601,pitser/templijäljend
+3176601,pitsat
 3338470,fotonegatiiv
 3832706,fotonegatiiv
 2997453,noodid
@@ -3611,7 +3611,7 @@ id,type
 1906558,fotonegatiiv
 2075125,fotonegatiiv
 3252763,kavand/joonis/eskiis
-3576886,kiri
+3576886,kava
 3633048,kiri
 3079737,digitaalne kujutis
 3774798,fotonegatiiv
@@ -3633,7 +3633,7 @@ id,type
 1000792,foto
 2073539,fotonegatiiv
 2776368,fotonegatiiv
-4105083,joonistus
+4105083,kiri
 2734699,foto
 2484353,foto
 2312638,arheoloogiline leid
@@ -3658,7 +3658,7 @@ id,type
 3610358,kavand/joonis/eskiis
 2769899,kavand/joonis/eskiis
 2059857,foto
-2911786,kava
+2911786,dokument
 3833194,fotonegatiiv
 217284,dokument
 2351322,medal
@@ -3668,17 +3668,17 @@ id,type
 3691342,kavand/joonis/eskiis
 2717641,foto
 2998716,foto
-3415465,käsikiri
+3415465,kava
 2838695,foto
 3082744,ajakiri
 2839211,foto
 3371199,foto
 2767130,fotonegatiiv
 2796529,fotonegatiiv
-2931100,kiri
+2931100,käsikiri
 3434058,foto
 2762026,fotonegatiiv
-3827131,postkaart
+3827131,kaustik/vihik
 204295,"käsikiri, laul/ vokaalmuusika"
 395070,fotonegatiiv
 3874205,kava
@@ -3722,7 +3722,7 @@ id,type
 2158956,kiri
 236008,graafika
 2799760,fotonegatiiv
-3941580,"käsikiri, muusikateos"
+3941580,käsikiri
 2194061,kava
 2804233,fotonegatiiv
 2792554,fotonegatiiv
@@ -3730,7 +3730,7 @@ id,type
 4090075,fotonegatiiv
 1320532,pitser/templijäljend
 3914469,plakat
-3765771,dokument
+3765771,kiri
 231148,foto
 3647607,kavand/joonis/eskiis
 2353389,medal
@@ -3759,7 +3759,7 @@ id,type
 3535622,münt
 2079071,fotonegatiiv
 3177145,pitsat
-2045857,foto
+2045857,postkaart
 4110765,plakat
 2741147,foto
 203154,"käsikiri, laul/ vokaalmuusika"
@@ -3793,7 +3793,7 @@ id,type
 2053647,foto
 3635061,noodid
 2395623,foto
-2354624,foto
+2354624,"foto, postkaart"
 3085533,foto
 4095945,kiri
 3169962,pitser/templijäljend
@@ -3817,13 +3817,13 @@ id,type
 3288119,kiri
 4000570,foto
 3831615,foto
-2186775,kiri
+2186775,käsikiri
 3620242,telegramm
 2790572,fotonegatiiv
 3901690,kava
 2568861,dokument
 3401134,foto
-2360899,dokument
+2360899,kiri
 2316433,arheoloogiline leid
 3360054,"käsikiri, noodid"
 3249965,joonistus
@@ -3848,7 +3848,7 @@ id,type
 2347129,foto
 2041341,foto
 4089364,fotonegatiiv
-204882,käsikiri
+204882,"käsikiri, laul/ vokaalmuusika"
 2737551,foto
 2745527,fotonegatiiv
 3986128,kava
@@ -3890,19 +3890,19 @@ id,type
 2507454,kava
 3758451,joonistus
 2177519,foto
-3483474,silt/märk
+3483474,medal
 2036099,foto
 4092792,plakat
 2995565,foto
 2961418,ajakiri
 3371775,foto
 2708707,fotonegatiiv
-1342983,fotonegatiiv
+1342983,foto
 2798156,fotonegatiiv
 3918882,raamat
 3683455,foto
 2747057,raamat
-4121928,käsikiri
+4121928,"käsikiri, muusikateos"
 3625166,kiri
 3489804,fotonegatiiv
 2050716,foto
@@ -3914,7 +3914,7 @@ id,type
 3017911,fotonegatiiv
 2908026,kava
 2733641,foto
-205854,käsikiri
+205854,"käsikiri, laul/ vokaalmuusika"
 2761256,fotonegatiiv
 2603217,graafika
 3515967,kiri
@@ -3963,7 +3963,7 @@ id,type
 1609010,foto
 2070451,foto
 3857482,foto
-233134,foto
+233134,käsikiri
 2966468,kiri
 4290861,fotonegatiiv
 3541399,raamat
@@ -3977,7 +3977,7 @@ id,type
 2522312,münt
 3598849,foto
 2304477,kava
-2048424,foto
+2048424,"foto, postkaart"
 3519165,kiri
 3046101,dokument
 3609609,foto
@@ -3989,7 +3989,7 @@ id,type
 211031,muusikainstrument
 2835880,kava
 2615650,dokument
-2338177,dokument
+2338177,kiri
 2189475,kiri
 3638713,foto
 2773006,fotonegatiiv
@@ -4000,7 +4000,7 @@ id,type
 2073006,fotonegatiiv
 2812514,fotonegatiiv
 4042418,käsikiri
-3661562,kiri
+3661562,kutse
 4263689,dokument
 2046296,foto
 2274783,noodid
@@ -4019,10 +4019,10 @@ id,type
 3816807,graafika
 2322534,arheoloogiline leid
 2832715,fotonegatiiv
-229179,silt/märk
+229179,nõu/anum
 2455505,foto
 2053389,foto
-2295973,kiri
+2295973,"kiri, postkaart"
 3490045,kavand/joonis/eskiis
 4258698,helisalvestis
 3147188,pitser/templijäljend
@@ -4046,13 +4046,13 @@ id,type
 3382615,kiri
 237397,maal
 3832807,fotonegatiiv
-3437945,kiri
+3437945,postkaart
 2439612,raamat
 2349449,käsikiri
 3348767,foto
 3281326,raamat
 3632411,fotonegatiiv
-2685967,pakend
+2685967,silt/märk
 4044436,"käsikiri, laul/ vokaalmuusika"
 2773197,fotonegatiiv
 3535789,kavand/joonis/eskiis
@@ -4066,7 +4066,7 @@ id,type
 2674181,foto
 3557331,kavand/joonis/eskiis
 3422388,foto
-3842331,noodid
+3842331,trükinoot
 4260840,fotonegatiiv
 4107164,plakat
 3626833,kavand/joonis/eskiis
@@ -4110,7 +4110,7 @@ id,type
 2234305,fotonegatiiv
 2611020,foto
 3176600,kava
-2128834,käsikiri
+2128834,kiri
 2981993,foto
 2151502,kava
 2370767,pitser/templijäljend
@@ -4256,7 +4256,7 @@ id,type
 2352588,medal
 3280045,foto
 3813058,foto
-1842856,ehe
+1842856,nõu/anum
 4089284,fotonegatiiv
 3253622,kavand/joonis/eskiis
 4062895,dokument
@@ -4324,7 +4324,7 @@ id,type
 2060324,foto
 2818476,fotonegatiiv
 2709003,raamat
-3537866,kutse
+3537866,dokument
 3942880,kava
 2747988,fotonegatiiv
 2512221,münt
@@ -4351,7 +4351,7 @@ id,type
 2351600,medal
 2764749,fotonegatiiv
 3363338,graafika
-3341737,"käsikiri, laul/ vokaalmuusika"
+3341737,dokument
 3775475,fotonegatiiv
 2913630,kava
 2998521,foto
@@ -4359,7 +4359,7 @@ id,type
 2956085,foto
 2288513,"kiri, postkaart"
 3616634,kavand/joonis/eskiis
-3037766,kava
+3037766,kiri
 4296276,fotonegatiiv
 3874298,kava
 1341513,foto
@@ -4398,7 +4398,7 @@ id,type
 2803269,fotonegatiiv
 3195336,telegramm
 3930582,foto
-4294955,kiri
+4294955,dokument
 4164386,foto
 2752025,kava
 1994575,fotonegatiiv
@@ -4410,10 +4410,10 @@ id,type
 2771761,fotonegatiiv
 465343,fotonegatiiv
 2315983,arheoloogiline leid
-3012445,noodid
+3012445,väiketrükis
 2708363,fotonegatiiv
 4260658,fotonegatiiv
-2249664,ajakiri
+2249664,noodid
 2853367,foto
 2335917,arheoloogiline leid
 3918928,kiri
@@ -4439,7 +4439,7 @@ id,type
 2062174,foto
 3195668,telegramm
 3623152,kavand/joonis/eskiis
-2166610,käsikiri
+2166610,kiri
 3293942,fotonegatiiv
 2789395,fotonegatiiv
 2807268,fotonegatiiv
@@ -4450,11 +4450,11 @@ id,type
 2076599,fotonegatiiv
 3069205,plakat
 3388886,foto
-2231022,kiri
+2231022,kutse
 2814816,fotonegatiiv
 3431968,foto
 1860318,dokument
-3609631,käsikiri
+3609631,dokument
 1375032,lina/linik
 2915451,kava
 2704365,fotonegatiiv
@@ -4464,9 +4464,9 @@ id,type
 3263852,foto
 3182982,pitser/templijäljend
 3929155,plakat
-206015,"käsikiri, laul/ vokaalmuusika"
+206015,käsikiri
 1915896,foto
-4079541,käsikiri
+4079541,"käsikiri, muusikateos"
 3906264,dokument
 3278554,postkaart
 2072656,fotonegatiiv
@@ -4479,7 +4479,7 @@ id,type
 3431916,foto
 2269643,käsikiri
 2069697,foto
-2942051,kiri
+2942051,dokument
 3166118,pitser/templijäljend
 2826308,fotonegatiiv
 3826237,kiri
@@ -4488,7 +4488,7 @@ id,type
 2336276,arheoloogiline leid
 1916158,foto
 2774295,fotonegatiiv
-3738286,käsikiri
+3738286,kavand/joonis/eskiis
 3351657,kava
 2832391,fotonegatiiv
 2019773,noodid
@@ -4513,11 +4513,11 @@ id,type
 2485517,foto
 3578722,ajaleht
 2061890,foto
-3620123,kutse
+3620123,dokument
 3585874,digitaalne kujutis
 2484010,foto
 4087625,kavand/joonis/eskiis
-2960530,kalender
+2960530,ajakiri
 2622000,foto
 3079539,digitaalne kujutis
 3744491,foto
@@ -4532,7 +4532,7 @@ id,type
 1122631,fotonegatiiv
 2740517,foto
 3583447,fotomaterjal
-2364644,foto
+2364644,kutse
 2320708,arheoloogiline leid
 4312066,dokument
 2406202,foto
@@ -4549,7 +4549,7 @@ id,type
 2316569,arheoloogiline leid
 3437641,dokument
 4272284,dokument
-3480048,kavand/joonis/eskiis
+3480048,foto
 2056567,foto
 3840550,fotonegatiiv
 2742520,fotonegatiiv
@@ -4571,7 +4571,7 @@ id,type
 2710644,kavand/joonis/eskiis
 2351397,medal
 2352685,medal
-1915742,foto
+1915742,dokument
 3608253,foto
 2407657,fotonegatiiv
 3139494,kava
@@ -4587,7 +4587,7 @@ id,type
 2789327,fotonegatiiv
 3427128,dokument
 2781792,fotonegatiiv
-4265443,kiri
+4265443,dokument
 3170980,käsikiri
 3932203,raamat
 3562874,foto
@@ -4633,11 +4633,11 @@ id,type
 2695533,foto
 3475512,kiri
 4086704,fotonegatiiv
-3866264,dokument
+3866264,foto
 2034625,foto
 2511486,münt
 1995580,diapositiiv
-3236221,dokument
+3236221,käsikiri
 2710696,kiri
 2067974,foto
 3132207,kleit
@@ -4647,7 +4647,7 @@ id,type
 2483327,foto
 4299073,fotonegatiiv
 4051000,plakat
-3670687,kava
+3670687,ajakiri
 2159117,kiri
 3238270,kavand/joonis/eskiis
 3920986,plakat
@@ -4661,14 +4661,14 @@ id,type
 3326664,käsikiri
 3894632,dokument
 4029392,kiri
-3490450,dokument
+3490450,kava
 3555866,kavand/joonis/eskiis
-2039908,foto
+2039908,"foto, postkaart"
 2719939,foto
 2044666,foto
 2431991,foto
 2813024,fotonegatiiv
-198969,foto
+198969,käsikiri
 2321992,arheoloogiline leid
 3141451,kava
 2070586,foto
@@ -4680,7 +4680,7 @@ id,type
 200616,"käsikiri, laul/ vokaalmuusika"
 3699988,kiri
 3628412,kiri
-2700646,kava
+2700646,kiri
 2056288,foto
 2351828,medal
 2320765,arheoloogiline leid
@@ -4724,7 +4724,7 @@ id,type
 3679919,kavand/joonis/eskiis
 3309647,foto
 2366113,kiri
-4164512,album
+4164512,trükinoot
 2410813,foto
 3707333,kiri
 2065469,foto
@@ -4746,7 +4746,7 @@ id,type
 2068577,foto
 216486,dokument
 2849069,foto
-2215357,dokument
+2215357,kiri
 2741210,foto
 2056511,foto
 2764284,fotonegatiiv
@@ -4781,7 +4781,7 @@ id,type
 2055877,foto
 2321437,arheoloogiline leid
 1540970,"käsikiri, laul/ vokaalmuusika"
-3782326,väiketrükis
+3782326,ajaleht
 3321712,väiketrükis
 3214885,pitsat
 3986336,väiketrükis
@@ -4789,7 +4789,7 @@ id,type
 1808671,dokument
 2070185,foto
 3699716,kiri
-3251996,joonistus
+3251996,graafika
 2803779,fotonegatiiv
 3080625,digitaalne kujutis
 3943413,kava
@@ -4809,7 +4809,7 @@ id,type
 223614,kavand/joonis/eskiis
 3601281,foto
 2315489,arheoloogiline leid
-999542,kott
+999542,kleit
 2034697,foto
 3608771,kavand/joonis/eskiis
 4089850,fotonegatiiv
@@ -4822,7 +4822,7 @@ id,type
 3693914,graafika
 2045864,foto
 2035967,foto
-3934830,kava
+3934830,dokument
 2352177,medal
 4030459,digitaalne kujutis
 2706543,fotonegatiiv
@@ -4871,7 +4871,7 @@ id,type
 3927471,plakat
 2123242,kiri
 2404054,foto
-3099522,postkaart
+3099522,kiri
 3512302,kava
 2324231,arheoloogiline leid
 2817529,fotonegatiiv
@@ -4910,7 +4910,7 @@ id,type
 3378382,foto
 1583567,foto
 2056846,foto
-3940667,kiri
+3940667,dokument
 2363365,kiri
 2019712,kava
 2332847,arheoloogiline leid
@@ -4928,7 +4928,7 @@ id,type
 1721975,plakat
 2041068,foto
 2812516,fotonegatiiv
-3271071,dokument
+3271071,kiri
 4299365,fotonegatiiv
 3585913,digitaalne kujutis
 2561920,dokument
@@ -4962,7 +4962,7 @@ id,type
 3911031,dokument
 3005768,ajakiri
 2716578,foto
-205522,"käsikiri, muusikateos"
+205522,käsikiri
 2035968,foto
 3400242,digitaalne kujutis
 2739911,plakat
@@ -4978,7 +4978,7 @@ id,type
 3032553,plakat
 2882194,foto
 4089814,fotonegatiiv
-3239759,dokument
+3239759,käsikiri
 3245373,käsikiri
 3275338,kutse
 2319885,arheoloogiline leid
@@ -4998,7 +4998,7 @@ id,type
 3390744,foto
 3688056,foto
 1267477,kavand/joonis/eskiis
-1842868,noodid
+1842868,väiketrükis
 3130211,kava
 3854040,postkaart
 2761225,fotonegatiiv
@@ -5064,7 +5064,7 @@ id,type
 2054858,foto
 2944425,kiri
 3210879,käsikiri
-1283488,dokument
+1283488,silt/märk
 2476661,kava
 1977066,fotonegatiiv
 4133934,käsikiri
@@ -5091,7 +5091,7 @@ id,type
 3332982,paber
 2711192,foto
 2060002,foto
-2273022,kutse
+2273022,kiri
 3296506,fotonegatiiv
 3629069,fotonegatiiv
 2748058,fotonegatiiv
@@ -5121,7 +5121,7 @@ id,type
 2684797,foto
 3415592,dokument
 2652061,münt
-2908780,kava
+2908780,telegramm
 3540005,foto
 2512553,münt
 1857182,noodid
@@ -5145,7 +5145,7 @@ id,type
 1915945,foto
 2055391,foto
 2548922,dokument
-3019248,trükinoot
+3019248,noodid
 2253120,kavand/joonis/eskiis
 3908961,raamat
 3361952,kava
@@ -5188,7 +5188,7 @@ id,type
 2596723,foto
 2528537,münt
 2562035,foto
-3040975,fotonegatiiv
+3040975,foto
 3727258,kavand/joonis/eskiis
 3557222,foto
 2703693,fotonegatiiv
@@ -5244,12 +5244,12 @@ id,type
 3383213,foto
 3186733,pitser/templijäljend
 3944114,väiketrükis
-3432367,kiri
-4123755,dokument
+3432367,dokument
+4123755,postkaart
 2113422,fotonegatiiv
 3766364,kiri
 3589339,graafika
-3168669,käsikiri
+3168669,kava
 3365296,graafika
 2091494,diapositiiv
 2165733,kava
@@ -5306,7 +5306,7 @@ id,type
 3211592,postkaart
 2530848,foto
 2475937,foto
-1656965,foto
+1656965,skulptuur
 3539977,foto
 2678434,raamat
 3451254,foto
@@ -5335,7 +5335,7 @@ id,type
 2037622,foto
 2798093,fotonegatiiv
 4100108,foto
-4312610,laegas/karp
+4312610,silt/märk
 2034972,foto
 3131369,graafika
 2782619,pitser/templijäljend
@@ -5351,7 +5351,7 @@ id,type
 2773324,fotonegatiiv
 2742015,fotonegatiiv
 2332654,arheoloogiline leid
-1848245,noodid
+1848245,raamat
 3695036,kavand/joonis/eskiis
 3335515,digitaalne kujutis
 2076998,fotonegatiiv
@@ -5402,7 +5402,7 @@ id,type
 3088185,plakat
 3435444,foto
 2538620,fotonegatiiv
-2295998,kutse
+2295998,kiri
 3041024,plakat
 217432,dokument
 2976288,foto
@@ -5438,13 +5438,13 @@ id,type
 3694601,kava
 3297356,fotonegatiiv
 2292273,foto
-3979627,ajakiri
+3979627,postkaart
 2197784,foto
 2327892,arheoloogiline leid
 3537905,kutse
 2770457,fotonegatiiv
 4089981,fotonegatiiv
-3302809,kutse
+3302809,kiri
 4120177,münt
 4021532,graafika
 2476547,kava
@@ -5468,7 +5468,7 @@ id,type
 3832754,fotonegatiiv
 2927181,foto
 3881700,foto
-2494077,pitser/templijäljend
+2494077,pitsat
 2779799,fotonegatiiv
 4303345,münt
 2931017,kutse
@@ -5480,7 +5480,7 @@ id,type
 2764732,fotonegatiiv
 3917093,raamat
 3168892,kava
-4103612,aukiri/auaadress
+4103612,kiri
 2718477,foto
 3080997,plakat
 3268357,telegramm
@@ -5496,7 +5496,7 @@ id,type
 2808278,fotonegatiiv
 3262998,digitaalne kujutis
 3822265,foto
-3675128,telegramm
+3675128,kiri
 2069006,foto
 2328185,arheoloogiline leid
 2858211,nukk
@@ -5515,9 +5515,9 @@ id,type
 2798031,fotonegatiiv
 3053233,plakat
 3390781,foto
-3250085,pitser/templijäljend
+3250085,pitsat
 2813856,fotonegatiiv
-2304521,dokument
+2304521,kiri
 2124821,ajakiri
 2134007,fotonegatiiv
 3908866,raamat
@@ -5543,7 +5543,7 @@ id,type
 2778884,fotonegatiiv
 4106383,foto
 3431853,foto
-3966799,foto
+3966799,postkaart
 2808387,kalender
 3299898,dokument
 2522832,münt
@@ -5551,7 +5551,7 @@ id,type
 2357345,pitser/templijäljend
 3991547,foto
 2352788,medal
-2051851,"foto, postkaart"
+2051851,foto
 4122245,foto
 3973659,väiketrükis
 3634128,kavand/joonis/eskiis
@@ -5566,7 +5566,7 @@ id,type
 2353397,medal
 2933162,"käsikiri, laul/ vokaalmuusika"
 2069883,foto
-3159439,ajaleht
+3159439,kiri
 3657045,skulptuur
 211642,muusikainstrument
 3391896,foto
@@ -5595,7 +5595,7 @@ id,type
 2353480,medal
 2323826,arheoloogiline leid
 3915928,raamat
-3297202,kutse
+3297202,kiri
 3223516,käsikiri
 3722958,kavand/joonis/eskiis
 2774614,fotonegatiiv
@@ -5609,7 +5609,7 @@ id,type
 2796477,fotonegatiiv
 4078844,käsikiri
 3780000,raamat
-2682430,kiri
+2682430,foto
 3745982,graafika
 3135885,käsikiri
 3535630,münt
@@ -5622,7 +5622,7 @@ id,type
 3480079,kavand/joonis/eskiis
 1865029,noodid
 2825994,fotonegatiiv
-3133207,postkaart
+3133207,kiri
 2454834,kava
 3767125,maal
 3840133,fotonegatiiv
@@ -5643,7 +5643,7 @@ id,type
 2751401,foto
 3775865,fotonegatiiv
 3849953,kiri
-3977482,väiketrükis
+3977482,ajaleht
 2828211,fotonegatiiv
 2741851,foto
 3683458,foto
@@ -5654,7 +5654,7 @@ id,type
 1975755,fotonegatiiv
 3485578,kavand/joonis/eskiis
 3526264,kavand/joonis/eskiis
-4265667,dokument
+4265667,raamat
 2685354,foto
 2279503,noodid
 3934607,plakat
@@ -5712,7 +5712,7 @@ id,type
 3144226,käsikiri
 2075384,fotonegatiiv
 2060240,foto
-2675599,foto
+2675599,dokument
 3535541,kavand/joonis/eskiis
 2658389,fotonegatiiv
 2569376,foto
@@ -5723,7 +5723,7 @@ id,type
 2905649,graafika
 3447893,graafika
 3080585,digitaalne kujutis
-3867449,kava
+3867449,foto
 2694595,foto
 4040442,postkaart
 2313166,arheoloogiline leid
@@ -5755,7 +5755,7 @@ id,type
 1967303,diapositiiv
 2048664,foto
 4301267,foto
-2371814,kutse
+2371814,kava
 3592340,kiri
 3062357,käsikiri
 3840405,fotonegatiiv
@@ -5790,7 +5790,7 @@ id,type
 3707525,kavand/joonis/eskiis
 4260674,fotonegatiiv
 3632733,fotonegatiiv
-2398928,foto
+2398928,kava
 3675570,kavand/joonis/eskiis
 3358471,kava
 2607353,dokument
@@ -5807,7 +5807,7 @@ id,type
 3178935,foto
 1185751,fotomaterjal
 2727122,foto
-3239479,kava
+3239479,dokument
 3240071,kava
 3393949,foto
 2824472,fotonegatiiv
@@ -5831,7 +5831,7 @@ id,type
 226507,silt/märk
 2774257,fotonegatiiv
 4085946,fotonegatiiv
-1869678,noodid
+1869678,ajakiri
 1609961,foto
 2080537,fotonegatiiv
 3094199,noodid
@@ -5858,7 +5858,7 @@ id,type
 2525532,münt
 2852417,foto
 4311495,foto
-3346323,ehe
+3346323,nõu/anum
 3080525,digitaalne kujutis
 2808085,fotonegatiiv
 3741210,foto
@@ -5867,7 +5867,7 @@ id,type
 3833297,fotonegatiiv
 1394668,dokument
 3194763,postkaart
-2357559,dokument
+2357559,kiri
 3531109,kavand/joonis/eskiis
 3681926,graafika
 2743844,fotonegatiiv
@@ -5880,11 +5880,11 @@ id,type
 2722372,foto
 3975087,telegramm
 2297081,foto
-235866,maal
+235866,skulptuur
 3658449,foto
 3827109,dokument
 2059819,foto
-1852262,raamat
+1852262,noodid
 4222179,plakat
 2319758,arheoloogiline leid
 2037586,foto
@@ -5910,16 +5910,16 @@ id,type
 3161057,pitser/templijäljend
 2802326,fotonegatiiv
 3529146,kavand/joonis/eskiis
-3590878,postkaart
+3590878,telegramm
 223200,plakat
 2917411,foto
 3814363,käsikiri
 2036647,foto
 3775145,fotonegatiiv
 1743915,kutse
-2433071,foto
+2433071,kava
 3040947,plakat
-2102043,"käsikiri, laul/ vokaalmuusika"
+2102043,käsikiri
 1810072,dokument
 2346683,foto
 3029891,foto
@@ -5950,7 +5950,7 @@ id,type
 3201473,pitser/templijäljend
 2309712,foto
 3617028,raamat
-2428242,foto
+2428242,kiri
 2197656,foto
 2991683,kavand/joonis/eskiis
 2742500,fotonegatiiv
@@ -5992,7 +5992,7 @@ id,type
 3841325,käsikiri
 2848951,foto
 3712184,kavand/joonis/eskiis
-4202523,"käsikiri, laul/ vokaalmuusika"
+4202523,"käsikiri, muusikateos"
 1253107,nukk
 3035795,foto
 2765287,plakat
