@@ -27,9 +27,7 @@ train_prep = pd.read_csv('data/train_prepared.csv', index_col='id', dtype={'type
 
 
 # xg boost
-
-import xgboost as xgb
-from xgboost import XGBClassifier
+import xgboost
 # utilities
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
@@ -70,7 +68,7 @@ def main():
 
     # -------------------------- usual training code starts here  -------------------------------------
 
-    bst = XGBClassifier(n_estimtorators=1000, max_depth=depth, min_child_weight=child, random_state=0)
+    bst = xgboost.XGBClassifier(n_estimtorators=1000, max_depth=depth, min_child_weight=child, random_state=0)
     # fit model
     bst.fit(X_train, y_train)
     # make predictions
