@@ -1,0 +1,56 @@
+,estonian,english,id
+0,album,album,0
+1,arheoloogiline leid,archaeological find,1
+2,helisalvestis,audio recording,2
+3,kott,bag,3
+4,raamat,book,4
+5,kalender,calendar,5
+6,karikatuur,caricature,6
+7,tunnistus,certificate,7
+8,münt,coin,8
+9,maal,country,9
+10,laegas/karp,crate/box,10
+11,kavand/joonis/eskiis,design/drawing/sketch,11
+12,digitaalne kujutis,digital image,12
+13,nõu/anum,dish/vessel,13
+14,dokument,document,14
+15,nukk,doll,15
+16,joonistus,drawing,16
+17,kaustik/vihik,folder/booklet,17
+18,graafika,graphics,18
+19,kutse,invitation,19
+20,ehe,jewel,20
+21,silt/märk,label/sign,21
+22,kiri,letter,22
+23,aukiri/auaadress,letter of honor/honorary address,23
+24,"kiri, postkaart","letter, postcard",24
+25,ajakiri,magazines,25
+26,käsikiri,manuscript,26
+27,"käsikiri, muusikateos","manuscript, musical composition",27
+28,"käsikiri, noodid","manuscript, sheet music",28
+29,medal,medal,29
+30,noodid,music sheet,30
+31,muusikainstrument,musical instrument,31
+32,ajaleht,newspaper,32
+33,märkmed,notes,33
+34,pakend,packaging,34
+35,paber,paper,35
+36,foto,photo,36
+37,fotonegatiiv,photo negative,37
+38,"foto, postkaart","photo, postcard",38
+39,fotomaterjal,photographic material,39
+40,"fotonegatiiv, fotonegatiiv","photographic negative, photographic negative",40
+41,kava,plan,41
+42,postkaart,postcard,42
+43,plakat,poster,43
+44,trükinoot,printed notes,44
+45,"käsikiri, laul/ vokaalmuusika","script, song/vocal music",45
+46,skulptuur,sculpture,46
+47,pitsat,seal,47
+48,pitser/templijäljend,seal/imprint,48
+49,lina/linik,sheet/linen,49
+50,diapositiiv,slide,50
+51,väiketrükis,small print,51
+52,kleit,suit,52
+53,lint/pael,tape/ribbon,53
+54,telegramm,telegram,54
