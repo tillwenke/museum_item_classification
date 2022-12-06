@@ -63,7 +63,9 @@ def main():
     # -------------------------- usual training code starts here  -------------------------------------
     
     clf = RandomForestClassifier(n_estimators=estimators, max_depth=depth, min_samples_leaf=leaf, max_features=features, min_samples_split=split, random_state=42)
+    print('run')
     clf.fit(X_train, y_train)
+    print('ran')
     preds = clf.predict(X_test)
 
     val_acc = accuracy_score(y_test, preds)
