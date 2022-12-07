@@ -22,8 +22,8 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(
     list(df.curie_similarity.values),
     df.type,
-    test_size = 0.1,
-    random_state=42
+    test_size = 0.3,
+    random_state=0
 )
 
 from sklearn.ensemble import RandomForestClassifier
@@ -87,5 +87,5 @@ def main():
     })
 
 # Start sweep job.
-wandb.agent(sweep_id, function=main, count=4)
+wandb.agent(sweep_id, function=main)
  
