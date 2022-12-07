@@ -43,14 +43,14 @@ label_encoder = LabelEncoder()
 label_encoder = label_encoder.fit(labels)
 labels = label_encoder.transform(labels)
 
-X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.3, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.00001, random_state=0)
 
 from pytorch_tabnet.tab_model import TabNetClassifier
 
 clf = TabNetClassifier()
 clf.fit(
   X_train.values, y_train,
-  eval_set=[(X_test.values, y_test)], patience=0
+  eval_set=[(X_test.values, y_test)], patience=0, max_epochs=1000
 )
 
 preds = clf.predict(X_test.values)
@@ -58,4 +58,4 @@ probs = clf.predict_proba(X_test.values)
 val_acc = accuracy_score(y_test, preds)
 val_acc
 
-clf.save_model('models/nn/first_try')
+clf.save_model('models/nn/full_ds')
