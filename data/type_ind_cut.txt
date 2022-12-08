@@ -1,0 +1,55 @@
+'sculpture'
+'bag' bag
+'suit' dress suit
+'doll'
+'sheet/linen'
+'dish/vessel'
+'jewel'
+'tape/ribbon'
+'country'
+'paper'
+'book' pages Autograph book
+'magazines' magazine Magazine magazines
+'album'
+'newspaper' clippings newspaper
+'folder/booklet'
+'invitation'
+'calendar'
+'audio recording' B:
+'telegram' Goldschmidt telegram
+'packaging'
+'crate/box'
+'printed notes'
+'small print' Dimensions
+'seal' handle
+'seal/imprint' Society seal rightSeal CrackedSeal arms imprint
+'letter' letter
+'letter of honor/honorary address' honor
+'postcard'
+'photo, postcard' aviation
+'letter, postcard' 
+'manuscript' manuscript
+'script, song/vocal music' cappella accompaniment choir piano voice
+'music sheet'
+'musical instrument'
+'manuscript, musical composition'
+'manuscript, sheet music'
+'medal' Triumph
+'coin' denarius metal treasures hoards containera penny Dbg. transfer-acceptance Hatz detector coin
+'label/sign'
+'poster' Russian poster
+'plan' Franz Visnapuu plan
+'notes'
+'document' Folk instrumentalists document
+'certificate' Certificate
+'graphics' moisture slightly graphics
+'drawing'
+'design/drawing/sketch' design production Vanemuine actor costume Drama drawing
+'caricature' caricature
+'slide' slide
+'archaeological find' Mandel excavations Obtained earthenware Complained archaeological
+'photo' photos photo
+'photo negative' negative picture
+'photographic negative, photographic negative'
+'photographic material'
+'digital image' Rakvere Premiere Ugala 2015 2006 2017

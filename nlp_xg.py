@@ -30,7 +30,7 @@ labels = df.type
 label_encoder = LabelEncoder()
 label_encoder = label_encoder.fit(labels)
 labels = label_encoder.transform(labels)
-X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.3, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.0001, random_state=0)
 
 bst = XGBClassifier(random_state=0)
 print('run')
@@ -46,4 +46,4 @@ train_acc = accuracy_score(y_train, y_pred)
 
 print(train_acc, val_acc)
 
-bst.save_model('models/nlp/xgboost.json')
+bst.save_model('models/nlp/xgboost_full.json')
