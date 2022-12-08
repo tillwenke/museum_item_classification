@@ -1,0 +1,4 @@
+'medal' Triumph
+'coin' denarius
+'archeological find' Mandel
+'photo negative' negatives
