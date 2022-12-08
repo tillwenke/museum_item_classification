@@ -1,4 +1,6 @@
 'medal' Triumph
 'coin' denarius
+'audio recording' B:
+'script, song/vocal music' cappella
 'archeological find' Mandel
 'photo negative' negatives
