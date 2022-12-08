@@ -36,11 +36,11 @@ sweep_configuration = {
     'metric': {'goal': 'maximize', 'name': 'val_acc'},
     'parameters': 
     {
-        'split': {'values': [2, 5, 10, 100]},
-        'depth': {'values': [3, 6, 10, 50, 100, 1000]},
-        'leaf': {'values': [2, 6, 10, 50, 100, 1000, 5000]},
-        'estimators': {'values': [200, 500, 1000, 2000]},
-        'features': {'values': [None, 'sqrt', 'log2']},
+        'split': {'values': [2, 5, 7, 10, 12, 15, 20]},
+        'depth': {'values': [3, 6, 10, 50, 100, 500, 1000, 2000]},
+        'leaf': {'values': [2]},
+        'estimators': {'values': [100, 200, 350, 500, 1000, 1500, 2000]},
+        'features': {'values': [None]},
 
      }
 }
