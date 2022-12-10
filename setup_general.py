@@ -12,6 +12,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import classification_report
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
+
+from sklearn.model_selection import cross_val_score
+
+import openai
+import time
+import pickle
+from pytorch_tabnet.tab_model import TabNetClassifier
 
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_colwidth", None)
@@ -28,5 +38,9 @@ combined_data = pd.read_csv('data/combined_data.csv', index_col='id', dtype={'ty
 combined_data_translated = pd.read_csv('data/combined_data_translated.csv', index_col='id', dtype={'type': str})
 combined_data_fully_translated = pd.read_csv('data/combined_data_fully_translated.csv', index_col='id', dtype={'type': str})
 prep = pd.read_csv('data/prep.csv', index_col='id', dtype={'type': str})
+test_prep = pd.read_csv('data/test_prepared.csv', index_col='id', dtype={'type': str})
+train_prep = pd.read_csv('data/train_prepared.csv', index_col='id', dtype={'type': str})
+train_text = pd.read_csv('data/train_text.csv', index_col='id', dtype={'type': str})
+test_text = pd.read_csv('data/test_text.csv', index_col='id', dtype={'type': str})
 
 type_lookup = pd.read_csv('data/type_lookup.csv')
