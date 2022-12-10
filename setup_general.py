@@ -17,6 +17,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 
 from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import MultiLabelBinarizer
 
 import openai
 import time
@@ -34,12 +35,20 @@ train = pd.read_csv('data/train.csv', index_col='id', dtype={'type': str})
 test = pd.read_csv('data/test.csv', index_col='id', dtype={'type': str})
 train_translated = pd.read_csv('data/train_translated.csv', dtype={'type': str})
 test_translated = pd.read_csv('data/test_translated.csv', index_col='id', dtype={'type': str})
+
 combined_data = pd.read_csv('data/combined_data.csv', index_col='id', dtype={'type': str})
 combined_data_translated = pd.read_csv('data/combined_data_translated.csv', index_col='id', dtype={'type': str})
 combined_data_fully_translated = pd.read_csv('data/combined_data_fully_translated.csv', index_col='id', dtype={'type': str})
+
 prep = pd.read_csv('data/prep.csv', index_col='id', dtype={'type': str})
 test_prep = pd.read_csv('data/test_prepared.csv', index_col='id', dtype={'type': str})
 train_prep = pd.read_csv('data/train_prepared.csv', index_col='id', dtype={'type': str})
+low = pd.read_csv('data/prep_low_thres.csv', index_col='id', dtype={'type': str})
+high = pd.read_csv('data/prep_high_thres.csv', index_col='id', dtype={'type': str})
+
+train_prepROS = pd.read_csv('data/train_prepROS.csv')
+train_prepSMOTE = pd.read_csv('data/train_prepSMOTE100.csv')
+
 train_text = pd.read_csv('data/train_text.csv', index_col='id', dtype={'type': str})
 test_text = pd.read_csv('data/test_text.csv', index_col='id', dtype={'type': str})
 
