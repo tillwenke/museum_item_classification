@@ -72,3 +72,49 @@ KS - Whole series number, numeric field
 KJ - Whole serial number, numeric field.
 
 KL - Whole extension number, text field.
+
+
+# How to use:
+
+Run the notebooks in the following order:
+
+### Data discovery:
+
+data_discovery
+
+### Data Preparation:
+
+combine_test_and_train
+translation
+whitespaces
+unit_sizes
+split_content_feature
+formatting_1
+formatting_2
+hot_encoding_prep - upto Re-hot encoding 
+adding_and_deleting_columns
+prep_final
+
+To adjusting thresholds or to remove extra columns later:
+hot_encoding_prep - from Re-hot encoding 
+adding_and_deleting_columns
+
+
+### Modelling: 
+
+prepare for models:
+rebalancing
+
+Running models - here order in not as important 
+
+random_forest
+random_forest_balanced
+crossval_randomforest
+neural_networks
+nlp
+predictions
+xgboost_tries
+xgboost_tries_balanced
+voter
+
+The details of these notebooks are found in README_data_prep and README_modelling respectively 
