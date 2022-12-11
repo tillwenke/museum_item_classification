@@ -63,6 +63,3 @@ xgboost_tries_balanced
 voter
 
 The details of these notebooks are found in README_data_prep and README_modelling respectively 
-=======
-execute this block - to have the changes present in the current notebook you will have to read the files in again via "from setup_general import *" and you can proceed in the notebook from top to bottom.
->>>>>>> 8c849902df74a6ce2bdd22b14f44b4ded57610ac
