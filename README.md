@@ -12,12 +12,12 @@ Due to large files you have to get trained models and text embeddings from [here
 # Executing
 Mostly you will see Jupyter Notebooks. Especially during data preparation we went in baby steps therefore you will often notice something similar to:
 
-```
+````
 data = dataset.copy
 "do something with data"
 data.to_csv('dataset.csv)
 ```
-execute this block - to have the changes present in the current notebook you will have to read the files in again via "from setup_general import *" and you can proceed in the notebook from top to bottom.
+execute this block - to have the changes present in the current notebook you will have to read the files in again via ```from setup_general import *``` and you can proceed in the notebook from top to bottom.
 
 # How to use:
 
