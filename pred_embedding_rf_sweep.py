@@ -1,23 +1,9 @@
-# Imports
-import pandas as pd
-import numpy as np
-from matplotlib import pyplot as plt
-from deep_translator import GoogleTranslator
-import re 
-from math import isnan
-import wandb
-
-pd.set_option("display.max_columns", None)
-pd.set_option("display.max_colwidth", None)
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_seq_items', None)
-
-df = pd.read_csv('data/train_curie.csv', index_col='id', dtype={'type': str})
-df['curie_similarity'] = df.curie_similarity.apply(eval).apply(np.array)
+from setup_general import *
+from setup_embedding import *
 
 print('loaded data')
 
-from sklearn.model_selection import train_test_split
+df = curie_train.copy()
  
 X_train, X_test, y_train, y_test = train_test_split(
     list(df.curie_similarity.values),

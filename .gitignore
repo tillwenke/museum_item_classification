@@ -1,9 +1,4 @@
 # ignore
-**/test_emb.csv
-**/train_emb.csv
-**/embedded_1k_reviews.csv
-**/curie.csv
-**/train_curie.csv
-**/test_curie.csv
+data/text_embeddings/*
 models/*
 wandb/*
