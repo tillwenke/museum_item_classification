@@ -6,7 +6,7 @@ Part of this [kaggle challenge](https://www.kaggle.com/competitions/caps-in-muse
 # Getting started
 Embed the cloned project in a [PyVenv](https://docs.python.org/3/library/venv.html) (or conda env if you prefer) and install the requiremnts listed in requirements.txt
 
-Due to large files you have to get trained models and text embeddings from [here](https://www.dropbox.com/sh/a8nhnkf63um3r29/AADpV1nNK4aR2CJBiB7YONB9a?dl=0) and paste them respectively in models/ and data/text_embeddings
+Due to large files you have to get trained models and text embeddings from [here](https://drive.google.com/drive/folders/1ZKOynMoLZd0R_0Q8kB-AwELzFwo50atb?usp=sharing) and paste them respectively in models/ and data/text_embeddings
 
 
 # Executing
