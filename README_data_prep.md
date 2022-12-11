@@ -29,6 +29,18 @@ This notebook also includes a section for adjusting the thresholds at a later da
 
 For feature-engineering/ reassembling the parameter-unit-size features.
 
+## prep_split_feature_content
+
+Some features contained lists of values or multiple information in some other way - those are split up into separate features here.
+
+## prep_whitespace_deletion
+
+Some cells conatained whitespaces instead of '' or NaN.
+
+## prep_xgboost
+
+Rename columns for xgboost (cant deal with <>[] in feature names).
+
 ## formatting
 'Start' and 'End' have multiple different formats. The goal is to put the information into a uniform and useable format.
 This is done by splitting both columns up in 3 columns each. For days and months there is an indicator now that shows whether these values are given. The year is in an own column and it is 0 if there as none given. The original columns were deleted from the data.
@@ -43,4 +55,8 @@ feature has a value(1) or an NaN entery(0).
 
 ## prep_final
 
-Features that are not needed are deleted and NaNs from different columns are changed.
+Features that are not needed are deleted and NaNs from different columns are changed and finally splits into test and train data for predicting phase.
+
+## prep_rebalancing
+
+
