@@ -14,7 +14,7 @@ In this notebook, a model is trained using a random forest classifier. At the st
 
 ## pred_neural_network
 
-This notebook is used to train a neural network on train data.
+This notebook is used to train a neural network on tabular training data.
 
 ## prep_nlp
 
