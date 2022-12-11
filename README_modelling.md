@@ -18,7 +18,7 @@ This notebook is used to train a neural network on train data.
 
 ## prep_nlp
 
-This notebook is used to train using GPT-3 for textual data.
+This notebook is used to train different models using GPT-3 text embeddings from textual data.
 
 ## pred_voter
 
