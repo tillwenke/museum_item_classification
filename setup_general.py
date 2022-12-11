@@ -21,6 +21,7 @@ from sklearn.model_selection import GridSearchCV
 
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import MultiLabelBinarizer
+from collections import Counter
 
 import openai
 import time
