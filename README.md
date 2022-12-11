@@ -20,6 +20,8 @@ data.to_csv('dataset.csv)
 
 execute this block - to have the changes present in the current notebook you will have to read the files in again via `from setup_general import *` and you can proceed in the notebook from top to bottom.
 
+We set settings so that Notebook outputs are fully displayed for investigation purposes. But this makes it necessary to limit what you want to see when displaying variables containing large amount of data, so for example rather do `prep.head()`than `prep`.
+
 # How to use:
 
 Run the notebooks in the following order:
