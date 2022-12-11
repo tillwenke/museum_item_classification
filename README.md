@@ -17,67 +17,7 @@ data = dataset.copy
 "do something with data"
 data.to_csv('dataset.csv)
 ```
-
-<<<<<<< HEAD
-the MONTH is somehow left in
-
-COUNTRY_ADMIN_COUNTRY - for foreign countries only the country name, for Estonia a more specific administrative unit may be added.
-
-PARISH - is an Estonian parish.
-
-PARTICIPANT - name of the person or organisation
-
-PARTICIPANT_ROLE - mandatory field if PARTICIPANT selected, specifies the role of the participant in the event (e.g. author, associate, sitter, photographer, etc.).
-
-NAME - name of the museum object
-
-TECHNIQUE - what technique was used to make the object (e.g. copying, ceramics, black and white photography).
-
-COMMENTARY - free text commentary on the technique
-
-Table of dimensions
-
-PARAMETER - predefined formats (e.g. width, number of pages)
-
-UNIT - unit of measurement (e.g. page, cm)
-
-VALUE - usually a numeric field
-
-COMMENTARY - comment on dimensions
-
-MATERIAL - what the specimen is made of (e.g. paper, wood, gold).
-
-COMMENTARY - comment on the material
-
-SITUATION - good, bad, very bad, unspecified, satisfactory
-
-DAMAGE - free text box to specify damage (e.g. torn, crack, etc.)
-
-TEXT - additional name of the museum object as free text.
-
-TYPE - type of additional name, choice (e.g. former name, document name).
-
-ADDITIONAL TEXT - free text description of the museum object.
-
-APPENDIX - type of text, choice (e.g. text on object, comment, physical description, etc.).
-ACR - Abbreviation of museum, text field.
-
-TRT - Tulmera Book Symbol, text field.
-
-TRS - Tulip number series number, numeric field.
-
-TRJ - TIN serial number, numeric field.
-
-TRL - Supplementary TIN number, text field.
-
-KT - Whole identifier, text field
-
-KS - Whole series number, numeric field
-
-KJ - Whole serial number, numeric field.
-
-KL - Whole extension number, text field.
-
+execute this block - to have the changes present in the current notebook you will have to read the files in again via "from setup_general import *" and you can proceed in the notebook from top to bottom.
 
 # How to use:
 
