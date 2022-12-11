@@ -12,7 +12,7 @@ Due to large files you have to get trained models and text embeddings from [here
 # Executing
 Mostly you will see Jupyter Notebooks. Especially during data preparation we went in baby steps therefore you will often notice something similar to:
 
-````
+```
 data = dataset.copy
 "do something with data"
 data.to_csv('dataset.csv)
