@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 
+# can take some time to run - import carefully
+
 babbage = pd.read_csv('data/text_embeddings/babbage.csv', index_col='id', dtype={'type': str})
 curie = pd.read_csv('data/text_embeddings/curie.csv', dtype={'type': str})
 train_curie = pd.read_csv('data/text_embeddings/train_curie.csv', index_col='id', dtype={'type': str})
