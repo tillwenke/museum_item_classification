@@ -2,7 +2,8 @@
 
 All notebooks can be run from start to finish.
 
-## combining_test_and_train:
+## combining_test_and_train
+
 This notebook combines the train and test dataset provided by Kaggle into one collective dataset to 
 used for the data prepartion
 
@@ -10,7 +11,7 @@ used for the data prepartion
 
 Text data is translated in this notebook.
 
-## hot_encoding_prep:
+## hot_encoding_prep
 
 This notebook is used to hot encode our text based categorical features.
 This notebook also includes data minipulation needed before the hot encoding is applied:
@@ -23,6 +24,22 @@ The group_under_threshold(data, col, threshold) function dose the following:
 So that during the hot_encoding we only have columns for values that appear at least as often as the threshold
 
 This notebook also includes a section for adjusting the thresholds at a later date
+
+## prep_units_sizes
+
+For feature-engineering/ reassembling the parameter-unit-size features.
+
+## prep_split_feature_content
+
+Some features contained lists of values or multiple information in some other way - those are split up into separate features here.
+
+## prep_whitespace_deletion
+
+Some cells conatained whitespaces instead of '' or NaN.
+
+## prep_xgboost
+
+Rename columns for xgboost (cant deal with <>[] in feature names).
 
 ## formatting
 'Start' and 'End' have multiple different formats. The goal is to put the information into a uniform and useable format.
@@ -38,4 +55,8 @@ feature has a value(1) or an NaN entery(0).
 
 ## prep_final
 
-Features that are not needed are deleted and NaNs from different columns are changed.
+Features that are not needed are deleted and NaNs from different columns are changed and finally splits into test and train data for predicting phase.
+
+## prep_rebalancing
+
+

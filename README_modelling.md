@@ -22,4 +22,4 @@ This notebook is used to train different models using GPT-3 text embeddings from
 
 ## pred_voter
 
-In this notebook the different models are combined to vote on classification and some text-keyword -> type classifiers are tried.
+In this notebook the final model assembly takes place and different models are combined to vote (hard, soft) on classification and some text-keyword -> type classifiers are tried.
