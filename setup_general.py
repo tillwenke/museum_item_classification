@@ -2,30 +2,25 @@
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
+
 from deep_translator import GoogleTranslator
+import re
+import time
+
+import helpers
 import wandb
 import pickle
-import re
-import helpers
+import openai
+from collections import Counter
+
+from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
+from sklearn.metrics import roc_auc_score, accuracy_score, classification_report
+from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
+from sklearn.ensemble import RandomForestClassifier
 
 import xgboost as xgb
 from xgboost import XGBClassifier
-# utilities
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import roc_auc_score
-from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import classification_report
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import GridSearchCV
 
-from sklearn.model_selection import cross_val_score
-from sklearn.preprocessing import MultiLabelBinarizer
-from collections import Counter
-
-import openai
-import time
-import pickle
 from pytorch_tabnet.tab_model import TabNetClassifier
 
 pd.set_option("display.max_columns", None)
