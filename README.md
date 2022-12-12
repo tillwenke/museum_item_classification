@@ -57,9 +57,9 @@ prepare for models:
 
 Running models - here order in not as important 
 
--pred_random_forest
--pred_crossval_randomforest
--pred_neural_networks
--pred_nlp
--pred_xgboost_tries
--pred_voter
+- pred_random_forest
+- pred_crossval_randomforest
+- pred_neural_networks
+- pred_nlp
+- pred_xgboost_tries
+- pred_voter
