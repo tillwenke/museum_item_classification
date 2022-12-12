@@ -53,7 +53,7 @@ adding_and_deleting_columns
 For more detailed information see: README_modelling.md
 
 prepare for models:
--prep_rebalancing
+- prep_rebalancing
 
 Running models - here order in not as important 
 
