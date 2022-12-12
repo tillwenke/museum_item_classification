@@ -31,16 +31,17 @@ Run the notebooks in the following order:
 data_discovery
 
 ### Data Preparation:
+For more detailed information see: README_data_prep.md
 
-combine_test_and_train
-translation
-whitespaces
-unit_sizes
-split_content_feature
-formatting_1
-formatting_2
-hot_encoding_prep - upto Re-hot encoding 
-adding_and_deleting_columns
+prep_combine_test_and_train
+prep_translation
+prep_whitespace_deletion
+prep_units_sizes
+prep_split_feature_content
+prep_formatting
+prep_formatting2
+prep_hot_encoding_prep - upto Re-hot encoding 
+prep_adding_and_deleting_columns
 prep_final
 
 To adjusting thresholds or to remove extra columns later:
@@ -49,20 +50,16 @@ adding_and_deleting_columns
 
 
 ### Modelling: 
+For more detailed information see: README_modelling.md
 
 prepare for models:
-rebalancing
+prep_rebalancing
 
 Running models - here order in not as important 
 
-random_forest
-random_forest_balanced
-crossval_randomforest
-neural_networks
-nlp
-predictions
-xgboost_tries
-xgboost_tries_balanced
-voter
-
-The details of these notebooks are found in README_data_prep and README_modelling respectively 
+pred_random_forest
+pred_crossval_randomforest
+pred_neural_networks
+pred_nlp
+pred_xgboost_tries
+pred_voter
