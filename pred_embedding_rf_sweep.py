@@ -3,7 +3,7 @@ from setup_embedding import *
 
 print('loaded data')
 
-df = curie_train.copy()
+df = curie_train.copy
  
 X_train, X_test, y_train, y_test = train_test_split(
     list(df.curie_similarity.values),
