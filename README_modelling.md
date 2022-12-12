@@ -18,7 +18,7 @@ This notebook is used to train a neural network on tabular training data.
 
 ## prep_nlp
 
-This notebook is used to train different models using GPT-3 text embeddings from textual data.
+This notebook is used to train different models using GPT-3 text embeddings from textual data. It also provides the code to gain GPT-3 embedding vectors. Due to restrictions in OpenAI's free trial this has been an overnight-task (babbage/ curie embeddings). In December 2022 gaining the babbage and curie (models on it performed slightly better) embeddings once each ate up my 18$ free trial amount.
 
 ## pred_voter
 
