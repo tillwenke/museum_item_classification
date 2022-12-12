@@ -33,16 +33,16 @@ data_discovery
 ### Data Preparation:
 For more detailed information see: README_data_prep.md
 
--prep_combine_test_and_train
--prep_translation
--prep_whitespace_deletion
--prep_units_sizes
--prep_split_feature_content
--prep_formatting
--prep_formatting2
--prep_hot_encoding_prep - upto Re-hot encoding 
--prep_adding_and_deleting_columns
--prep_final
+- prep_combine_test_and_train
+- prep_translation
+- prep_whitespace_deletion
+- prep_units_sizes
+- prep_split_feature_content
+- prep_formatting
+- prep_formatting2
+- prep_hot_encoding_prep - upto Re-hot encoding 
+- prep_adding_and_deleting_columns
+- prep_final
 
 To adjusting thresholds or to remove extra columns later:
 hot_encoding_prep - from Re-hot encoding 
