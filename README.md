@@ -1,7 +1,7 @@
 # Classification of items in Estonian Museums
 Part of this [kaggle challenge](https://www.kaggle.com/competitions/caps-in-museums-data-part-2)
 
-[Column discovery](https://docs.google.com/spreadsheets/d/1E4Z6RELIxHR8ZOggO6AyRTGMs3EQOBxrMZo25ahPMXM/edit?usp=sharing)
+In [Column Discovery](https://docs.google.com/spreadsheets/d/1E4Z6RELIxHR8ZOggO6AyRTGMs3EQOBxrMZo25ahPMXM/edit?usp=sharing) our findings and resulted feature engineering tasks per feature are captured.
 
 # Getting started
 Embed the cloned project in a [PyVenv](https://docs.python.org/3/library/venv.html) (or conda env if you prefer) and install the requiremnts listed in requirements.txt
