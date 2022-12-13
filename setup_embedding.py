@@ -7,8 +7,7 @@ babbage = pd.read_csv('data/text_embeddings/babbage.csv', index_col='id', dtype=
 curie = pd.read_csv('data/text_embeddings/curie.csv', dtype={'type': str})
 train_curie = pd.read_csv('data/text_embeddings/train_curie.csv', index_col='id', dtype={'type': str})
 test_curie = pd.read_csv('data/text_embeddings/test_curie.csv', index_col='id', dtype={'type': str})
-train_curie['curie_similarity'] = train_curie.curie_similarity.apply(eval).apply(np.array)
-test_curie['curie_similarity'] = test_curie.curie_similarity.apply(eval).apply(np.array)
+
 
 # categorize and resort types
 types = [
