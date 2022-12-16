@@ -8,6 +8,7 @@ Embed the cloned project in a [PyVenv](https://docs.python.org/3/library/venv.ht
 
 Due to large files you have to get trained models and text embeddings from [here](https://drive.google.com/drive/folders/1ZKOynMoLZd0R_0Q8kB-AwELzFwo50atb?usp=sharing) and paste them respectively in models/ and data/text_embeddings
 
+For getting a quick overview check out the respective folder.
 
 # Executing
 Mostly you will see Jupyter Notebooks. Especially during data preparation we went in baby steps therefore you will often notice something similar to:
