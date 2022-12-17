@@ -1,5 +1,5 @@
-from setup_general import *
-from setup_embedding import *
+from .setup_general import *
+from .setup_embedding import *
 
 print('loaded data')
 
