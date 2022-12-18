@@ -25,6 +25,8 @@ So that during the hot_encoding we only have columns for values that appear at l
 
 This notebook also includes a section for adjusting the thresholds at a later date
 
+## prep_mapping
+
 ## prep_units_sizes
 
 For feature-engineering/ reassembling the parameter-unit-size features.
