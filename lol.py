@@ -20,7 +20,7 @@ from sklearn.inspection import permutation_importance
 
 start_time = time.time()
 result = permutation_importance(
-    forest, X_test, y_test, n_repeats=4, random_state=42, n_jobs=1
+    forest, X_test, y_test, n_repeats=3, random_state=42, n_jobs=1
 )
 elapsed_time = time.time() - start_time
 print(f"Elapsed time to compute the importances: {elapsed_time:.3f} seconds")

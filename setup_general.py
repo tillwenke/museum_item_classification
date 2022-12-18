@@ -45,6 +45,14 @@ train_prep = pd.read_csv('data/prepared_ready/train_prepared.csv', index_col='id
 low = pd.read_csv('data/prepared_ready/prep_low_thres.csv', index_col='id', dtype={'type': str})
 high = pd.read_csv('data/prepared_ready/prep_high_thres.csv', index_col='id', dtype={'type': str})
 
+train_est_prepared = pd.read_csv('data/prepared_ready/train_est_prepared.csv', index_col='id', dtype={'type': str})
+val_est_prepared = pd.read_csv('data/prepared_ready/val_est_prepared.csv', index_col='id', dtype={'type': str})
+test_est_prepared = pd.read_csv('data/prepared_ready/test_est_prepared.csv', index_col='id', dtype={'type': str})
+
+train_en_prepared = pd.read_csv('data/prepared_ready/train_en_prepared.csv', index_col='id', dtype={'type': str})
+val_en_prepared = pd.read_csv('data/prepared_ready/val_en_prepared.csv', index_col='id', dtype={'type': str})
+test_en_prepared = pd.read_csv('data/prepared_ready/test_en_prepared.csv', index_col='id', dtype={'type': str})
+
 train_prepROS = pd.read_csv('data/prepared_ready/train_prepROS.csv')
 train_prepSMOTE = pd.read_csv('data/prepared_ready/train_prepSMOTE100.csv')
 
