@@ -1,6 +1,7 @@
 # Imports
 import pandas as pd
 import numpy as np
+from numpy import nan
 from matplotlib import pyplot as plt
 
 from deep_translator import GoogleTranslator
@@ -31,6 +32,7 @@ pd.set_option('display.max_seq_items', None)
 
 # dtype={'type': str} prevents being confused with data type for large data sets
 train = pd.read_csv('data/general/train.csv', index_col='id', dtype={'type': str})
+val = pd.read_csv('data/general/val.csv', index_col='id', dtype={'type': str})
 test = pd.read_csv('data/general/test.csv', index_col='id', dtype={'type': str})
 train_translated = pd.read_csv('data/translated/train_translated.csv', dtype={'type': str})
 test_translated = pd.read_csv('data/translated/test_translated.csv', index_col='id', dtype={'type': str})
@@ -48,6 +50,8 @@ high = pd.read_csv('data/prepared_ready/prep_high_thres.csv', index_col='id', dt
 train_est_prepared = pd.read_csv('data/prepared_ready/train_est_prepared.csv', index_col='id', dtype={'type': str})
 val_est_prepared = pd.read_csv('data/prepared_ready/val_est_prepared.csv', index_col='id', dtype={'type': str})
 test_est_prepared = pd.read_csv('data/prepared_ready/test_est_prepared.csv', index_col='id', dtype={'type': str})
+train_est_smote100_03 = pd.read_csv('data/prepared_ready/train_est_smote100_03.csv', index_col='id', dtype={'type': str})
+train_est_smote100_full = pd.read_csv('data/prepared_ready/train_est_smote100_full.csv', index_col='id', dtype={'type': str})
 
 train_en_prepared = pd.read_csv('data/prepared_ready/train_en_prepared.csv', index_col='id', dtype={'type': str})
 val_en_prepared = pd.read_csv('data/prepared_ready/val_en_prepared.csv', index_col='id', dtype={'type': str})
