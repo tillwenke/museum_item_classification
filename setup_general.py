@@ -42,6 +42,7 @@ test_translated = pd.read_csv('data/translated/test_translated.csv', index_col='
 """
 
 combined_data = pd.read_csv('data/general/combined_data.csv', index_col='id', dtype={'type': str})
+"""
 combined_data_translated = pd.read_csv('data/translated/combined_data_translated.csv', index_col='id', dtype={'type': str})
 combined_data_fully_translated = pd.read_csv('data/translated/combined_data_fully_translated.csv', index_col='id', dtype={'type': str})
 
@@ -66,5 +67,6 @@ test_est_prepared = pd.read_csv('data/prepared_ready/test_est_prepared.csv', ind
 
 #train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
 #test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
+"""
 
 type_lookup = pd.read_csv('data/general/type_lookup.csv')
