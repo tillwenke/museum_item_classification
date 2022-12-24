@@ -41,7 +41,7 @@ train_translated = pd.read_csv('data/translated/train_translated.csv', dtype={'t
 test_translated = pd.read_csv('data/translated/test_translated.csv', index_col='id', dtype={'type': str})
 """
 
-combined_data = pd.read_csv('data/general/combined_data.csv', index_col='id', dtype={'type': str})
+combined_data = pd.read_csv('./data/general/combined_data.csv', index_col='id', dtype={'type': str})
 """
 combined_data_translated = pd.read_csv('data/translated/combined_data_translated.csv', index_col='id', dtype={'type': str})
 combined_data_fully_translated = pd.read_csv('data/translated/combined_data_fully_translated.csv', index_col='id', dtype={'type': str})

@@ -294,7 +294,7 @@ sweep_configuration = {
 sweep_id = wandb.sweep(sweep=sweep_configuration, project=project)
 
 def main():
-    #run = wandb.init(project=project)
+    run = wandb.init(project=project)
 
     # note that we define values from `wandb.config` instead 
     # of defining hard values 
