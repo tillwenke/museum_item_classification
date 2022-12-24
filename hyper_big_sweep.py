@@ -200,7 +200,7 @@ def get_data(feat_percent_cut, feat_freq_cut):
     return train, val, test
 
 #function to have resamplers resample to specific number of samples per class
-def by_num(data, min_samples):
+def by_num(y, min_samples):
     b = Counter(y).values()
     a = Counter(y).keys()
     a = list(a)
@@ -215,7 +215,7 @@ def by_num(data, min_samples):
     return dict(zip(a, b))
 
 #function to have resamplers resample to specific number of samples per class
-def by_perc(data, increase_perc):
+def by_perc(y, increase_perc):
     a = Counter(y).keys()
     b = Counter(y).values()
     a = list(a)
