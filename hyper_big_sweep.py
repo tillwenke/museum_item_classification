@@ -271,21 +271,21 @@ sweep_configuration = {
     'metric': {'goal': 'maximize', 'name': 'val_f1_macro'},
     'parameters': 
     {
-        'min_samples_split': {'values': [2]},
-        'max_depth': {'values': [None]},
-        'min_samples_leaf': {'values': [1]},
-        'n_estimators': {'values': [500]},
-        'criterion': {'values': ['gini']},
-        'max_features': {'values': ['sqrt']},
-        'feat_percent_cut': {'min': 99, 'max': 100},
-        'feat_freq_cut': {'min': 1, 'max': 2},
-        'reb_method': {'values': ['none']},
+        'min_samples_split': {'values': [2, 5, 7, 10, 20, 40, 100, 200]},
+        'max_depth': {'values': [3, 6, 10, 25, 50, 75, 100, 150, 200, 500, 1000, None]},
+        'min_samples_leaf': {'values': [1, 2, 6, 10, 20, 40, 50, 70, 100, 200, 500, 1000]},
+        'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000, 10000]},
+        'criterion': {'values': ['gini', 'entropy', 'log_loss']},
+        'max_features': {'values': [None, 'sqrt', 'log2']},
+        'feat_percent_cut': {'min': 50, 'max': 100},
+        'feat_freq_cut': {'min': 1, 'max': 15},
+        'reb_method': {'values': ['none', 'smote', 'ros']},
         'rebalance': {'values': [('perc',10),('perc',20),('perc',30),('perc',40),('perc',50),('perc',60),('perc',70),('perc',80),\
             ('perc',90),('perc',100),('perc',200),('perc',300),('perc',400),('perc',500),('perc',600),('perc',700),('perc',800),\
                 ('perc',900),('perc',1000),('perc',2000),('perc',5000),('perc',10000),('perc',50000), ('num',10),('num',20),('num',50),\
                     ('num',70),('num',100),('num',200),('num',300),('num',400),('num',500),('num',700),('num',1000),('num',1500),('num',2000),\
                         ('num',2500),('num',3000)]},
-        'class_weight': {'values': [None]}
+        'class_weight': {'values': [None, 'balanced']}
 
      }
 }
@@ -294,7 +294,7 @@ sweep_configuration = {
 sweep_id = wandb.sweep(sweep=sweep_configuration, project=project)
 
 def main():
-    run = wandb.init(project=project)
+    #run = wandb.init(project=project)
 
     # note that we define values from `wandb.config` instead 
     # of defining hard values 
@@ -313,7 +313,7 @@ def main():
     # -------------------------- data prep code  -------------------------------------
 
     print('data prep')
-    train, val, test = get_data(feat_percent_cut=98, feat_freq_cut=7)
+    train, val, test = get_data(feat_percent_cut=feat_percent_cut, feat_freq_cut=feat_freq_cut)
 
     print('balancing')
     print(rebalance)
