@@ -232,7 +232,9 @@ def by_perc(y, increase_perc):
     return dict(zip(a, b))
 
 
-def rebalancing(X, y, reb_method, strategy, by_value):
+def rebalancing(data, reb_method, strategy, by_value):
+    x = data.drop(['type'], axis=1)
+    y = data.type.astype("category")
 
     if strategy == 'perc':
         sampling_strategy = by_perc
@@ -240,17 +242,20 @@ def rebalancing(X, y, reb_method, strategy, by_value):
         sampling_strategy = by_num
     
     if reb_method == 'smote':
-        balancer = SMOTE(sampling_strategy=sampling_strategy(y,by_value), k_neighbors=1, random_state=0)
+        balancer = SMOTE(sampling_strategy=sampling_strategy(y,by_value), k_neighbors=3, random_state=0)
     elif reb_method == 'ros':
         balancer = RandomOverSampler(sampling_strategy=sampling_strategy(y,by_value), random_state=0)
     else:
-        return X, y
+        return data
 
-    X_res, y_res = balancer.fit_resample(X, y)
-    X_res['id'] = X_res.index
-    X_res.set_index('id', inplace=True)
+    X_res, y_res = balancer.fit_resample(x, y)
+    dataREB = X_res.copy()
+    dataREB['type'] = y_res
+    dataREB['type'] = dataREB['type'].replace(type_lookup.id.to_list(), type_lookup.english.to_list())
+    dataREB['id'] = dataREB.index
+    dataREB.set_index('id', inplace=True)
 
-    return X_res, y_res
+    return dataREB
 
 
 project = 'rf'
@@ -289,86 +294,60 @@ def main():
 
     # note that we define values from `wandb.config` instead 
     # of defining hard values 
-    min_samples_split = wandb.config.min_samples_split
-    max_depth = wandb.config.max_depth
-    min_samples_leaf = wandb.config.min_samples_leaf
-    n_estimators = wandb.config.n_estimators
-    max_features = wandb.config.max_features
-    criterion = wandb.config.criterion
-    feat_percent_cut = wandb.config.feat_percent_cut
-    feat_freq_cut = wandb.config.feat_freq_cut
-    reb_method = wandb.config.reb_method
-    rebalance = wandb.config.rebalance
-    class_weight = wandb.config.class_weight
+    min_samples_split = 5
+    max_depth = 200
+    min_samples_leaf = 1
+    n_estimators = 800
+    max_features = None
+    criterion = 'entropy'
+    feat_percent_cut = 84
+    feat_freq_cut = 15
+    reb_method = 'ros'
+    rebalance = ('num',1000)
+    class_weight = 'balanced'
 
     # -------------------------- data prep code  -------------------------------------
 
     print('data prep')
     train, val, test = get_data(feat_percent_cut=feat_percent_cut, feat_freq_cut=feat_freq_cut)
 
+    label_encoder = LabelEncoder().fit(train.type)
+
+    train.type = label_encoder.transform(train.type)
+    val.type = label_encoder.transform(val.type)
+
+    X_train = train.drop('type', axis=1)
+    y_train = train.type
+    
+    X_val = val.drop('type', axis=1)
+    y_val = val.type    
+
+    # -------------------------- usual training code starts here  -------------------------------------
+    print('training')
+
     print('balancing')
     print(rebalance)
     strategy, by_value = rebalance
     print(strategy, by_value)
-
-    #val = val_est_prepared.copy()
-
-    X_train = train.drop('type', axis=1)
-    y_train = train.type
-
-    """"
-    X_val = val.drop('type', axis=1)
-    y_val = val.type
-    """
-
-    label_encoder = LabelEncoder()
-    label_encoder = label_encoder.fit(y_train)
-
-    y_train = label_encoder.transform(y_train)
-    #y_val = label_encoder.transform(y_val)
-    
-
-    # -------------------------- usual training code starts here  -------------------------------------
-    print('training')
+    train = rebalancing(train, reb_method=reb_method, strategy=strategy, by_value=by_value)
     
     rfc = RandomForestClassifier(n_estimators=n_estimators, criterion=criterion, max_depth=max_depth, min_samples_leaf=min_samples_leaf,\
          max_features=max_features, min_samples_split=min_samples_split, class_weight=class_weight, random_state=0)
 
-    """
     scoring = ['accuracy', 'f1_macro']
-
     scores = cross_validate(rfc, X_train, y_train, cv=4, scoring=scoring)
     print(scores)
-    
+
+    rfc.fit(X_train, y_train)
     y_pred = rfc.predict(X_val)
     val_acc = accuracy_score(y_val, y_pred)
     val_f1_macro = f1_score(y_val, y_pred, average='macro')
-
+    
     crossval_acc = np.mean(scores['test_accuracy'])
     crossval_f1_macro = np.mean(scores['test_f1_macro'])
 
     print(crossval_acc, crossval_f1_macro)
-    """
-
-    skf = StratifiedKFold(n_splits=4)
-
-    val_acc = []
-    val_f1_macro = []
-
-    for i, (train_index, test_index) in enumerate(skf.split(X_train, y_train)):
-        X_train_fold, X_test_fold = X_train.iloc[train_index], X_train.iloc[test_index]
-        y_train_fold, y_test_fold = y_train[train_index], y_train[test_index]
-
-        X_train_fold, y_train_fold = rebalancing(X_train_fold, y_train_fold, reb_method=reb_method, strategy=strategy, by_value=by_value)
-
-        rfc.fit(X_train_fold, y_train_fold)
-
-        y_pred = rfc.predict(X_test_fold)
-        val_acc.append(accuracy_score(y_test_fold, y_pred))
-        val_f1_macro.append(f1_score(y_test_fold, y_pred, average='macro'))
-
-    crossval_acc = np.mean(val_acc)
-    crossval_f1_macro = np.mean(val_f1_macro)
+    print(val_acc, val_f1_macro)
 
     # -------------------------- ends here  -------------------------------------
     

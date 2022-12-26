@@ -14,12 +14,14 @@ import pickle
 import openai
 from collections import Counter
 
-from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score, cross_validate
-from sklearn.metrics import roc_auc_score, accuracy_score, classification_report
+from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score, cross_validate, StratifiedKFold
+from sklearn.metrics import roc_auc_score, accuracy_score, classification_report, f1_score
 from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
 from sklearn.ensemble import RandomForestClassifier
 
 from imblearn.over_sampling import SMOTE, RandomOverSampler
+from imblearn.under_sampling import RandomUnderSampler
+from imblearn.pipeline import Pipeline
 
 import xgboost as xgb
 from xgboost import XGBClassifier
@@ -70,3 +72,7 @@ test_est_prepared = pd.read_csv('data/prepared_ready/test_est_prepared.csv', ind
 """
 
 type_lookup = pd.read_csv('data/general/type_lookup.csv')
+
+
+train_est_prepared = pd.read_csv('data/prepared_ready/train_est_prepared.csv', index_col='id', dtype={'type': str})
+val_est_prepared = pd.read_csv('data/prepared_ready/val_est_prepared.csv', index_col='id', dtype={'type': str})
