@@ -194,6 +194,11 @@ def get_data(feat_percent_cut, feat_freq_cut):
 
     ## resplit test/train
     train = data.loc[data['source']=='train'].drop('source',axis=1)
+
+    # modify types
+    train['type'] = train['type'].replace('fotonegatiiv, fotonegatiiv', 'fotonegatiiv')    
+
+    # resplit test/train
     train, val = train_test_split(train, test_size=0.3, random_state=0)
     test = data.loc[data['source']=='test'].drop('source',axis=1)
 
@@ -240,15 +245,13 @@ def rebalancing(X, y, reb_method, strategy, by_value):
         sampling_strategy = by_num
     
     if reb_method == 'smote':
-        balancer = SMOTE(sampling_strategy=sampling_strategy(y,by_value), k_neighbors=1, random_state=0)
+        balancer = SMOTE(sampling_strategy=sampling_strategy(y,by_value), random_state=0)
     elif reb_method == 'ros':
         balancer = RandomOverSampler(sampling_strategy=sampling_strategy(y,by_value), random_state=0)
     else:
         return X, y
 
     X_res, y_res = balancer.fit_resample(X, y)
-    X_res['id'] = X_res.index
-    X_res.set_index('id', inplace=True)
 
     return X_res, y_res
 
@@ -334,30 +337,22 @@ def main():
     rfc = RandomForestClassifier(n_estimators=n_estimators, criterion=criterion, max_depth=max_depth, min_samples_leaf=min_samples_leaf,\
          max_features=max_features, min_samples_split=min_samples_split, class_weight=class_weight, random_state=0)
 
-    """
-    scoring = ['accuracy', 'f1_macro']
-
-    scores = cross_validate(rfc, X_train, y_train, cv=4, scoring=scoring)
-    print(scores)
-    
-    y_pred = rfc.predict(X_val)
-    val_acc = accuracy_score(y_val, y_pred)
-    val_f1_macro = f1_score(y_val, y_pred, average='macro')
-
-    crossval_acc = np.mean(scores['test_accuracy'])
-    crossval_f1_macro = np.mean(scores['test_f1_macro'])
-
-    print(crossval_acc, crossval_f1_macro)
-    """
-
     skf = StratifiedKFold(n_splits=4)
 
     val_acc = []
     val_f1_macro = []
 
     for i, (train_index, test_index) in enumerate(skf.split(X_train, y_train)):
+        print('fold', i)
         X_train_fold, X_test_fold = X_train.iloc[train_index], X_train.iloc[test_index]
         y_train_fold, y_test_fold = y_train[train_index], y_train[test_index]
+
+        # replace uncommon types
+        unique, counts = np.unique(y_train_fold, return_counts=True)
+        # 6 to have 5 samples per class left for standard knn in smote
+        # -> uncommon classes become 100
+        for i in np.argwhere(counts < 6):
+            y_train_fold[y_train_fold == i[0]] = 100
 
         X_train_fold, y_train_fold = rebalancing(X_train_fold, y_train_fold, reb_method=reb_method, strategy=strategy, by_value=by_value)
 
@@ -379,4 +374,4 @@ def main():
     })
 
 # Start sweep job.
-wandb.agent(sweep_id, function=main, count=100)
+wandb.agent(sweep_id, function=main, count=1000)
