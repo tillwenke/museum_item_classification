@@ -44,6 +44,7 @@ test_translated = pd.read_csv('data/translated/test_translated.csv', index_col='
 """
 
 combined_data = pd.read_csv('./data/general/combined_data.csv', index_col='id', dtype={'type': str})
+combined_intermediate_ready = pd.read_csv('./data/general/combined_intermediate_ready.csv', index_col='id', dtype={'type': str})
 """
 combined_data_translated = pd.read_csv('data/translated/combined_data_translated.csv', index_col='id', dtype={'type': str})
 combined_data_fully_translated = pd.read_csv('data/translated/combined_data_fully_translated.csv', index_col='id', dtype={'type': str})
