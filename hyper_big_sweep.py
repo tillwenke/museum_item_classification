@@ -280,7 +280,7 @@ def main():
 
     wandb.log({
       'val_acc': crossval_acc,
-      'val_f1_macro': crossval_f1_macro
+      'val_f1_macro': crossval_f1_macro,
       'rebalancing_time': time_reb,
       'training_time': time_train
       })
