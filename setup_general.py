@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from numpy import nan
 from matplotlib import pyplot as plt
+import time
 
 from deep_translator import GoogleTranslator
 import re
@@ -33,7 +34,7 @@ pd.set_option("display.max_colwidth", None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_seq_items', None)
 
-cluster = True
+cluster = False
 
 if cluster:
     # dtype={'type': str} prevents being confused with data type for large data sets
@@ -75,7 +76,7 @@ if cluster:
     """
 
     type_lookup = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/general/type_lookup.csv')
-        
+
 else:
     # dtype={'type': str} prevents being confused with data type for large data sets
     """

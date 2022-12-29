@@ -191,6 +191,17 @@ def main():
     class_weight = wandb.config.class_weight
     """
 
+    space={'max_depth': hp.quniform("max_depth", 3, 18, 1),
+        'gamma': hp.uniform ('gamma', 1,9),
+        'reg_alpha' : hp.quniform('reg_alpha', 40,180,1),
+        'reg_lambda' : hp.uniform('reg_lambda', 0,1),
+        'colsample_bytree' : hp.uniform('colsample_bytree', 0.5,1),
+        'min_child_weight' : hp.quniform('min_child_weight', 0, 10, 1),
+        'n_estimators': 180,
+        'seed': 0
+    }
+
+
     min_samples_split = 2
     max_depth = None
     min_samples_leaf = 1
@@ -233,8 +244,7 @@ def main():
     # -------------------------- usual training code starts here  -------------------------------------
     print('training')
     
-    rfc = RandomForestClassifier(n_estimators=n_estimators, criterion=criterion, max_depth=max_depth, min_samples_leaf=min_samples_leaf,\
-         max_features=max_features, min_samples_split=min_samples_split, class_weight=class_weight, random_state=0, n_jobs=-1)
+    clf = XGBClassifier(random_state=0)
 
     skf = StratifiedKFold(n_splits=4)
 
@@ -258,7 +268,7 @@ def main():
         X_train_fold, y_train_fold = rebalancing(X_train_fold, y_train_fold, reb_method=reb_method, strategy=strategy, by_value=by_value)
 
         print('fold', k)
-        rfc.fit(X_train_fold, y_train_fold)
+        clf.fit(X_train_fold, y_train_fold)
 
         y_pred = rfc.predict(X_test_fold)
         val_acc.append(accuracy_score(y_test_fold, y_pred))
