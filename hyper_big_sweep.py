@@ -243,6 +243,9 @@ def main():
 
     start_time = time.time()
 
+    time_reb = 0
+    time_train = 0
+ 
     for k, (train_index, test_index) in enumerate(skf.split(X_train, y_train)):
         
         X_train_fold, X_test_fold = X_train.iloc[train_index], X_train.iloc[test_index]
@@ -255,16 +258,19 @@ def main():
         for i in np.argwhere(counts < 6):
             y_train_fold[y_train_fold == i[0]] = 100
 
+        start_time = time.time()
         X_train_fold, y_train_fold = rebalancing(X_train_fold, y_train_fold, reb_method=reb_method, strategy=strategy, by_value=by_value)
+        time_reb += time.time() - start_time
 
         print('fold', k)
+        start_time = time.time()
         rfc.fit(X_train_fold, y_train_fold)
+        time_train += time.time() - start_time
 
         y_pred = rfc.predict(X_test_fold)
         val_acc.append(accuracy_score(y_test_fold, y_pred))
         val_f1_macro.append(f1_score(y_test_fold, y_pred, average='macro'))
 
-    print('time', time.time() - start_time)
 
     crossval_acc = np.mean(val_acc)
     crossval_f1_macro = np.mean(val_f1_macro)
@@ -275,7 +281,9 @@ def main():
     wandb.log({
       'val_acc': crossval_acc,
       'val_f1_macro': crossval_f1_macro
-    })
+      'rebalancing_time': time_reb,
+      'training_time': time_train
+      })
 
 # Start sweep job.
 wandb.agent(sweep_id, function=main, count=1000)
