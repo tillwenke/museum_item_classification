@@ -175,7 +175,7 @@ def main():
     # note that we define values from `wandb.config` instead 
     # of defining hard values 
 
-    """
+    
     min_samples_split = wandb.config.min_samples_split
     max_depth = wandb.config.max_depth
     min_samples_leaf = wandb.config.min_samples_leaf
@@ -187,8 +187,8 @@ def main():
     reb_method = wandb.config.reb_method
     rebalance = wandb.config.rebalance
     class_weight = wandb.config.class_weight
-    """
 
+    """
     min_samples_split = 2
     max_depth = None
     min_samples_leaf = 1
@@ -200,6 +200,7 @@ def main():
     reb_method = 'ros'
     rebalance = ('num',500)
     class_weight = None
+    """
 
     # -------------------------- data prep code  -------------------------------------
 

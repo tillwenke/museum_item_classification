@@ -34,7 +34,7 @@ pd.set_option("display.max_colwidth", None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_seq_items', None)
 
-cluster = False
+cluster = True
 
 if cluster:
     # dtype={'type': str} prevents being confused with data type for large data sets
