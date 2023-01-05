@@ -5,6 +5,8 @@ matplotlib
 deep_translator
 wandb
 sklearn
+scikit-learn-intelex
+dpcpp-cpp-rt
 imblearn
 xgboost
 openai

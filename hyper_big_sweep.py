@@ -1,11 +1,12 @@
 from setup_general import *
 from prep_helpers import *
 
-from sklearnex import patch_sklearn
-patch_sklearn()
+#from sklearnex import patch_sklearn
+#patch_sklearn()
 
 
 def get_data(feat_percent_cut, feat_freq_cut):
+    # adapted from preparation.ipynb
     
     data = combined_intermediate_ready.copy()
 
@@ -60,11 +61,8 @@ def get_data(feat_percent_cut, feat_freq_cut):
         
     ## Delete unneeded features
 
-
     data.drop(columns=['full_nr','country_and_unit','parameter','unit','value'], inplace=True)
 
-    ## continous numeric features (nan -> 0)
-    data = data.replace(np.nan, 0)
     ## rename for xgboost (cant deal with <>[] in feature names)
     for i in data.columns:
         if '>' in i:

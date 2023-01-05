@@ -17,7 +17,7 @@ from collections import Counter
 
 from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score, cross_validate, StratifiedKFold
 from sklearn.metrics import roc_auc_score, accuracy_score, classification_report, f1_score
-from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
+from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer, MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
 
 from imblearn.over_sampling import SMOTE, RandomOverSampler
@@ -34,7 +34,7 @@ pd.set_option("display.max_colwidth", None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_seq_items', None)
 
-cluster = True
+cluster = False
 
 if cluster:
     # dtype={'type': str} prevents being confused with data type for large data sets
@@ -70,6 +70,7 @@ if cluster:
 
     #train_prepROS = pd.read_csv('data/prepared_ready/train_prepROS.csv')
     #train_prepSMOTE = pd.read_csv('data/prepared_ready/train_prepSMOTE100.csv')
+    
 
     #train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
     #test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
@@ -111,10 +112,11 @@ else:
 
     #train_prepROS = pd.read_csv('data/prepared_ready/train_prepROS.csv')
     #train_prepSMOTE = pd.read_csv('data/prepared_ready/train_prepSMOTE100.csv')
+    """
 
     #train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
     #test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
-    """
+    text = pd.read_csv('data/text/text.csv', index_col='id', dtype={'type': str})
 
     type_lookup = pd.read_csv('data/general/type_lookup.csv')
 
