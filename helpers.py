@@ -4,5 +4,4 @@ def col_collection(data, col_start):
         for c in data.columns:
             if (c.startswith(col_start)):
                 cols.append(c)
-        print(str(len(cols)) + ' columns found that start with ' + str(col_start))
         return cols

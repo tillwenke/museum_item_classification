@@ -63,8 +63,6 @@ def get_data(feat_percent_cut, feat_freq_cut):
 
     data.drop(columns=['full_nr','country_and_unit','parameter','unit','value'], inplace=True)
 
-    ## continous numeric features (nan -> 0)
-    data = data.replace(np.nan, 0)
     ## rename for xgboost (cant deal with <>[] in feature names)
     for i in data.columns:
         if '>' in i:
@@ -148,11 +146,17 @@ sweep_configuration = {
     'name': 'sweep',
     'metric': {'goal': 'maximize', 'name': 'val_f1_macro'},
     'parameters': 
-    {
+    {      
+        'max_depth': {'min': 3, 'max': 1000},
+        'gamma': {'min': 1.0, 'max': 9.0},
+        'reg_alpha': {'min': 40, 'max': 180},
+        'reg_lambda' : {'min': 0.0, 'max': 1.0},
+        'colsample_bytree' : {'min': 0.5, 'max': 1.0},
+        'min_child_weight' : {'min': 0, 'max': 10},       
+        'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000]},
+        
         'min_samples_split': {'values': [2, 5, 7, 10, 20, 40, 100, 200]},
-        'max_depth': {'values': [3, 6, 10, 25, 50, 75, 100, 150, 200, 500, 1000, None]},
         'min_samples_leaf': {'values': [1, 2, 6, 10, 20, 40, 50, 70, 100, 200, 500, 1000]},
-        'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000, 10000]},
         'criterion': {'values': ['gini', 'entropy', 'log_loss']},
         'max_features': {'values': [None, 'sqrt', 'log2']},
         'feat_percent_cut': {'min': 50, 'max': 100},
@@ -191,7 +195,7 @@ def main():
     class_weight = wandb.config.class_weight
     """
 
-    space={'max_depth': hp.quniform("max_depth", 3, 18, 1),
+    space=
         'gamma': hp.uniform ('gamma', 1,9),
         'reg_alpha' : hp.quniform('reg_alpha', 40,180,1),
         'reg_lambda' : hp.uniform('reg_lambda', 0,1),
@@ -270,7 +274,7 @@ def main():
         print('fold', k)
         clf.fit(X_train_fold, y_train_fold)
 
-        y_pred = rfc.predict(X_test_fold)
+        y_pred = clf.predict(X_test_fold)
         val_acc.append(accuracy_score(y_test_fold, y_pred))
         val_f1_macro.append(f1_score(y_test_fold, y_pred, average='macro'))
 
