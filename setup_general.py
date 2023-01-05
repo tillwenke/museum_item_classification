@@ -4,6 +4,7 @@ import numpy as np
 from numpy import nan
 from matplotlib import pyplot as plt
 import time
+import os
 
 from deep_translator import GoogleTranslator
 import re
@@ -34,9 +35,7 @@ pd.set_option("display.max_colwidth", None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_seq_items', None)
 
-cluster = False
-
-if cluster:
+if os.popen('hostname').read() == 'login2\n':
     # dtype={'type': str} prevents being confused with data type for large data sets
     """
     train = pd.read_csv('data/general/train.csv', index_col='id', dtype={'type': str})

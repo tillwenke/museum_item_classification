@@ -141,6 +141,7 @@ def rebalancing(X, y, reb_method, strategy, by_value):
 project = 'rf'
 
 # Define sweep config
+# from https://www.kaggle.com/code/prashant111/a-guide-on-xgboost-hyperparameters-tuning/notebook
 sweep_configuration = {
     'method': 'bayes',
     'name': 'sweep',
