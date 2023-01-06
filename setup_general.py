@@ -35,7 +35,7 @@ pd.set_option("display.max_colwidth", None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_seq_items', None)
 
-if os.popen('hostname').read() == 'login2\n':
+if os.popen('hostname').read() != 'till\n':
     # dtype={'type': str} prevents being confused with data type for large data sets
     """
     train = pd.read_csv('data/general/train.csv', index_col='id', dtype={'type': str})
