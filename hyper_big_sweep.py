@@ -234,7 +234,7 @@ def main():
     # -------------------------- usual training code starts here  -------------------------------------
     print('training')
 
-    rfc = RandomForestClassifier(n_estimators=2000, random_state=0, n_jobs=1000)
+    rfc = RandomForestClassifier(n_estimators=2000, random_state=0, n_jobs=-1)
 
     skf = StratifiedKFold(n_splits=4)
 
