@@ -283,7 +283,7 @@ def main():
       'val_f1_macro': crossval_f1_macro,
       'rebalancing_time': time_reb,
       'training_time': time_train,
-      'cpus' : str(os.sched_getaffinity(0), os.cpu_count(), multiprocessing.cpu_count(), psutil.cpu_count(logical=False), psutil.cpu_count(logical=True))
+      'cpus' : (os.sched_getaffinity(0), os.cpu_count(), multiprocessing.cpu_count(), psutil.cpu_count(logical=False), psutil.cpu_count(logical=True))
       })
 
 # Start sweep job.
