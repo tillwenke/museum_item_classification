@@ -69,12 +69,12 @@ if os.popen('hostname').read() != 'till\n':
 
     #train_prepROS = pd.read_csv('data/prepared_ready/train_prepROS.csv')
     #train_prepSMOTE = pd.read_csv('data/prepared_ready/train_prepSMOTE100.csv')
-    """
+    
 
     train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
     test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
     text = pd.read_csv('data/text/text.csv', index_col='id', dtype={'type': str})
-    
+    """
 
     type_lookup = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/general/type_lookup.csv')
 
