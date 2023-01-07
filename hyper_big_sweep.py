@@ -4,6 +4,8 @@ from prep_helpers import *
 #from sklearnex import patch_sklearn
 #patch_sklearn()
 
+print('CPUs ', os.sched_getaffinity(0), os.cpu_count(), multiprocessing.cpu_count(), psutil.cpu_count(logical=False), psutil.cpu_count(logical=True))
+
 
 def get_data(feat_percent_cut, feat_freq_cut):
     # adapted from preparation.ipynb
@@ -231,9 +233,8 @@ def main():
 
     # -------------------------- usual training code starts here  -------------------------------------
     print('training')
-    
-    rfc = RandomForestClassifier(n_estimators=n_estimators, criterion=criterion, max_depth=max_depth, min_samples_leaf=min_samples_leaf,\
-         max_features=max_features, min_samples_split=min_samples_split, class_weight=class_weight, random_state=0, n_jobs=-1)
+
+    rfc = RandomForestClassifier(n_estimators=2000, random_state=0, n_jobs=1000)
 
     skf = StratifiedKFold(n_splits=4)
 

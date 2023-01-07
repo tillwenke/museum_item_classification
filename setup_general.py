@@ -4,7 +4,7 @@ import numpy as np
 from numpy import nan
 from matplotlib import pyplot as plt
 import time
-import os
+import multiprocessing, os, psutil
 
 from deep_translator import GoogleTranslator
 import re
@@ -69,11 +69,12 @@ if os.popen('hostname').read() != 'till\n':
 
     #train_prepROS = pd.read_csv('data/prepared_ready/train_prepROS.csv')
     #train_prepSMOTE = pd.read_csv('data/prepared_ready/train_prepSMOTE100.csv')
-    
-
-    #train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
-    #test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
     """
+
+    train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
+    test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
+    text = pd.read_csv('data/text/text.csv', index_col='id', dtype={'type': str})
+    
 
     type_lookup = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/general/type_lookup.csv')
 
@@ -89,7 +90,7 @@ else:
 
     combined_data = pd.read_csv('./data/general/combined_data.csv', index_col='id', dtype={'type': str})
     combined_intermediate_ready = pd.read_csv('./data/general/combined_intermediate_ready.csv', index_col='id', dtype={'type': str})
-    """
+    
     combined_data_translated = pd.read_csv('data/translated/combined_data_translated.csv', index_col='id', dtype={'type': str})
     combined_data_fully_translated = pd.read_csv('data/translated/combined_data_fully_translated.csv', index_col='id', dtype={'type': str})
 
@@ -111,7 +112,6 @@ else:
 
     #train_prepROS = pd.read_csv('data/prepared_ready/train_prepROS.csv')
     #train_prepSMOTE = pd.read_csv('data/prepared_ready/train_prepSMOTE100.csv')
-    """
 
     #train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
     #test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
