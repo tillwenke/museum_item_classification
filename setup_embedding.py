@@ -8,6 +8,11 @@ train_curie = pd.read_csv('data/text_embeddings/train_curie.csv', index_col='id'
 val_curie = pd.read_csv('data/text_embeddings/val_curie.csv', index_col='id', dtype={'type': str})
 test_curie = pd.read_csv('data/text_embeddings/test_curie.csv', index_col='id', dtype={'type': str})
 
+bow = pd.read_csv('data/text_embeddings/bow_freq_over_20.csv', index_col='id', dtype={'type': str})
+train_bow = pd.read_csv('data/text_embeddings/train_bow.csv', index_col='id', dtype={'type': str})
+val_bow = pd.read_csv('data/text_embeddings/val_bow.csv', index_col='id', dtype={'type': str})
+test_bow = pd.read_csv('data/text_embeddings/test_bow.csv', index_col='id', dtype={'type': str})
+
 
 # categorize and resort types
 types = [
