@@ -234,7 +234,7 @@ def main():
     # -------------------------- usual training code starts here  -------------------------------------
     print('training')
 
-    rfc = RandomForestClassifier(random_state=0, n_jobs=-1)
+    rfc = RandomForestClassifier(n_estimators=2000, random_state=0, n_jobs=-1)
 
     skf = StratifiedKFold(n_splits=4)
 
@@ -277,14 +277,17 @@ def main():
 
     # -------------------------- ends here  -------------------------------------
     
+    cpus = str(os.sched_getaffinity(0)) 
+    cpu_count = str(os.cpu_count()) + ' ' + str(multiprocessing.cpu_count()) + ' ' + str(psutil.cpu_count(logical=False)) + ' ' + str(psutil.cpu_count(logical=True))
 
     wandb.log({
       'val_acc': crossval_acc,
       'val_f1_macro': crossval_f1_macro,
       'rebalancing_time': time_reb,
       'training_time': time_train,
-      'cpus' : (os.sched_getaffinity(0), os.cpu_count(), multiprocessing.cpu_count(), psutil.cpu_count(logical=False), psutil.cpu_count(logical=True))
-      })
+      'cpus' : cpus,
+      'cpu_count' : cpu_count
+    })
 
 # Start sweep job.
 wandb.agent(sweep_id, function=main, count=1000)
