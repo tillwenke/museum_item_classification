@@ -1,10 +1,6 @@
 from setup_general import *
 from prep_helpers import *
 
-from sklearnex import patch_sklearn
-patch_sklearn()
-
-
 def get_data(feat_percent_cut, feat_freq_cut):
     
     data = combined_intermediate_ready.copy()
@@ -39,7 +35,7 @@ def get_data(feat_percent_cut, feat_freq_cut):
     # already encoded
     # material, technique, unit, size, value
 
-    cols = ['musealia_additional_nr', 'collection_mark', 'musealia_mark', 'museum_abbr', 'before_Christ', 'is_original', 'class', 'parish', 'state',  'event_type', 'participants_role', 'parish', 'color', 'collection_additional_nr', 'damages', 'participant', 'location', 'name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text', 'country', 'city_municipality']
+    cols = ['musealia_additional_nr', 'collection_mark', 'musealia_mark', 'museum_abbr', 'before_Christ', 'is_original', 'class', 'state', 'event_type', 'participants_role', 'parish', 'color', 'collection_additional_nr', 'damages', 'participant', 'location', 'name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text', 'country', 'city_municipality']
 
     text_features = ['name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text']
     for col in cols:
@@ -59,8 +55,6 @@ def get_data(feat_percent_cut, feat_freq_cut):
     data = pd.get_dummies(data, columns=cols)
         
     ## Delete unneeded features
-
-
     data.drop(columns=['full_nr','country_and_unit','parameter','unit','value'], inplace=True)
 
     ## rename for xgboost (cant deal with <>[] in feature names)
@@ -127,7 +121,7 @@ def rebalancing(X, y, reb_method, strategy, by_value):
         sampling_strategy = by_num
     
     if reb_method == 'smote':
-        balancer = SMOTE(sampling_strategy=sampling_strategy(y,by_value), random_state=0)
+        balancer = SMOTE(sampling_strategy=sampling_strategy(y,by_value), k_neighbors=3, random_state=0)
     elif reb_method == 'ros':
         balancer = RandomOverSampler(sampling_strategy=sampling_strategy(y,by_value), random_state=0)
     else:
@@ -142,6 +136,8 @@ project = 'rf'
 
 # Define sweep config
 # from https://www.kaggle.com/code/prashant111/a-guide-on-xgboost-hyperparameters-tuning/notebook
+# https://towardsdatascience.com/xgboost-fine-tune-and-optimize-your-model-23d996fab663
+# step by step https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/
 sweep_configuration = {
     'method': 'bayes',
     'name': 'sweep',
@@ -149,17 +145,14 @@ sweep_configuration = {
     'parameters': 
     {      
         'max_depth': {'min': 3, 'max': 1000},
-        'gamma': {'min': 1.0, 'max': 9.0},
-        'reg_alpha': {'min': 40, 'max': 180},
-        'reg_lambda' : {'min': 0.0, 'max': 1.0},
-        'colsample_bytree' : {'min': 0.5, 'max': 1.0},
-        'min_child_weight' : {'min': 0, 'max': 10},       
+        'gamma': {'min': 0.0, 'max': 9.0},
+        'learning_rate': {'min': 0.0, 'max': 1.0},
+        'reg_alpha': {'min': 0, 'max': 180},
+        'reg_lambda' : {'min': 0, 'max': 100},
+        'colsample_bytree' : {'min': 0.1, 'max': 1.0},
+        'subsample' : {'min': 0.1, 'max': 1.0},
+        'min_child_weight' : {'min': 0, 'max': 100},       
         'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000]},
-        
-        'min_samples_split': {'values': [2, 5, 7, 10, 20, 40, 100, 200]},
-        'min_samples_leaf': {'values': [1, 2, 6, 10, 20, 40, 50, 70, 100, 200, 500, 1000]},
-        'criterion': {'values': ['gini', 'entropy', 'log_loss']},
-        'max_features': {'values': [None, 'sqrt', 'log2']},
         'feat_percent_cut': {'min': 50, 'max': 100},
         'feat_freq_cut': {'min': 1, 'max': 15},
         'reb_method': {'values': ['none', 'smote', 'ros']},
@@ -167,9 +160,7 @@ sweep_configuration = {
             ('perc',90),('perc',100),('perc',200),('perc',300),('perc',400),('perc',500),('perc',600),('perc',700),('perc',800),\
                 ('perc',900),('perc',1000),('perc',2000),('perc',5000),('perc',10000),('perc',50000), ('num',10),('num',20),('num',50),\
                     ('num',70),('num',100),('num',200),('num',300),('num',400),('num',500),('num',700),('num',1000),('num',1500),('num',2000),\
-                        ('num',2500),('num',3000)]},
-        'class_weight': {'values': [None, 'balanced']}
-
+                        ('num',2500),('num',3000)]}
      }
 }
 
@@ -180,44 +171,21 @@ def main():
     run = wandb.init(project=project)
 
     # note that we define values from `wandb.config` instead 
-    # of defining hard values 
-
-    """
-    min_samples_split = wandb.config.min_samples_split
+    # of defining hard values
     max_depth = wandb.config.max_depth
-    min_samples_leaf = wandb.config.min_samples_leaf
+    gamma = wandb.config.gamma
+    learning_rate = wandb.config.learning_rate
+    reg_alpha = wandb.config.reg_alpha
+    reg_lambda = wandb.config.reg_lambda
+    colsample_bytree = wandb.config.colsample_bytree
+    subsample = wandb.config.subsample
+    min_child_weight = wandb.config.min_child_weight
     n_estimators = wandb.config.n_estimators
-    max_features = wandb.config.max_features
-    criterion = wandb.config.criterion
+
     feat_percent_cut = wandb.config.feat_percent_cut
     feat_freq_cut = wandb.config.feat_freq_cut
     reb_method = wandb.config.reb_method
     rebalance = wandb.config.rebalance
-    class_weight = wandb.config.class_weight
-    """
-
-    space=
-        'gamma': hp.uniform ('gamma', 1,9),
-        'reg_alpha' : hp.quniform('reg_alpha', 40,180,1),
-        'reg_lambda' : hp.uniform('reg_lambda', 0,1),
-        'colsample_bytree' : hp.uniform('colsample_bytree', 0.5,1),
-        'min_child_weight' : hp.quniform('min_child_weight', 0, 10, 1),
-        'n_estimators': 180,
-        'seed': 0
-    }
-
-
-    min_samples_split = 2
-    max_depth = None
-    min_samples_leaf = 1
-    n_estimators = 2000
-    max_features = None
-    criterion = 'gini'
-    feat_percent_cut = 98
-    feat_freq_cut = 7
-    reb_method = 'ros'
-    rebalance = ('num',500)
-    class_weight = None
 
     # -------------------------- data prep code  -------------------------------------
 
@@ -229,27 +197,20 @@ def main():
     strategy, by_value = rebalance
     print(strategy, by_value)
 
-    #val = val_est_prepared.copy()
-
     X_train = train.drop('type', axis=1)
     y_train = train.type
-
-    """"
-    X_val = val.drop('type', axis=1)
-    y_val = val.type
-    """
 
     label_encoder = LabelEncoder()
     label_encoder = label_encoder.fit(y_train)
 
     y_train = label_encoder.transform(y_train)
-    #y_val = label_encoder.transform(y_val)
     
 
     # -------------------------- usual training code starts here  -------------------------------------
     print('training')
     
-    clf = XGBClassifier(random_state=0)
+    clf = XGBClassifier(n_estimators=n_estimators, max_depth=max_depth, min_child_weight=min_child_weight, gamma=gamma, learning_rate=learning_rate, reg_alpha=reg_alpha, reg_lambda=reg_lambda,\
+        colsample_bytree=colsample_bytree, subsample=subsample, random_state=0)
 
     skf = StratifiedKFold(n_splits=4)
 
@@ -263,12 +224,17 @@ def main():
         X_train_fold, X_test_fold = X_train.iloc[train_index], X_train.iloc[test_index]
         y_train_fold, y_test_fold = y_train[train_index], y_train[test_index]
 
+        # xg cant deal with labels that are leaving some ints out
+        # -> have to lower k_neighbors in smote
+        """
         # replace uncommon types
         unique, counts = np.unique(y_train_fold, return_counts=True)
         # 6 to have 5 samples per class left for standard knn in smote
         # -> uncommon classes become 100
         for i in np.argwhere(counts < 6):
+            print(i)
             y_train_fold[y_train_fold == i[0]] = 100
+        """
 
         X_train_fold, y_train_fold = rebalancing(X_train_fold, y_train_fold, reb_method=reb_method, strategy=strategy, by_value=by_value)
 

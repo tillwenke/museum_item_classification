@@ -42,7 +42,7 @@ def get_data(feat_percent_cut, feat_freq_cut):
     # already encoded
     # material, technique, unit, size, value
 
-    cols = ['musealia_additional_nr', 'collection_mark', 'musealia_mark', 'museum_abbr', 'before_Christ', 'is_original', 'class', 'parish', 'state',  'event_type', 'participants_role', 'parish', 'color', 'collection_additional_nr', 'damages', 'participant', 'location', 'name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text', 'country', 'city_municipality']
+    cols = ['musealia_additional_nr', 'collection_mark', 'musealia_mark', 'museum_abbr', 'before_Christ', 'is_original', 'class', 'state', 'event_type', 'participants_role', 'parish', 'color', 'collection_additional_nr', 'damages', 'participant', 'location', 'name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text', 'country', 'city_municipality']
 
     text_features = ['name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text']
     for col in cols:
@@ -214,22 +214,13 @@ def main():
     strategy, by_value = rebalance
     print(strategy, by_value)
 
-    #val = val_est_prepared.copy()
-
     X_train = train.drop('type', axis=1)
     y_train = train.type
-
-    """"
-    X_val = val.drop('type', axis=1)
-    y_val = val.type
-    """
 
     label_encoder = LabelEncoder()
     label_encoder = label_encoder.fit(y_train)
 
     y_train = label_encoder.transform(y_train)
-    #y_val = label_encoder.transform(y_val)
-    
 
     # -------------------------- usual training code starts here  -------------------------------------
     print('training')

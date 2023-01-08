@@ -20,6 +20,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_sc
 from sklearn.metrics import roc_auc_score, accuracy_score, classification_report, f1_score
 from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer, MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_extraction.text import CountVectorizer
 
 from imblearn.over_sampling import SMOTE, RandomOverSampler
 from imblearn.under_sampling import RandomUnderSampler
