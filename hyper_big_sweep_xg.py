@@ -10,8 +10,8 @@ def get_data(feat_percent_cut, feat_freq_cut):
     threshold_sum = len(data) * perc
     min_freq = feat_freq_cut
 
-    tech = helpers.col_collection(data, 'technique_')
-    mat = helpers.col_collection(data, 'material_')
+    tech = col_collection(data, 'technique_')
+    mat = col_collection(data, 'material_')
     size = data.columns[data.columns.str.contains('IN')]
 
     features = [tech,mat,size]
@@ -121,7 +121,7 @@ def rebalancing(X, y, reb_method, strategy, by_value):
         sampling_strategy = by_num
     
     if reb_method == 'smote':
-        balancer = SMOTE(sampling_strategy=sampling_strategy(y,by_value), k_neighbors=3, random_state=0)
+        balancer = SMOTE(sampling_strategy=sampling_strategy(y,by_value), k_neighbors=2, random_state=0)
     elif reb_method == 'ros':
         balancer = RandomOverSampler(sampling_strategy=sampling_strategy(y,by_value), random_state=0)
     else:
@@ -132,7 +132,7 @@ def rebalancing(X, y, reb_method, strategy, by_value):
     return X_res, y_res
 
 
-project = 'rf'
+project = 'xgboost'
 
 # Define sweep config
 # from https://www.kaggle.com/code/prashant111/a-guide-on-xgboost-hyperparameters-tuning/notebook
@@ -210,7 +210,7 @@ def main():
     print('training')
     
     clf = XGBClassifier(n_estimators=n_estimators, max_depth=max_depth, min_child_weight=min_child_weight, gamma=gamma, learning_rate=learning_rate, reg_alpha=reg_alpha, reg_lambda=reg_lambda,\
-        colsample_bytree=colsample_bytree, subsample=subsample, random_state=0)
+        colsample_bytree=colsample_bytree, subsample=subsample, random_state=0, n_jobs=-1)
 
     skf = StratifiedKFold(n_splits=4)
 
@@ -219,11 +219,15 @@ def main():
 
     start_time = time.time()
 
+    time_reb = 0
+    time_train = 0
+ 
     for k, (train_index, test_index) in enumerate(skf.split(X_train, y_train)):
         
         X_train_fold, X_test_fold = X_train.iloc[train_index], X_train.iloc[test_index]
         y_train_fold, y_test_fold = y_train[train_index], y_train[test_index]
 
+        
         # xg cant deal with labels that are leaving some ints out
         # -> have to lower k_neighbors in smote
         """
@@ -234,18 +238,21 @@ def main():
         for i in np.argwhere(counts < 6):
             print(i)
             y_train_fold[y_train_fold == i[0]] = 100
-        """
+        """        
 
+        start_time = time.time()
         X_train_fold, y_train_fold = rebalancing(X_train_fold, y_train_fold, reb_method=reb_method, strategy=strategy, by_value=by_value)
+        time_reb += time.time() - start_time
 
         print('fold', k)
+        start_time = time.time()
         clf.fit(X_train_fold, y_train_fold)
+        time_train += time.time() - start_time
 
         y_pred = clf.predict(X_test_fold)
         val_acc.append(accuracy_score(y_test_fold, y_pred))
         val_f1_macro.append(f1_score(y_test_fold, y_pred, average='macro'))
 
-    print('time', time.time() - start_time)
 
     crossval_acc = np.mean(val_acc)
     crossval_f1_macro = np.mean(val_f1_macro)
@@ -255,8 +262,10 @@ def main():
 
     wandb.log({
       'val_acc': crossval_acc,
-      'val_f1_macro': crossval_f1_macro
+      'val_f1_macro': crossval_f1_macro,
+      'rebalancing_time': time_reb,
+      'training_time': time_train
     })
 
 # Start sweep job.
-wandb.agent(sweep_id, function=main, count=1000)
+wandb.agent(sweep_id, function=main, count=10000)

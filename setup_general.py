@@ -10,7 +10,6 @@ from deep_translator import GoogleTranslator
 import re
 import time
 
-import helpers
 import wandb
 import pickle
 import openai

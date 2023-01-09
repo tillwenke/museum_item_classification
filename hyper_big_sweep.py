@@ -14,8 +14,8 @@ def get_data(feat_percent_cut, feat_freq_cut):
     threshold_sum = len(data) * perc
     min_freq = feat_freq_cut
 
-    tech = helpers.col_collection(data, 'technique_')
-    mat = helpers.col_collection(data, 'material_')
+    tech = col_collection(data, 'technique_')
+    mat = col_collection(data, 'material_')
     size = data.columns[data.columns.str.contains('IN')]
 
     features = [tech,mat,size]
@@ -220,9 +220,8 @@ def main():
 
     X_train = train.drop('type', axis=1)
     y_train = train.type
-
-    label_encoder = LabelEncoder()
-    label_encoder = label_encoder.fit(y_train)
+ 
+    label_encoder = LabelEncoder().fit(y_train)
 
     y_train = label_encoder.transform(y_train)
 
