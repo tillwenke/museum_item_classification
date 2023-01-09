@@ -4,9 +4,6 @@ from prep_helpers import *
 #from sklearnex import patch_sklearn
 #patch_sklearn()
 
-print('CPUs ', os.sched_getaffinity(0), os.cpu_count(), multiprocessing.cpu_count(), psutil.cpu_count(logical=False), psutil.cpu_count(logical=True))
-
-
 def get_data(feat_percent_cut, feat_freq_cut):
     # adapted from preparation.ipynb
     
@@ -203,9 +200,13 @@ def main():
     rebalance = ('num',500)
     class_weight = None
     """
+
+    """
+    # for example
     feat_percent_cut = 98
     feat_freq_cut = 7
     reb_method = 'none'
+    """
 
     # -------------------------- data prep code  -------------------------------------
 
@@ -228,14 +229,14 @@ def main():
     # -------------------------- usual training code starts here  -------------------------------------
     print('training')
 
+    """
     # for example
-    rfc = RandomForestClassifier(n_estimators=2000, random_state=0, n_jobs=-1)
-    
+    rfc = RandomForestClassifier(n_estimators=2000, random_state=0, n_jobs=1)    
     """
     # for real
     rfc = RandomForestClassifier(n_estimators=n_estimators, min_samples_split=min_samples_split, max_depth=max_depth, min_samples_leaf=min_samples_leaf,\
         max_features=max_features, criterion=criterion, class_weight=class_weight, random_state=0, n_jobs=-1)
-    """
+    
 
     skf = StratifiedKFold(n_splits=4)
 
@@ -281,8 +282,7 @@ def main():
     # -------------------------- ends here  -------------------------------------
     
     cpus = str(os.sched_getaffinity(0)) 
-    cpu_count = str(os.cpu_count()) + ' ' + str(multiprocessing.cpu_count()) + ' ' + str(psutil.cpu_count(logical=False)) + ' ' + str(psutil.cpu_count(logical=True))
-
+    cpu_count = str(os.cpu_count())
     wandb.log({
       'val_acc': crossval_acc,
       'val_f1_macro': crossval_f1_macro,
