@@ -80,13 +80,13 @@ if os.popen('hostname').read() != 'till\n':
 
 else:
     # dtype={'type': str} prevents being confused with data type for large data sets
-    """
+    
     train = pd.read_csv('data/general/train.csv', index_col='id', dtype={'type': str})
     val = pd.read_csv('data/general/val.csv', index_col='id', dtype={'type': str})
     test = pd.read_csv('data/general/test.csv', index_col='id', dtype={'type': str})
     train_translated = pd.read_csv('data/translated/train_translated.csv', dtype={'type': str})
     test_translated = pd.read_csv('data/translated/test_translated.csv', index_col='id', dtype={'type': str})
-    """
+    
 
     combined_data = pd.read_csv('./data/general/combined_data.csv', index_col='id', dtype={'type': str})
     combined_intermediate_ready = pd.read_csv('./data/general/combined_intermediate_ready.csv', index_col='id', dtype={'type': str})

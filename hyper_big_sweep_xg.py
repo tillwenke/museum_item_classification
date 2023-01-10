@@ -209,7 +209,8 @@ def main():
     # -------------------------- usual training code starts here  -------------------------------------
     print('training')
     
-    clf = XGBClassifier(random_state=0, n_jobs=-1)
+    clf = XGBClassifier(n_estimators=n_estimators, max_depth=max_depth, min_child_weight=min_child_weight, gamma=gamma, learning_rate=learning_rate, reg_alpha=reg_alpha, reg_lambda=reg_lambda,\
+        colsample_bytree=colsample_bytree, subsample=subsample, random_state=0, n_jobs=-1)
 
     skf = StratifiedKFold(n_splits=4)
 
