@@ -116,6 +116,7 @@ else:
     #train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
     #test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
     text = pd.read_csv('data/text/text.csv', index_col='id', dtype={'type': str})
+    text_est = pd.read_csv('data/text/text_est.csv', index_col='id', dtype={'type': str})
 
     type_lookup = pd.read_csv('data/general/type_lookup.csv')
 
