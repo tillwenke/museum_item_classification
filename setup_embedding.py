@@ -5,7 +5,7 @@ from sklearn.naive_bayes import MultinomialNB, ComplementNB
 
 # can take some time to run - import carefully
 
-curie = pd.read_csv('data/text_embeddings/curie.csv', dtype={'type': str})
+curie = pd.read_csv('data/text_embeddings/curie.csv', index_col='id', dtype={'type': str})
 train_curie = pd.read_csv('data/text_embeddings/train_curie.csv', index_col='id', dtype={'type': str})
 val_curie = pd.read_csv('data/text_embeddings/val_curie.csv', index_col='id', dtype={'type': str})
 test_curie = pd.read_csv('data/text_embeddings/test_curie.csv', index_col='id', dtype={'type': str})

@@ -1,15 +1,15 @@
 from setup_general import *
+from setup_embedding import *
 from prep_helpers import *
 
 #from sklearnex import patch_sklearn
 #patch_sklearn()
 
 def get_data(feat_percent_cut, feat_freq_cut):
-    # adapted from preparation.ipynb
+    # adapted from preparation.ipynb -> everything after "rescaling"
     
     data = combined_intermediate_ready.copy()
 
-    # best found combination (local optimum on 500 estimators)
     perc = feat_percent_cut/100
     threshold_sum = len(data) * perc
     min_freq = feat_freq_cut
@@ -85,6 +85,75 @@ def get_data(feat_percent_cut, feat_freq_cut):
 
     return train, val, test
 
+def get_curie():
+    #splitting
+    data = combined_intermediate_ready.copy()
+    trainval = data.loc[data['source']=='train']
+    test = data.loc[data['source']=='test']
+    train, val = train_test_split(trainval, test_size=0.3, random_state=0)
+
+    trainval_curie = curie[curie.source == 'train'].drop(columns=['source'])
+    test_curie = curie[curie.source == 'test'].drop(columns=['source'])
+
+    train_curie = pd.DataFrame.join(train[['element_count']], trainval_curie)
+    train_curie.dropna(axis=0, inplace=True)
+    train_curie.drop(columns=['element_count'], inplace=True)
+    print(len(train_curie))
+
+    val_curie = pd.DataFrame.join(val[['element_count']], trainval_curie)
+    val_curie.dropna(axis=0, inplace=True)
+    val_curie.drop(columns=['element_count'], inplace=True)
+    print(len(val_curie))
+
+    test_curie = pd.DataFrame.join(test[['element_count']], test_curie)
+    test_curie = test_curie.drop(columns=['type'])
+    test_curie.dropna(axis=0, inplace=True)
+    test_curie.drop(columns=['element_count'], inplace=True)
+    print(len(test_curie))
+
+    return train_curie, val_curie, test_curie
+
+def get_bow(max_n_gram, max_features):
+    dataset = text_est.copy()
+    stop_words = stopwords_est
+
+    CountVec = TfidfVectorizer(ngram_range=(1,max_n_gram), stop_words=stop_words, max_features=max_features)
+    # to use bigrams ngram_range=(2,2)
+    Count_data = CountVec.fit_transform(dataset.text_features)
+    #create dataframe
+    bow=pd.DataFrame(Count_data.toarray(),columns=CountVec.get_feature_names())
+
+    bow = bow.add_prefix('word_')
+    bow.index = dataset.index
+    bow = bow.join(dataset[['source', 'type']])
+
+    #splitting
+    data = combined_intermediate_ready.copy()
+    trainval = data.loc[data['source']=='train']
+    test = data.loc[data['source']=='test']
+    train, val = train_test_split(trainval, test_size=0.3, random_state=0)
+
+    trainval_bow = bow[bow.source == 'train'].drop(columns=['source'])
+    test_bow = bow[bow.source == 'test'].drop(columns=['source'])
+
+    train_bow = pd.DataFrame.join(train[['element_count']], trainval_bow)
+    train_bow.dropna(axis=0, inplace=True)
+    train_bow.drop(columns=['element_count'], inplace=True)
+    print(len(train_bow))
+    
+    val_bow = pd.DataFrame.join(val[['element_count']], trainval_bow)
+    val_bow.dropna(axis=0, inplace=True)
+    val_bow.drop(columns=['element_count'], inplace=True)
+    print(len(val_bow))
+
+    test_bow = pd.DataFrame.join(test[['element_count']], test_bow)
+    test_bow = test_bow.drop(columns=['type'])
+    test_bow.dropna(axis=0, inplace=True)
+    test_bow.drop(columns=['element_count'], inplace=True)
+    print(len(test_bow))
+
+    return train_bow, val_bow, test_bow
+
 #function to have resamplers resample to specific number of samples per class
 def by_num(y, min_samples):
     b = Counter(y).values()
@@ -146,10 +215,7 @@ def training(train, clf, reb_method, rebalance):
     # replace uncommon types -> gives small improvement in acc & f1 (investigate further?)
     # 8 to have 5 samples per class left for standard knn in smote after 4 fold cv
     for type in y_train.value_counts()[y_train.value_counts() < 8].index:
-        print(type)
         y_train[y_train == type] = 'uncommon_type'
-
-    print(y_train.value_counts())
  
     label_encoder = LabelEncoder().fit(y_train)
 
