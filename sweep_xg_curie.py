@@ -24,6 +24,7 @@ sweep_configuration = {
         'min_child_weight' : {'min': 0, 'max': 100},       
         'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000]},
         """
+        
         'reb_method': {'values': ['none', 'smote', 'ros']},
         'rebalance': {'values': [('perc',10),('perc',20),('perc',30),('perc',40),('perc',50),('perc',60),('perc',70),('perc',80),\
             ('perc',90),('perc',100),('perc',200),('perc',300),('perc',400),('perc',500),('perc',600),('perc',700),('perc',800),\
