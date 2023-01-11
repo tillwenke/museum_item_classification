@@ -141,7 +141,15 @@ def training(train, clf, reb_method, rebalance):
     strategy, by_value = rebalance    
 
     X_train = train.drop('type', axis=1)
-    y_train = train.type
+    y_train = train.type.copy(deep=True)
+
+    # replace uncommon types -> gives small improvement in acc & f1 (investigate further?)
+    # 8 to have 5 samples per class left for standard knn in smote after 4 fold cv
+    for type in y_train.value_counts()[y_train.value_counts() < 8].index:
+        print(type)
+        y_train[y_train == type] = 'uncommon_type'
+
+    print(y_train.value_counts())
  
     label_encoder = LabelEncoder().fit(y_train)
 
@@ -163,16 +171,7 @@ def training(train, clf, reb_method, rebalance):
     for k, (train_index, test_index) in enumerate(skf.split(X_train, y_train)):
         
         X_train_fold, X_test_fold = X_train.iloc[train_index], X_train.iloc[test_index]
-        y_train_fold, y_test_fold = y_train[train_index], y_train[test_index]
-
-        
-        # replace uncommon types -> gives small improvement in acc & f1 (investigate further?)
-        unique, counts = np.unique(y_train_fold, return_counts=True)
-        # 6 to have 5 samples per class left for standard knn in smote
-        # -> uncommon classes become 100
-        for i in np.argwhere(counts < 6):
-            y_train_fold[y_train_fold == i[0]] = 100
-        
+        y_train_fold, y_test_fold = y_train[train_index], y_train[test_index]        
 
         start_time = time.time()
         X_train_fold, y_train_fold = rebalancing(X_train_fold, y_train_fold, reb_method=reb_method, strategy=strategy, by_value=by_value)
