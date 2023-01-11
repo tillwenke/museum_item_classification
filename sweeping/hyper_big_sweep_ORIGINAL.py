@@ -148,7 +148,7 @@ sweep_configuration = {
     {
         'min_samples_split': {'values': [2, 5, 7, 10, 20, 40, 100, 200]},
         'max_depth': {'values': [3, 6, 10, 25, 50, 75, 100, 150, 200, 500, 1000, None]},
-        'min_samples_leaf': {'values': [1, 2, 6, 10, 20, 40, 50, 70, 100, 200, 500, 1000]},
+        'min_samples_leaf': {'min': 1, 'max': 20},
         'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000, 10000]},
         'criterion': {'values': ['gini', 'entropy', 'log_loss']},
         'max_features': {'values': [None, 'sqrt', 'log2']},
