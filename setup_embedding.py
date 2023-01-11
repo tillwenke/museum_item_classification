@@ -1,22 +1,38 @@
 import pandas as pd
 import numpy as np
+import os
 
 from sklearn.naive_bayes import MultinomialNB, ComplementNB
 
 # can take some time to run - import carefully
 
-curie = pd.read_csv('data/text_embeddings/curie.csv', index_col='id', dtype={'type': str})
-train_curie = pd.read_csv('data/text_embeddings/train_curie.csv', index_col='id', dtype={'type': str})
-val_curie = pd.read_csv('data/text_embeddings/val_curie.csv', index_col='id', dtype={'type': str})
-test_curie = pd.read_csv('data/text_embeddings/test_curie.csv', index_col='id', dtype={'type': str})
+if os.popen('hostname').read() != 'till\n':
+    curie = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/curie.csv', index_col='id', dtype={'type': str})
+    train_curie = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/train_curie.csv', index_col='id', dtype={'type': str})
+    val_curie = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/val_curie.csv', index_col='id', dtype={'type': str})
+    test_curie = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/test_curie.csv', index_col='id', dtype={'type': str})
 
-train_bow = pd.read_csv('data/text_embeddings/train_bow.csv', index_col='id', dtype={'type': str})
-val_bow = pd.read_csv('data/text_embeddings/val_bow.csv', index_col='id', dtype={'type': str})
-test_bow = pd.read_csv('data/text_embeddings/test_bow.csv', index_col='id', dtype={'type': str})
+    train_bow = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/train_bow.csv', index_col='id', dtype={'type': str})
+    val_bow = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/val_bow.csv', index_col='id', dtype={'type': str})
+    test_bow = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/test_bow.csv', index_col='id', dtype={'type': str})
 
-with open('data/general/estonian-stopwords.txt') as file:
-    lines = [line.rstrip() for line in file]
-stopwords_est = lines
+    with open('/gpfs/space/home/till/museum/museum_item_classification/data/general/estonian-stopwords.txt') as file:
+        lines = [line.rstrip() for line in file]
+    stopwords_est = lines
+
+else:
+    curie = pd.read_csv('data/text_embeddings/curie.csv', index_col='id', dtype={'type': str})
+    train_curie = pd.read_csv('data/text_embeddings/train_curie.csv', index_col='id', dtype={'type': str})
+    val_curie = pd.read_csv('data/text_embeddings/val_curie.csv', index_col='id', dtype={'type': str})
+    test_curie = pd.read_csv('data/text_embeddings/test_curie.csv', index_col='id', dtype={'type': str})
+
+    train_bow = pd.read_csv('data/text_embeddings/train_bow.csv', index_col='id', dtype={'type': str})
+    val_bow = pd.read_csv('data/text_embeddings/val_bow.csv', index_col='id', dtype={'type': str})
+    test_bow = pd.read_csv('data/text_embeddings/test_bow.csv', index_col='id', dtype={'type': str})
+
+    with open('data/general/estonian-stopwords.txt') as file:
+        lines = [line.rstrip() for line in file]
+    stopwords_est = lines
 
 # categorize and resort types
 types = [
