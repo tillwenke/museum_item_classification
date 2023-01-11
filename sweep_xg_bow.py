@@ -13,17 +13,6 @@ sweep_configuration = {
     'metric': {'goal': 'maximize', 'name': 'val_f1_macro'},
     'parameters': 
     {    
-        """
-        'max_depth': {'min': 3, 'max': 1000},
-        'gamma': {'min': 0.0, 'max': 9.0},
-        'learning_rate': {'min': 0.0, 'max': 1.0},
-        'reg_alpha': {'min': 0, 'max': 180},
-        'reg_lambda' : {'min': 0, 'max': 100},
-        'colsample_bytree' : {'min': 0.1, 'max': 1.0},
-        'subsample' : {'min': 0.1, 'max': 1.0},
-        'min_child_weight' : {'min': 0, 'max': 100},       
-        'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000]},
-        """
         'max_n_gram': {'min': 1, 'max': 5},
         'max_feature': {'values': [100, 200, 400, 800, 1600, 3200, 6400]},
         'reb_method': {'values': ['none', 'smote', 'ros']},
@@ -34,6 +23,18 @@ sweep_configuration = {
                         ('num',2500),('num',3000)]}
      }
 }
+
+"""
+'max_depth': {'min': 3, 'max': 1000},
+'gamma': {'min': 0.0, 'max': 9.0},
+'learning_rate': {'min': 0.0, 'max': 1.0},
+'reg_alpha': {'min': 0, 'max': 180},
+'reg_lambda' : {'min': 0, 'max': 100},
+'colsample_bytree' : {'min': 0.1, 'max': 1.0},
+'subsample' : {'min': 0.1, 'max': 1.0},
+'min_child_weight' : {'min': 0, 'max': 100},       
+'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000]},
+"""
 
 # Initialize sweep by passing in config. (Optional) Provide a name of the project.
 sweep_id = wandb.sweep(sweep=sweep_configuration, project=project)
