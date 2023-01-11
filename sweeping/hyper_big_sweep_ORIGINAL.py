@@ -138,8 +138,6 @@ def rebalancing(X, y, reb_method, strategy, by_value):
 
 
 project = 'rf'
-# 1. use 1000 estimators to find right dataset
-# 2. tune rf parameters
 
 # Define sweep config
 sweep_configuration = {
@@ -148,6 +146,12 @@ sweep_configuration = {
     'metric': {'goal': 'maximize', 'name': 'val_f1_macro'},
     'parameters': 
     {
+        'min_samples_split': {'values': [2, 5, 7, 10, 20, 40, 100, 200]},
+        'max_depth': {'values': [3, 6, 10, 25, 50, 75, 100, 150, 200, 500, 1000, None]},
+        'min_samples_leaf': {'values': [1, 2, 6, 10, 20, 40, 50, 70, 100, 200, 500, 1000]},
+        'n_estimators': {'values': [100, 200, 500, 800, 1000, 1500, 2000, 3000, 5000, 10000]},
+        'criterion': {'values': ['gini', 'entropy', 'log_loss']},
+        'max_features': {'values': [None, 'sqrt', 'log2']},
         'feat_percent_cut': {'min': 50, 'max': 100},
         'feat_freq_cut': {'min': 1, 'max': 15},
         'reb_method': {'values': ['none', 'smote', 'ros']},
@@ -170,11 +174,39 @@ def main():
     # note that we define values from `wandb.config` instead 
     # of defining hard values 
 
+    
+    min_samples_split = wandb.config.min_samples_split
+    max_depth = wandb.config.max_depth
+    min_samples_leaf = wandb.config.min_samples_leaf
+    n_estimators = wandb.config.n_estimators
+    max_features = wandb.config.max_features
+    criterion = wandb.config.criterion
     feat_percent_cut = wandb.config.feat_percent_cut
     feat_freq_cut = wandb.config.feat_freq_cut
     reb_method = wandb.config.reb_method
     rebalance = wandb.config.rebalance
     class_weight = wandb.config.class_weight
+
+    """
+    min_samples_split = 2
+    max_depth = None
+    min_samples_leaf = 1
+    n_estimators = 2000
+    max_features = None
+    criterion = 'gini'
+    feat_percent_cut = 98
+    feat_freq_cut = 7
+    reb_method = 'ros'
+    rebalance = ('num',500)
+    class_weight = None
+    """
+
+    """
+    # for example
+    feat_percent_cut = 98
+    feat_freq_cut = 7
+    reb_method = 'none'
+    """
 
     # -------------------------- data prep code  -------------------------------------
 
@@ -201,7 +233,8 @@ def main():
     rfc = RandomForestClassifier(n_estimators=2000, random_state=0, n_jobs=1)    
     """
     # for real
-    rfc = RandomForestClassifier(n_estimators=1000, class_weight=class_weight, random_state=0, n_jobs=-1)
+    rfc = RandomForestClassifier(n_estimators=n_estimators, min_samples_split=min_samples_split, max_depth=max_depth, min_samples_leaf=min_samples_leaf,\
+        max_features=max_features, criterion=criterion, class_weight=class_weight, random_state=0, n_jobs=-1)
     
 
     skf = StratifiedKFold(n_splits=4)
