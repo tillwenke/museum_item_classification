@@ -121,7 +121,7 @@ def get_bow(max_n_gram, max_features):
     # to use bigrams ngram_range=(2,2)
     Count_data = CountVec.fit_transform(dataset.text_features)
     #create dataframe
-    bow=pd.DataFrame(Count_data.toarray(),columns=CountVec.get_feature_names())
+    bow=pd.DataFrame(Count_data.toarray(),columns=CountVec.get_feature_names_out())
 
     bow = bow.add_prefix('word_')
     bow.index = dataset.index
