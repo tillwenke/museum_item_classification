@@ -8,6 +8,7 @@ from sklearn.naive_bayes import MultinomialNB, ComplementNB
 
 if os.popen('hostname').read() != 'till\n':
     curie = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/curie.csv', index_col='id', dtype={'type': str})
+    """
     train_curie = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/train_curie.csv', index_col='id', dtype={'type': str})
     val_curie = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/val_curie.csv', index_col='id', dtype={'type': str})
     test_curie = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/test_curie.csv', index_col='id', dtype={'type': str})
@@ -15,7 +16,8 @@ if os.popen('hostname').read() != 'till\n':
     train_bow = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/train_bow.csv', index_col='id', dtype={'type': str})
     val_bow = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/val_bow.csv', index_col='id', dtype={'type': str})
     test_bow = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text_embeddings/test_bow.csv', index_col='id', dtype={'type': str})
-
+    """
+    
     with open('/gpfs/space/home/till/museum/museum_item_classification/data/general/estonian-stopwords.txt') as file:
         lines = [line.rstrip() for line in file]
     stopwords_est = lines
