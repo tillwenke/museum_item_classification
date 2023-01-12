@@ -67,10 +67,10 @@ def main():
     monitoring = training(train, xg, reb_method, rebalance)    
 
     wandb.log({
-      'val_acc': monitoring['val_acc'],
-      'val_f1_macro': monitoring['val_f1_macro'],
-      'rebalancing_time': monitoring['rebalancing_time'],
-      'training_time': monitoring['training_time'],
+      'val_acc': monitoring['crossval_acc'],
+      'val_f1_macro': monitoring['crossval_f1_macro'],
+      'rebalancing_time': monitoring['time_reb'],
+      'training_time': monitoring['time_train']
     })
 
 # Start sweep job.
