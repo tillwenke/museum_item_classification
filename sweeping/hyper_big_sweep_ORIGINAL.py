@@ -173,7 +173,6 @@ def main():
 
     # note that we define values from `wandb.config` instead 
     # of defining hard values 
-
     
     min_samples_split = wandb.config.min_samples_split
     max_depth = wandb.config.max_depth
