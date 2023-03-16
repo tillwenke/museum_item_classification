@@ -1,6 +1,6 @@
 from setup_general import *
 
-for counter in range(10,12):
+for counter in range(0,11):
     lang = 'est'
     if lang == 'en':
         data = combined_data_fully_translated.copy()
@@ -376,7 +376,6 @@ for counter in range(10,12):
             data[col] = data[col].apply(lambda x: 'uncommon' if (x in values_to_group) else x)
 
     # one hot encoding
-    print(cols)
     data = pd.get_dummies(data, columns=cols)
         
     ## Delete unneeded features
@@ -411,5 +410,5 @@ for counter in range(10,12):
     score = cross_validate(model, X, y, cv=5, scoring={'Acc':"accuracy","F1":"f1_macro"})
     print(counter, score.get('test_Acc').mean(), score.get('test_F1').mean())
     f = open('fe_results.txt', 'a')
-    f.write(str(counter) + ' ' + str(score.get('test_Acc').mean()) + ' ' + str(score.get('test_F1').mean()) + '\n')
+    f.write('single ' + str(counter) + ' ' + str(score.get('test_Acc').mean()) + ' ' + str(score.get('test_F1').mean()) + '\n')
     f.close()

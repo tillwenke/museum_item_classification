@@ -3,3 +3,4 @@ data/text_embeddings/*
 models/*
 wandb/*
 data/prepared_ready/*
+data/typeless/*
