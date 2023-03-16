@@ -5,8 +5,10 @@ from prep_helpers import *
 #from sklearnex import patch_sklearn
 #patch_sklearn()
 
-def get_data(feat_percent_cut, feat_freq_cut):
+def get_data(feat_percent_cut=1.0, feat_freq_cut=0):
     # adapted from preparation.ipynb -> everything after "rescaling"
+
+    # rather cut from both ends
     
     data = combined_intermediate_ready.copy()
 
@@ -19,7 +21,8 @@ def get_data(feat_percent_cut, feat_freq_cut):
     size = data.columns[data.columns.str.contains('IN')]
 
     features = [tech,mat,size]
-
+    
+    # !!! should not be allowed bc includes knowledge about test set
     for feat in features:
         frequencies = {}
         for col in feat:
@@ -113,7 +116,7 @@ def get_curie():
 
     return train_curie, val_curie, test_curie
 
-def get_bow(max_n_gram, max_features):
+def get_bow(max_n_gram=2, max_features=1000):
     dataset = text_est.copy()
     stop_words = stopwords_est
 
