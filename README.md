@@ -119,7 +119,7 @@ For more detailed information see: README_modelling.md
 prepare for models:
 - prep_rebalancing
 
-Running models - here order in not as important 
+Running models - here order is not as important 
 
 - pred_random_forest
 - pred_crossval_randomforest

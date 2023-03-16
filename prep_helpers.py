@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import re
 
+text_features = ['name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text', 'damages']
+
 # Combine parameter, unit & w/h values to value
 def get_squared(item):
     if ' x ' in item:
@@ -183,4 +185,20 @@ def col_collection(data, col_start):
             if (c.startswith(col_start)):
                 cols.append(c)
         return cols
+
+def collect_text(item, tf):
+    return ' '.join(item[tf]).strip()
+
+def get_text_df(data):
+    
+    tf = [value for value in text_features if value in data.columns]
+    data[tf] = data[tf].fillna('')
+    data['text_features'] = data.apply(lambda item: collect_text(item, tf),axis=1)
+
+    final_features = [value for value in ['text_features','type','source'] if value in data.columns]
+    text = data[final_features]
+
+    text.text_features = text.text_features.apply(lambda x: x.strip())
+    text = text[text.text_features != '']
+    return text
 
