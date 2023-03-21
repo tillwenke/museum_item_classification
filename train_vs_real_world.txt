@@ -1,2 +1,4 @@
 about real world:
-less events
+less events -> basically no events
+no: color, initial_info, legend, is_original, element_count
+musealia_queue_nr 0.4054556537640963 vs in train 0.83985
