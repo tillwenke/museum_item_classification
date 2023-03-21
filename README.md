@@ -1,3 +1,12 @@
+# TODOs
+## model for ETMM&AM subset
+- [] compare feature value distribution train & inference set (iset) -> measure similarity of data sets
+- [] maybe clean iset for out of distribution values -> make data sets similar
+- [] put data sets together
+- [] check iset for save predictions by keywords
+- [] build big predictive model from normal and text features from train data set.
+- [] deploy and infer on iset
+
 # Classification of items in Estonian Museums
 Part of this [kaggle challenge](https://www.kaggle.com/competitions/caps-in-museums-data-part-2); [original data](https://opendata.muis.ee/)
 
