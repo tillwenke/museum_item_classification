@@ -2,3 +2,13 @@ about real world:
 less events -> basically no events
 no: color, initial_info, legend, is_original, element_count
 musealia_queue_nr 0.4054556537640963 vs in train 0.83985
+
+collection_queue_nr 0.6162450472416946 0.25745
+collection_additional_nr 0.6185106166819059 0.46175
+name 0.0 0.3535
+material 0.8879101899827289 0.3535
+commentary 0.990013207355481 0.96835
+technique 0.9696027633851468 0.59435
+parameter 0.8888855023874835 0.5284
+unit 0.8888855023874835 0.5284
+value 0.8888855023874835 0.5284
