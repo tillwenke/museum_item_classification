@@ -2,6 +2,9 @@ about real world:
 less events -> basically no events
 no: color, initial_info, legend, is_original, element_count
 musealia_queue_nr 0.4054556537640963 vs in train 0.83985
+num, cat distributions totally different throughout
+-> slightly better for only ETMM
+-> using train/test split gives much more similar distribution
 
 collection_queue_nr 0.6162450472416946 0.25745
 collection_additional_nr 0.6185106166819059 0.46175

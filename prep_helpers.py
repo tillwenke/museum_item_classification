@@ -39,6 +39,7 @@ def extract_height_width(item):
     else:        
         return [float(i) for i in item]
 
+## country_and_unit - technique (whitespace deletion)
 def empty_to_nan(item):
     if type(item) == str:
         item = item.strip()
@@ -145,6 +146,7 @@ def extract_year_from_name(row):
             start = match.group()
     return start
 
+## event_type (brackets)
 def strip_brackets(x):
     x = str(x)
     x = x.strip('< >')
@@ -152,6 +154,8 @@ def strip_brackets(x):
         x = x.replace('\u200b', '')
     return x
 
+#The base colours: red, blue, green, grey, yellow, patterned, orange, brown, white, black , pink
+#The most common/distingtive stay unchanged
 def colour_grouping(x):
     if x in ['madara red', 'dark red', 'purple red', 'Red']:
         return 'red'
