@@ -1,0 +1,10 @@
+method: bayes
+metric:
+    goal: maximize
+    name: val_f1_macro
+parameters:
+    model__n_estimators:
+        min: 100
+        max: 1000
+    model__n_jobs:
+        values: [1]

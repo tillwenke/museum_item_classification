@@ -1,0 +1,8 @@
+defaults:
+  - dataset: column
+  - parameters: rfc_std
+  - pipeline: rfc
+
+hydra:
+  job:
+    chdir: False

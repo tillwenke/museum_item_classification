@@ -1,8 +1,8 @@
 from setup_general import *
 from prep_helpers import *
 
-source = 'data/typeless/like_train_set.csv'
-sink = 'data/typeless/like_train_set_prepared.csv'
+source = 'data/typeless/AM_ETMM.csv'
+sink = 'data/inference/AM_ETMM.csv'
 
 #############################
 

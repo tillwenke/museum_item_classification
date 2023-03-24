@@ -1,0 +1,6 @@
+name: "text_data"
+data_dir: "data/training/text"
+file: "text.csv"
+parameters: bow_std
+extra_dir: "data/training/column"
+extra_file: "clean_column.csv"

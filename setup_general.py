@@ -15,6 +15,8 @@ import wandb
 import pickle
 import openai
 from collections import Counter
+import seaborn as sns
+from math import isnan
 
 from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score, cross_validate, StratifiedKFold
 from sklearn.metrics import roc_auc_score, accuracy_score, classification_report, f1_score
@@ -29,26 +31,25 @@ from imblearn.pipeline import Pipeline
 import xgboost as xgb
 from xgboost import XGBClassifier
 
-from pytorch_tabnet.tab_model import TabNetClassifier
-
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_colwidth", None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_seq_items', None)
 
+
+"""
 if os.popen('hostname').read() != 'till\n':
     # dtype={'type': str} prevents being confused with data type for large data sets
-    """
+    
     train = pd.read_csv('data/general/train.csv', index_col='id', dtype={'type': str})
     val = pd.read_csv('data/general/val.csv', index_col='id', dtype={'type': str})
     test = pd.read_csv('data/general/test.csv', index_col='id', dtype={'type': str})
     train_translated = pd.read_csv('data/translated/train_translated.csv', dtype={'type': str})
     test_translated = pd.read_csv('data/translated/test_translated.csv', index_col='id', dtype={'type': str})
-    """
 
     combined_data = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/general/combined_data.csv', index_col='id', dtype={'type': str})
     combined_intermediate_ready = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/general/combined_intermediate_ready.csv', index_col='id', dtype={'type': str})
-    """
+    
     combined_data_translated = pd.read_csv('data/translated/combined_data_translated.csv', index_col='id', dtype={'type': str})
     combined_data_fully_translated = pd.read_csv('data/translated/combined_data_fully_translated.csv', index_col='id', dtype={'type': str})
 
@@ -74,7 +75,6 @@ if os.popen('hostname').read() != 'till\n':
 
     train_text = pd.read_csv('data/text/train_text.csv', index_col='id', dtype={'type': str})
     test_text = pd.read_csv('data/text/test_text.csv', index_col='id', dtype={'type': str})
-    """
     
     text = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text/text.csv', index_col='id', dtype={'type': str})
     text_est = pd.read_csv('/gpfs/space/home/till/museum/museum_item_classification/data/text/text_est.csv', index_col='id', dtype={'type': str})
@@ -89,8 +89,6 @@ else:
     test = pd.read_csv('data/general/test.csv', index_col='id', dtype={'type': str})
     train_translated = pd.read_csv('data/translated/train_translated.csv', dtype={'type': str})
     test_translated = pd.read_csv('data/translated/test_translated.csv', index_col='id', dtype={'type': str})
-    
-
     combined_data = pd.read_csv('./data/general/combined_data.csv', index_col='id', dtype={'type': str})
     combined_intermediate_ready = pd.read_csv('./data/general/combined_intermediate_ready.csv', index_col='id', dtype={'type': str})
     
@@ -126,3 +124,4 @@ else:
 
     train_est_prepared = pd.read_csv('data/prepared_ready/train_est_prepared.csv', index_col='id', dtype={'type': str})
     val_est_prepared = pd.read_csv('data/prepared_ready/val_est_prepared.csv', index_col='id', dtype={'type': str})
+"""

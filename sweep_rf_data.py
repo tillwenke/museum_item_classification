@@ -31,6 +31,8 @@ sweep_id = wandb.sweep(sweep=sweep_configuration, project=project)
 def main():
     run = wandb.init(project=project)
 
+    print(wandb.config)
+
     #data specific
     feat_percent_cut = wandb.config.feat_percent_cut
     feat_freq_cut = wandb.config.feat_freq_cut

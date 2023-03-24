@@ -4,3 +4,6 @@ models/*
 wandb/*
 data/prepared_ready/*
 data/typeless/*
+data/inference/*
+data/training/*
+outputs/*

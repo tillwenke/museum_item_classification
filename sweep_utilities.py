@@ -5,12 +5,11 @@ from prep_helpers import *
 #from sklearnex import patch_sklearn
 #patch_sklearn()
 
-def get_data(feat_percent_cut=1.0, feat_freq_cut=0):
+def get_data(path, feat_percent_cut=100, feat_freq_cut=0):
     # adapted from preparation.ipynb -> everything after "rescaling"
 
     # rather cut from both ends
-    
-    data = combined_intermediate_ready.copy()
+    data = pd.read_csv(path)
 
     perc = feat_percent_cut/100
     threshold_sum = len(data) * perc
@@ -88,9 +87,9 @@ def get_data(feat_percent_cut=1.0, feat_freq_cut=0):
 
     return train, val, test
 
-def get_curie():
+def get_embeddings(path):
     #splitting
-    data = combined_intermediate_ready.copy()
+    data = pd.read_csv(path)
     trainval = data.loc[data['source']=='train']
     test = data.loc[data['source']=='test']
     train, val = train_test_split(trainval, test_size=0.3, random_state=0)
@@ -116,8 +115,8 @@ def get_curie():
 
     return train_curie, val_curie, test_curie
 
-def get_bow(max_n_gram=2, max_features=1000):
-    dataset = text_est.copy()
+def get_bow(text_path, column_path, max_n_gram=2, max_features=1000):
+    dataset = pd.read_csv(text_path)
     stop_words = stopwords_est
 
     CountVec = TfidfVectorizer(ngram_range=(1,max_n_gram), stop_words=stop_words, max_features=max_features)
@@ -131,7 +130,7 @@ def get_bow(max_n_gram=2, max_features=1000):
     bow = bow.join(dataset[['source', 'type']])
 
     #splitting
-    data = combined_intermediate_ready.copy()
+    data = pd.read_csv(column_path)
     trainval = data.loc[data['source']=='train']
     test = data.loc[data['source']=='test']
     train, val = train_test_split(trainval, test_size=0.3, random_state=0)
