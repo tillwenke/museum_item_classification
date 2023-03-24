@@ -36,7 +36,6 @@ def run_training():
     global run_name
     global best_result
     
-    print(best_result)
     run = wandb.init()
     params = wandb.config
 
@@ -94,7 +93,7 @@ def train(cfg):
     sweep_id = wandb.sweep(sweep=sweep_configuration, project=project)
 
     # Start sweep job.
-    wandb.agent(sweep_id, function=run_training, count=10)
+    wandb.agent(sweep_id, function=run_training, count=5)
 
 if __name__ == "__main__":
     train()

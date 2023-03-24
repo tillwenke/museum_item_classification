@@ -5,7 +5,7 @@ from prep_helpers import *
 #from sklearnex import patch_sklearn
 #patch_sklearn()
 
-def get_data(path, feat_percent_cut=100, feat_freq_cut=0):
+def get_data(path, feat_percent_cut=100, feat_freq_cut=10):
     # adapted from preparation.ipynb -> everything after "rescaling"
 
     # rather cut from both ends
@@ -115,7 +115,7 @@ def get_embeddings(path):
 
     return train_curie, val_curie, test_curie
 
-def get_bow(text_path, column_path, max_n_gram=2, max_features=1000):
+def get_bow(text_path, column_path, max_n_gram=2, max_features=2000):
     dataset = pd.read_csv(text_path)
     stop_words = stopwords_est
 
@@ -141,18 +141,15 @@ def get_bow(text_path, column_path, max_n_gram=2, max_features=1000):
     train_bow = pd.DataFrame.join(train[['element_count']], trainval_bow)
     train_bow.dropna(axis=0, inplace=True)
     train_bow.drop(columns=['element_count'], inplace=True)
-    print(len(train_bow))
     
     val_bow = pd.DataFrame.join(val[['element_count']], trainval_bow)
     val_bow.dropna(axis=0, inplace=True)
     val_bow.drop(columns=['element_count'], inplace=True)
-    print(len(val_bow))
 
     test_bow = pd.DataFrame.join(test[['element_count']], test_bow)
     test_bow = test_bow.drop(columns=['type'])
     test_bow.dropna(axis=0, inplace=True)
     test_bow.drop(columns=['element_count'], inplace=True)
-    print(len(test_bow))
 
     return train_bow, val_bow, test_bow
 

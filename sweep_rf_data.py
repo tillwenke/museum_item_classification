@@ -51,7 +51,7 @@ def main():
 
     monitoring = training(train, rfc, reb_method, rebalance)
     
-    cpus = str(os.sched_getaffinity(0)) 
+    cpus = str(os.sched_getaffinity(0))
     cpu_count = str(os.cpu_count())
     wandb.log({
       'val_acc': monitoring['crossval_acc'],

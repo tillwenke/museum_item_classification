@@ -2,11 +2,31 @@ from setup_general import *
 from prep_helpers import *
 
 source = 'data/typeless/AM_ETMM.csv'
-sink = 'data/inference/AM_ETMM.csv'
+sink_column = 'data/inference/AM_ETMM_column.csv'
+sink_text = 'data/inference/AM_ETMM_text.csv'
 
 #############################
 
 data = pd.read_csv(source, index_col='id')
+
+# TEXT
+def collect_text(item):
+    return ' '.join(item[text_features]).strip()
+
+text_data = data.copy()
+
+text_features = ['name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text', 'damages']
+text_features = [col for col in text_features if col in text_data.columns]
+text_data[text_features] = text_data[text_features].fillna('')
+text_data['text_features'] = text_data.apply(lambda item: collect_text(item),axis=1)
+
+text = text_data[['text_features']]
+
+text.text_features = text.text_features.apply(lambda x: x.strip())
+text = text[text.text_features != '']
+text.to_csv(sink_text, index=True)
+
+# COLUMN
 # Feature specific engineering
 ## units - sizes -values
 # Finish unit translation/ unification &  values to float
@@ -132,6 +152,7 @@ data[numeric_features] = MinMaxScaler().fit_transform(data[numeric_features])
 # get typeless ready
 cols = ['musealia_additional_nr', 'collection_mark', 'musealia_mark', 'museum_abbr', 'before_Christ', 'is_original', 'class', 'state', 'event_type', 'participants_role', 'parish', 'color', 'collection_additional_nr', 'damages', 'participant', 'location', 'name', 'commentary', 'text', 'legend', 'initial_info', 'additional_text', 'country', 'city_municipality']
 columns = [value for value in cols if value in data.columns]
+data[columns] = data[columns].fillna('nan')
 data = pd.get_dummies(data, columns=columns)
 data.drop(columns=['full_nr','country_and_unit','parameter','unit','value'], inplace=True)
 ## rename for xgboost (cant deal with <>[] in feature names)
@@ -145,4 +166,4 @@ for i in data.columns:
     if '[' in i:
         data.rename(columns={i:i.replace('[','')}, inplace=True)
 
-data.to_csv(sink, index=True)
+data.to_csv(sink_column, index=True)
