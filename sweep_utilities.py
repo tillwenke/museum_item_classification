@@ -9,7 +9,7 @@ def get_data(path, feat_percent_cut=100, feat_freq_cut=10):
     # adapted from preparation.ipynb -> everything after "rescaling"
 
     # rather cut from both ends
-    data = pd.read_csv(path)
+    data = pd.read_csv(path, index_col='id')
 
     perc = feat_percent_cut/100
     threshold_sum = len(data) * perc
@@ -76,10 +76,7 @@ def get_data(path, feat_percent_cut=100, feat_freq_cut=10):
             data.rename(columns={i:i.replace('[','')}, inplace=True)
 
     ## resplit test/train
-    train = data.loc[data['source']=='train'].drop('source',axis=1)
-
-    # modify types
-    train['type'] = train['type'].replace('fotonegatiiv, fotonegatiiv', 'fotonegatiiv')    
+    train = data.loc[data['source']=='train'].drop('source',axis=1)   
 
     # resplit test/train
     train, val = train_test_split(train, test_size=0.3, random_state=0)
@@ -116,7 +113,7 @@ def get_embeddings(path):
     return train_curie, val_curie, test_curie
 
 def get_bow(text_path, column_path, max_n_gram=2, max_features=2000):
-    dataset = pd.read_csv(text_path)
+    dataset = pd.read_csv(text_path, index_col='id')
     stop_words = stopwords_est
 
     CountVec = TfidfVectorizer(ngram_range=(1,max_n_gram), stop_words=stop_words, max_features=max_features)
@@ -130,18 +127,18 @@ def get_bow(text_path, column_path, max_n_gram=2, max_features=2000):
     bow = bow.join(dataset[['source', 'type']])
 
     #splitting
-    data = pd.read_csv(column_path)
+    data = pd.read_csv(column_path, index_col='id')
     trainval = data.loc[data['source']=='train']
     test = data.loc[data['source']=='test']
     train, val = train_test_split(trainval, test_size=0.3, random_state=0)
-
+    
     trainval_bow = bow[bow.source == 'train'].drop(columns=['source'])
     test_bow = bow[bow.source == 'test'].drop(columns=['source'])
 
     train_bow = pd.DataFrame.join(train[['element_count']], trainval_bow)
     train_bow.dropna(axis=0, inplace=True)
     train_bow.drop(columns=['element_count'], inplace=True)
-    
+
     val_bow = pd.DataFrame.join(val[['element_count']], trainval_bow)
     val_bow.dropna(axis=0, inplace=True)
     val_bow.drop(columns=['element_count'], inplace=True)
