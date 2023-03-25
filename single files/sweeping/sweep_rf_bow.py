@@ -1,6 +1,6 @@
-from sweep_utilities import *
+from train_utils import *
 
-project = 'rf_curie'
+project = 'rf_bow'
 # 0. narrowing down from all params at once too complex
 # 1. use 1000 estimators to find right dataset
 # 2. tune rf parameters
@@ -12,6 +12,8 @@ sweep_configuration = {
     'metric': {'goal': 'maximize', 'name': 'val_f1_macro'},
     'parameters': 
     {
+        'max_n_gram': {'min': 1, 'max': 5},
+        'max_feature': {'values': [100, 200, 400, 800, 1600, 3200, 6400]},
         'reb_method': {'values': ['none', 'smote', 'ros']},
         'rebalance': {'values': [('perc',10),('perc',20),('perc',30),('perc',40),('perc',50),('perc',60),('perc',70),('perc',80),\
             ('perc',90),('perc',100),('perc',200),('perc',300),('perc',400),('perc',500),('perc',600),('perc',700),('perc',800),\
@@ -28,6 +30,10 @@ sweep_id = wandb.sweep(sweep=sweep_configuration, project=project)
 def main():
     run = wandb.init(project=project)
 
+    #data specific
+    max_n_gram = wandb.config.max_n_gram
+    max_features = wandb.config.max_feature
+
     # rebalancing specific
     reb_method = wandb.config.reb_method
     rebalance = wandb.config.rebalance
@@ -38,7 +44,7 @@ def main():
     rfc = RandomForestClassifier(n_estimators=1000, class_weight=class_weight, random_state=0, n_jobs=-1)
 
     print('data prep')
-    train, val, test = get_curie()
+    train, val, test = get_bow(max_n_gram, max_features)
 
     monitoring = training(train, rfc, reb_method, rebalance)
     

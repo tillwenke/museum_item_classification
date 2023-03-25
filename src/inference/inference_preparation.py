@@ -1,5 +1,5 @@
 from setup_general import *
-from prep_helpers import *
+from src.inference.preparation_utils import *
 
 source = 'data/typeless/AM_ETMM.csv'
 sink_column = 'data/inference/AM_ETMM_column.csv'

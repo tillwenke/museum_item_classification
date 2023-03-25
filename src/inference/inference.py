@@ -27,7 +27,6 @@ results.set_index('id', inplace=True)
 for key, model in models.items():
     results[key] = [[-1]] * len(results)
 
-results['safe'] = [-1] * len(results)
 import warnings
 warnings.simplefilter(action='ignore', category=pd.errors.PerformanceWarning)
 
@@ -35,9 +34,10 @@ for key, model in models.items():
     current_data = data[key]
     model_features = model.feature_names_in_
     data_features = current_data.columns
+    print(key, len(model_features), 'features in model', len(data_features, 'features in data')
 
     # align features
-    model_not_data = [feature for feature in model_features if feature not in data_features]
+    model_not_data = [feature for feature inf model_features if feature not in data_features]
     current_data[model_not_data] = 0
     intersection = [feature for feature in current_data.columns if feature in model_features]
     current_data = current_data[intersection]

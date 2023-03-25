@@ -1,3 +1,5 @@
+# approach to check which fe steps acutally give better results
+
 from setup_general import *
 
 for counter in range(0,11):

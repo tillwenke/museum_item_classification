@@ -6,6 +6,9 @@ num, cat distributions totally different throughout
 -> slightly better for only ETMM
 -> using train/test split gives much more similar distribution
 
+from predictions:
+better on instances with less nans & with higher certainty (+ labels from text)
+
 collection_queue_nr 0.6162450472416946 0.25745
 collection_additional_nr 0.6185106166819059 0.46175
 name 0.0 0.3535

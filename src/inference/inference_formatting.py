@@ -1,3 +1,20 @@
+import pandas as pd
+from functools import reduce
+
+additional_name = pd.read_csv('data/typeless/additional_name.csv')
+description = pd.read_csv('data/typeless/description.csv', sep=';')
+dimensions = pd.read_csv('data/typeless/dimensions.csv')
+events = pd.read_csv('data/typeless/events.csv')
+general_info = pd.read_csv('data/typeless/general_info.csv', sep=';')
+materials = pd.read_csv('data/typeless/materials.csv')
+technique = pd.read_csv('data/typeless/technique.csv')
+
+all_types = pd.read_excel('data/typeless/all_types.xlsx')
+
+#df_merged = pd.read_csv('data/typeless/all_merged.csv', index_col='id')
+
+#processing
+
 additional_name = additional_name.groupby('MUSEAAL_ID', as_index=True).agg({'TEKST':' '.join, 'LIIK':pd.Series.mode})
 additional_name = additional_name.rename(columns={'TEKST':'text', 'LIIK':'class'})
 description = description.groupby('MUSEAAL_ID', as_index=True).agg({'LISATEKST':' '.join})
@@ -17,7 +34,11 @@ technique = technique.rename(columns={'TEHNIKA':'technique','TAIS_NR':'full_nr',
 technique = technique.groupby('MUSEAAL_ID', as_index=True).agg({'technique':'>'.join})
 dfs = [additional_name, description, events, general_info, materials, technique, dimensions]
 
-from functools import reduce
+# duplicates in general_info are eliminated here
 df_merged = reduce(lambda  left,right: pd.merge(left,right,on=['MUSEAAL_ID'],
                                             how='outer'), dfs)
 df_merged.index.names=['id']
+
+df_merged.to_csv('data/typeless/all_merged.csv')
+iset = df_merged[(df_merged.museum_abbr == 'AM') | (df_merged.museum_abbr == 'ETMM')]
+iset.to_csv('data/typeless/AM_ETMM.csv')
