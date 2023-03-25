@@ -7,6 +7,9 @@
 - [ ] build big predictive model from normal and text features from train data set.
 - [ ] deploy and infer on iset
 
+
+- check for duplicates in general_info
+
 # Classification of items in Estonian Museums
 Part of this [kaggle challenge](https://www.kaggle.com/competitions/caps-in-museums-data-part-2); [original data](https://opendata.muis.ee/)
 
