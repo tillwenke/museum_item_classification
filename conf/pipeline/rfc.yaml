@@ -1,6 +1,6 @@
 name: rfc
 init:
-    _target_: make_pipeline.make_pipeline_sklearn
+    _target_: src.training.make_pipeline.make_pipeline_sklearn
     
     steps_config:        
         - model:
