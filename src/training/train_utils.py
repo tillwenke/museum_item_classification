@@ -1,6 +1,7 @@
-from setup_general import *
-from setup_embedding import *
-from prep_helpers import *
+from src.inference.preparation_utils import *
+from src.setup_general import *
+from src.setup_embedding import *
+
 
 #from sklearnex import patch_sklearn
 #patch_sklearn()
@@ -148,7 +149,7 @@ def get_bow(text_path, column_path, max_n_gram=2, max_features=2000):
     test_bow.dropna(axis=0, inplace=True)
     test_bow.drop(columns=['element_count'], inplace=True)
 
-    return train_bow, val_bow, test_bow
+    return train_bow, val_bow, test_bow, CountVec
 
 #function to have resamplers resample to specific number of samples per class
 def by_num(y, min_samples):

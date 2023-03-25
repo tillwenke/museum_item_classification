@@ -44,7 +44,7 @@ def run_training():
     if 'column' in cfg['dataset']['data_dir']:
         train, val, test = get_data(path=path)
     elif 'text' in cfg['dataset']['data_dir']:
-        train, val, test = get_bow(text_path=path, column_path=root_path / cfg['dataset']['extra_dir'] / cfg['dataset']['extra_file'])
+        train, val, test, Vectorizer = get_bow(text_path=path, column_path=root_path / cfg['dataset']['extra_dir'] / cfg['dataset']['extra_file'])
     elif 'embeddings' in cfg['dataset']['data_dir']:
         train, val, test = get_embeddings(path=path)
     else:
@@ -76,9 +76,16 @@ def run_training():
         print(pipeline)
         model = pipeline['model']
         print(model)
-        file = f"{root_path}/models/{cfg['dataset'].name}/best_model_{run_name}_{f1}.pkl"
+        dir = f"../models/{cfg['dataset'].name}/"
+        file = dir + f"best_model_{cfg['pipeline'].name}.pkl"
         print(file)
-        pickle.dump(model, open(file, "wb"))    
+        pickle.dump(model, open(file, "wb"))
+
+        if Vectorizer in locals():
+            file = dir + f"/vectorizer/best_model_{cfg['pipeline'].name}.pkl"
+            pickle.dump(Vectorizer, open(file, "wb"))
+
+
 
 
 @hydra.main(config_path="./conf", config_name="config")
