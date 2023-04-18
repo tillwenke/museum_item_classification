@@ -1,12 +1,10 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
-setup(name='lol',
-version='0.1',
-description='Testing installation of Package',
-url='#',
-author='auth',
-author_email='author@email.com',
-license='MIT',
-packages=['lol'],
-zip_safe=False)
-
+setup(
+    name='src',
+    packages=find_packages(),
+    version='0',
+    description='',
+    author='TillWenke',
+    license='',
+)

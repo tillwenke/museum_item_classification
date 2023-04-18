@@ -12,3 +12,4 @@ xgboost
 openai
 pytorch_tabnet
 cuml
+-e .
