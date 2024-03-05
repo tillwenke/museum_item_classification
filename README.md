@@ -1,5 +1,7 @@
-# Classification of items in Estonian Museums
-Part of this [kaggle challenge](https://www.kaggle.com/competitions/caps-in-museums-data-part-2); [original data](https://opendata.muis.ee/)
+# Classification of items in Estonian Museums - part of Bachelor's course on Data Science at University of Tartu
+You can find out report and poster [here](https://github.com/tillwenke/museum_item_classification/tree/main/overview).
+
+Part of the [kaggle challenge](https://www.kaggle.com/competitions/caps-in-museums-data-part-2). Here you can find the [original data](https://opendata.muis.ee/).
 
 Baseline: 100 tree RF: 30 % validation set [accuracy on kaggle test set: private: 0.901 public: 0.90266]
 
