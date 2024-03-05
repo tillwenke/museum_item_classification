@@ -2,8 +2,8 @@
 Part of this [kaggle challenge](https://www.kaggle.com/competitions/caps-in-museums-data-part-2); [original data](https://opendata.muis.ee/)
 
 Baseline: 100 tree RF: 30 % validation set [accuracy on kaggle test set: private: 0.901 public: 0.90266]
-                               precision    recall  f1-score   support
 
+                               precision    recall  f1-score   support
                       ajakiri       1.00      0.71      0.83        31
                       ajaleht       0.42      0.35      0.38        23
                         album       0.25      0.14      0.18         7
