@@ -3,7 +3,7 @@ Part of this [kaggle challenge](https://www.kaggle.com/competitions/caps-in-muse
 
 Baseline: 100 tree RF: 30 % validation set [accuracy on kaggle test set: private: 0.901 public: 0.90266]
 
-More detailed preformance per item category on the left:
+More detailed preformance per item category (Estonian) on the left:
 
                                precision    recall  f1-score   support
                       ajakiri       1.00      0.71      0.83        31
