@@ -17,7 +17,6 @@ Baseline: 100 tree RF: 30 % validation set [accuracy on kaggle test set: private
               foto, postkaart       1.00      0.24      0.38        17
                  fotomaterjal       1.00      0.73      0.84        11
                  fotonegatiiv       0.98      1.00      0.99       664
-                 fotonegatiiv, fotonegatiiv       0.00      0.00      0.00         8
                      graafika       0.83      0.97      0.89        69
                 helisalvestis       1.00      1.00      1.00        17
                     joonistus       1.00      0.53      0.69        17
@@ -32,7 +31,7 @@ Baseline: 100 tree RF: 30 % validation set [accuracy on kaggle test set: private
                          kott       1.00      0.25      0.40         4
                         kutse       1.00      0.29      0.44        35
                      käsikiri       0.84      0.76      0.80       144
-    käsikiri, laul/ vokaalmuusika       0.79      0.95      0.86        58
+          laul/ vokaalmuusika       0.79      0.95      0.86        58
         käsikiri, muusikateos       0.40      0.10      0.16        20
              käsikiri, noodid       1.00      1.00      1.00         2
                   laegas/karp       0.50      0.50      0.50         6
