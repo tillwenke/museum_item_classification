@@ -1,4 +1,4 @@
-# Classification of items in Estonian Museums - part of Bachelor's course on Data Science at University of Tartu
+# Classification of items in Estonian Museums - part of Bachelor's course on Data Science at University of Tartu 2022
 You can find out report and poster [here](https://github.com/tillwenke/museum_item_classification/tree/main/overview).
 
 Part of the [kaggle challenge](https://www.kaggle.com/competitions/caps-in-museums-data-part-2). Here you can find the [original data](https://opendata.muis.ee/).
