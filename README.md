@@ -89,16 +89,4 @@ execute this block - to have the changes present in the current notebook you wil
 
 We set settings so that Notebook outputs are fully displayed for investigation purposes. But this makes it necessary to limit what you want to see when displaying variables containing large amount of data, so for example rather do `prep.head()`than `prep`.
 
-# TODOs
-## model for ETMM&AM subset
-- [ ] compare feature value distribution train & inference set (iset) -> measure similarity of data sets
-- [ ] maybe clean iset for out of distribution values -> make data sets similar
-- [ ] put data sets together
-- [ ] check iset for save predictions by keywords
-- [ ] build big predictive model from normal and text features from train data set.
-- [ ] deploy and infer on iset
-
-
-- check for duplicates in general_info
-
 
