@@ -1,6 +1,0 @@
-wandb_version: 1
-
-child:
-  value: 100
-depth:
-  value: 3
